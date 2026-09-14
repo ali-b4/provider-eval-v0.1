@@ -1,0 +1,11 @@
+{
+  "provider_a": {
+    "input_per_1m_tokens": 0,
+    "output_per_1m_tokens": 0
+  },
+  "provider_b": {
+    "input_per_1m_tokens": 0,
+    "output_per_1m_tokens": 0
+  }
+}
+

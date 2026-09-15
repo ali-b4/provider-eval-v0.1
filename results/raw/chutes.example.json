@@ -1,0 +1,27 @@
+{
+  "status_code": 200,
+  "headers": {
+    "content-type": "application/json"
+  },
+  "body": {
+    "id": "chatcmpl_<provider-generated>",
+    "object": "chat.completion",
+    "model": "Qwen/Qwen3.8-27B-TEE",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "hello from Chutes"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": "<provider-reported>",
+      "completion_tokens": "<provider-reported>",
+      "total_tokens": "<provider-reported>"
+    }
+  },
+  "_note": "Shape example from the non-streaming OpenAI-compatible response; run scripts/chutes_raw_request.py to replace this with a live capture."
+}

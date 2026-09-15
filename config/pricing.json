@@ -1,11 +1,15 @@
 {
-  "provider_a": {
+  "model": "qwen/qwen3.8-27b",
+  "venice": {
     "input_per_1m_tokens": 0,
     "output_per_1m_tokens": 0
   },
-  "provider_b": {
+  "chutes": {
+    "input_per_1m_tokens": 0,
+    "output_per_1m_tokens": 0
+  },
+  "darkbloom": {
     "input_per_1m_tokens": 0,
     "output_per_1m_tokens": 0
   }
 }
-

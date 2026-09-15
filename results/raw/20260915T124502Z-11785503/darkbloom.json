@@ -1,0 +1,104 @@
+{
+  "provider": "darkbloom",
+  "model": "qwen/qwen3.8-27b",
+  "provider_model_id": "EigenLabs/Qwen3.8-27B-4bit-mtp",
+  "timestamp": "2026-09-15T12:45:02.746196+00:00",
+  "request": {
+    "url": "https://api.darkbloom.dev/v1/chat/completions",
+    "headers": {
+      "Authorization": "Bearer <redacted>",
+      "Content-Type": "application/json"
+    },
+    "json": {
+      "model": "EigenLabs/Qwen3.8-27B-4bit-mtp",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Reply with exactly: hello"
+        }
+      ],
+      "temperature": 0,
+      "stream": false
+    }
+  },
+  "response": {
+    "status_code": 200,
+    "headers": {
+      "Access-Control-Allow-Credentials": "true",
+      "Access-Control-Allow-Headers": "Content-Type, Authorization, X-Darkbloom-Metadata-Details",
+      "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+      "Access-Control-Allow-Origin": "https://console.darkbloom.dev",
+      "Alt-Svc": "h3=\":443\"; ma=2592000",
+      "Content-Length": "1182",
+      "Content-Type": "application/json",
+      "Date": "Tue, 15 Sep 2026 12:45:04 GMT",
+      "Referrer-Policy": "strict-origin-when-cross-origin",
+      "Via": "1.1 Caddy",
+      "X-Attestation-Se-Public-Key": "qKyWcxKWqjUa2BQgpxJltvNBqYV4M9EGl7I/xYqcrENs/kkk/AX1mKM+t2U5lf6qfZ6EZq4yiPphwdxvsMK64w==",
+      "X-Content-Type-Options": "nosniff",
+      "X-Frame-Options": "DENY",
+      "X-Inference-Job-Id": "76a9cd6c-78ea-4cdd-8a1b-00b716eabd63",
+      "X-Provider-Attested": "true",
+      "X-Provider-Chip": "Apple M5 Max",
+      "X-Provider-Encrypted": "true",
+      "X-Provider-Id": "ff429866-50ea-4693-92bf-7547cb0a1a6c",
+      "X-Provider-Mda-Verified": "true",
+      "X-Provider-Model": "Mac17,6",
+      "X-Provider-Secure-Enclave": "true",
+      "X-Provider-Trust-Level": "hardware",
+      "X-Ratelimit-Limit-Input-Tokens": "5000000",
+      "X-Ratelimit-Limit-Output-Tokens": "500000",
+      "X-Ratelimit-Limit-Requests": "1200",
+      "X-Ratelimit-Remaining-Input-Tokens": "999990",
+      "X-Ratelimit-Remaining-Output-Tokens": "31232",
+      "X-Ratelimit-Remaining-Requests": "119",
+      "X-Ratelimit-Reset-Input-Tokens": "1s",
+      "X-Ratelimit-Reset-Output-Tokens": "4s",
+      "X-Ratelimit-Reset-Requests": "1s",
+      "X-Request-Id": "ck33ci8qu8fj",
+      "X-Timing": "{\"parse_us\":64,\"reserve_us\":2915,\"route_us\":7967,\"queue_us\":0,\"encrypt_us\":609,\"dispatch_us\":11,\"provider_us\":1223359,\"pre_handler_us\":798,\"preflight_us\":336,\"route_reserve_us\":284,\"writer_us\":7,\"socket_us\":77,\"provider_ack_us\":1212184}",
+      "Connection": "close"
+    },
+    "body": {
+      "id": "chatcmpl-76a9cd6c-78ea-4cdd-8a1b-00b716eabd63",
+      "object": "chat.completion",
+      "created": 1789476304,
+      "model": "EigenLabs/Qwen3.8-27B-4bit-mtp",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "\n\nhello",
+            "reasoning": "The user wants me to reply with exactly the word \"hello\". This is a simple, direct request. I should output only \"hello\" with no additional text.\n",
+            "reasoning_content": "The user wants me to reply with exactly the word \"hello\". This is a simple, direct request. I should output only \"hello\" with no additional text.\n",
+            "reasoning_details": [
+              {
+                "type": "reasoning.text",
+                "text": "The user wants me to reply with exactly the word \"hello\". This is a simple, direct request. I should output only \"hello\" with no additional text.\n",
+                "id": "reasoning-text-0",
+                "format": "unknown",
+                "index": 0,
+                "signature": null
+              }
+            ]
+          },
+          "finish_reason": "stop"
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 57,
+        "completion_tokens": 38,
+        "total_tokens": 95,
+        "completion_tokens_details": {
+          "reasoning_tokens": 34
+        }
+      },
+      "se_signature": "MEUCIQCgcx59+sx5C5YW0t1TDM54XQb5rSmRcjF9knFeYPI/LQIgHGHYItzisiwWa7wsQ7gjMeV1Ir4XLU3a/HNm4SvW92k=",
+      "response_hash": "afda9d6f08497a3ea087be51942b5a34426278b2b4bd5f93ae8bc6901a3eaaaf"
+    }
+  },
+  "success": true,
+  "error": null,
+  "total_latency_seconds": 2.203
+}

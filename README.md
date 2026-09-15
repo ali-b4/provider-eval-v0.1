@@ -2,7 +2,7 @@
 
 A small Python-based harness for evaluating and comparing LLM inference providers using a standardized methodology.
 
-The initial benchmark will evaluate the same model:
+The benchmark uses one fixed model:
 
 **`qwen/qwen3.8-27b`**
 
@@ -15,6 +15,53 @@ across three inference providers:
 Each provider will be accessed through its **direct API**. The lab will not route requests through an aggregator such as OpenRouter.
 
 The goal is to understand how different providers deliver the same underlying model and compare them as inference products rather than treating all model endpoints as interchangeable APIs.
+
+---
+
+## Run and inspect requests
+
+The model stays the same, using the existing provider-specific IDs in `.env`.
+There is no model-selection command-line option or automatic model fallback.
+
+Run from the project folder with Python 3.10 or newer. No third-party packages are required.
+Copy `.env.example` to `.env` if needed and fill in the three API keys.
+
+```bash
+# Default: call all three providers concurrently and open the HTML report
+python3 scripts/manual_request.py --open
+
+# Call only the selected providers, concurrently
+python3 scripts/manual_request.py --providers venice chutes --open
+
+# Call just one provider with a custom prompt
+python3 scripts/manual_request.py --providers darkbloom --prompt "Explain inference in one sentence." --open
+```
+
+Every selected provider receives the same prompt with temperature 0, streaming off,
+and no artificial `max_tokens` limit. Calls overlap; their exact start times may differ slightly.
+Omitting `--providers` selects all three, even if a key is missing. Missing keys and
+request failures appear in the report without stopping the other providers.
+
+Each run saves its own folder under `results/raw/<run-id>/`, containing:
+
+- One JSON log per selected provider: request, response body, response headers, HTTP status, elapsed time, and any error.
+- `report.html`: three equal columns for Venice, Chutes, and Darkbloom. Unselected providers are labeled “Not selected.” Each response scrolls independently; expand “Request JSON” to inspect the input.
+
+The report opens after all calls finish. Omit `--open` to save it without opening a browser.
+The terminal prints only short status lines and the report path. Authorization keys are
+redacted from request logs; prompts and provider responses are retained locally.
+`--timeout 180` sets the network timeout in seconds (the default).
+A run exits with a nonzero status if any selected provider fails, while still saving its report.
+
+To recreate an HTML report from saved JSON without making new API calls:
+
+```bash
+python3 scripts/render_report.py results/raw/<run-id>
+```
+
+These are non-streaming inspection logs. Full streaming measurements, token throughput,
+and cost calculations remain future benchmark work; `run_benchmark.py` is still a placeholder.
+The older provider-specific probe scripts remain available for individual debugging.
 
 ---
 
@@ -41,7 +88,7 @@ The objective is to make the same workload runnable against all three providers 
 
 ## Benchmark Model
 
-The initial benchmark model is:
+The fixed benchmark model is:
 
 `qwen/qwen3.8-27b`
 
@@ -121,6 +168,7 @@ This allows the lab to compare providers on more than raw speed and price.
     │
     ├── scripts/
     │   ├── manual_request.py
+    │   ├── render_report.py
     │   └── run_benchmark.py
     │
     ├── tests/
@@ -182,7 +230,7 @@ Benchmark outputs.
 
 Executable project workflows.
 
-`manual_request.py` will be used to make simple API calls, inspect raw responses, and debug provider behavior.
+`manual_request.py` sends concurrent direct API requests and saves JSON logs and a three-column HTML report. `render_report.py` rebuilds the report from saved logs.
 
 `run_benchmark.py` will run standardized tests across all configured providers.
 
@@ -202,8 +250,7 @@ The same test inputs should be used across providers wherever possible.
 
 The harness should eventually allow a benchmark request to be described using a common set of parameters such as:
 
-    provider
-    model
+    providers (all three by default; explicit selections restrict the run)
     messages
     max_tokens
     temperature
@@ -272,7 +319,7 @@ A benchmark result should eventually contain fields similar to:
     error_type
     error_message
 
-Provider/model metadata will be stored separately from individual benchmark observations.
+Provider/model metadata may be maintained separately, but every response record must include or reference the endpoint metadata used for that request.
 
 ---
 
@@ -450,7 +497,7 @@ The following are intentionally deferred:
 - Multi-provider routing
 - Failover
 - Self-hosted inference
-- Dashboards
+- Interactive dashboards (the local HTML request log is in scope)
 - Production infrastructure
 - Customer-facing APIs
 - OpenRouter or other aggregator benchmarking
@@ -485,11 +532,25 @@ At that point the lab should provide a functional foundation for more rigorous p
 
 Current progress:
 
+- All three providers returned HTTP 200 in the concurrent verification run; see [comparison notes](notes/direct-request-comparison.md) and the [saved HTML report](results/raw/20260915T124502Z-11785503/report.html)
+- Concurrent direct request runner added; all three providers run by default, with optional subsets
+- Per-provider JSON logs and a three-column HTML report added
+- Offline tests cover concurrent selection, failures, missing keys, timeouts, and HTML escaping
 - Repository initialized
 - Project structure created
 - Initial metric definitions created
-- Benchmark model selected
-- Providers selected
+- Benchmark model selected: `qwen/qwen3.8-27b`
+- Direct non-streaming probe scripts created for Venice, Chutes, and Darkbloom
+- `.env` loading added to the probe scripts; `.env` is excluded from Git
+- No artificial `max_tokens` limit is included in the direct probe requests
+- Provider documentation links added as the source of truth for model names and errors
+- Provider-specific Qwen3.8 model IDs configured:
+  - Venice: `qwen-3-8-27b`
+  - Chutes: `Qwen/Qwen3.8-27B-TEE`
+  - Darkbloom: `EigenLabs/Qwen3.8-27B-4bit-mtp`
+- Venice direct request successfully returned HTTP 200 and parsed response text
+- Darkbloom model-permission behavior identified: the API key only permits its explicitly selected model ID
+- Raw response shape and lifecycle notes documented for the initial Chutes investigation
 
 Benchmark model:
 
@@ -501,6 +562,38 @@ Providers:
 - Chutes
 - Darkbloom
 
-Next step:
+### Completed: direct request inspection
 
-Make a successful direct API request to each provider and inspect the raw request and response formats before building the standardized provider interface.
+- Confirmed successful direct responses from all three providers using the existing model IDs, including Darkbloom's approved model.
+- Ran all three providers concurrently and retained their raw JSON responses and HTML comparison report.
+- Compared request and response shapes, usage fields, reasoning fields, status codes, and provider metadata.
+- Recorded provider-specific findings and remaining measurement questions in [comparison notes](notes/direct-request-comparison.md).
+
+### Next steps: measurements and streaming
+
+The following is planned work, not yet implemented. Keep the model fixed and continue
+calling all three providers concurrently by default; an explicit provider selection
+runs only those providers concurrently.
+
+1. **Implement non-streaming measurements.** Extend the existing request logs into consistent metric records for every provider response, including failures.
+2. **Implement streamed responses.** Capture the response stream and final assembled output, measure time to first token and generation throughput, and retain usage and error information.
+3. **Record every metric defined in [notes/metrics.md](notes/metrics.md) for every test response**, in both streaming and non-streaming modes:
+   - Time to first token (TTFT).
+   - Total latency.
+   - Output throughput / tokens per second, measured per request.
+   - Input tokens.
+   - Output tokens, including reasoning tokens as well as the final answer.
+   - Input price per 1M tokens.
+   - Output price per 1M tokens.
+   - Total request cost.
+   - HTTP/API errors, including status and error details, with an explicit success/failure outcome.
+   - Provider/model metadata, including provider name, model ID, pricing, rate limits, region, version, and context window where available.
+4. **Add a separate, clean “Metrics” dropdown to each provider column in every run's `report.html`.** Display the metrics above with readable labels and units, separate from the raw request and response JSON. Keep all three columns aligned for comparison and save the same metrics in the underlying JSON records.
+5. **Verify measurement consistency across providers.** Resolve differences in input-token reporting and reasoning-token accounting, and use documented provider pricing for cost calculations.
+
+Every response record must contain the full metric set. When a metric cannot be
+measured or supplied, record it as unavailable (`null`) with a reason rather than
+omitting it or reporting zero. For example, non-streaming responses do not expose
+true TTFT or the generation interval needed for output throughput; failures may
+also leave usage and costs unknown. Clearly distinguish measured, provider-reported,
+and estimated values.

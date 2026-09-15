@@ -1,0 +1,117 @@
+{
+  "provider": "venice",
+  "model": "qwen/qwen3.8-27b",
+  "provider_model_id": "qwen-3-8-27b",
+  "timestamp": "2026-09-15T12:45:02.745860+00:00",
+  "request": {
+    "url": "https://api.venice.ai/api/v1/chat/completions",
+    "headers": {
+      "Authorization": "Bearer <redacted>",
+      "Content-Type": "application/json"
+    },
+    "json": {
+      "model": "qwen-3-8-27b",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Reply with exactly: hello"
+        }
+      ],
+      "temperature": 0,
+      "stream": false
+    }
+  },
+  "response": {
+    "status_code": 200,
+    "headers": {
+      "Date": "Tue, 15 Sep 2026 12:45:03 GMT",
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "close",
+      "content-security-policy": "default-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests",
+      "access-control-allow-origin": "*",
+      "access-control-expose-headers": "*",
+      "Cache-Control": "no-store, no-cache, private, must-revalidate",
+      "cdn-cache-control": "no-store",
+      "x-venice-version": "outerface-api-server-us-east1-06309-mnq",
+      "x-venice-balance-usd": "9.99847797",
+      "x-ratelimit-limit-requests": "100",
+      "x-ratelimit-remaining-requests": "99",
+      "x-ratelimit-reset-requests": "1789476362883",
+      "x-ratelimit-limit-tokens": "2000000",
+      "x-ratelimit-remaining-tokens": "2000000",
+      "x-ratelimit-reset-tokens": "1789476362889",
+      "x-ratelimit-resets": "1789476332852",
+      "x-ratelimit-remaining": "50",
+      "etag": "W/\"449-IqyHfjcG8+mU8WKeN5l5F1mGjD4\"",
+      "vary": "Accept-Encoding",
+      "X-Frame-Options": "SAMEORIGIN",
+      "Server": "cloudflare",
+      "cf-cache-status": "DYNAMIC",
+      "set-cookie": "__cf_bm=epBGJNy7H6RhwIm6ZZu.C3y49iR22P5vib.JQDs5pfQ-1789476302.8363178-1.0.1.1-4trmytOTANBaZzpCcCRtzTwAhLSstgEiH4vwFvj5UWw1zCLAZ9NszX0p6HDH3tr3d_kOaCIBQgKR5LWQgf3Q0s6JwXsOdninsUka3.YVeKsWEqWB0aHFcy6TGdUEwVzk; HttpOnly; SameSite=None; Secure; Path=/; Domain=venice.ai; Expires=Tue, 15 Sep 2026 13:15:03 GMT",
+      "Permissions-Policy": "geolocation=(), camera=()",
+      "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload",
+      "X-Content-Type-Options": "nosniff",
+      "Server-Timing": "cfCacheStatus;desc=\"DYNAMIC\"",
+      "Referrer-Policy": "strict-origin",
+      "CF-RAY": "a3b7b9ecb9b6e609-IAD"
+    },
+    "body": {
+      "id": "chatcmpl-b7643f93aaf6cd26",
+      "object": "chat.completion",
+      "created": 1789476303,
+      "model": "qwen-3-8-27b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "\n\nhello",
+            "refusal": null,
+            "annotations": null,
+            "audio": null,
+            "function_call": null,
+            "reasoning_content": "The user wants me to reply with exactly \"hello\". This is a simple instruction. Let me just output exactly that.\n"
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null,
+          "token_ids": null,
+          "routed_experts": null
+        }
+      ],
+      "service_tier": null,
+      "usage": {
+        "prompt_tokens": 1650,
+        "completion_tokens": 29,
+        "total_tokens": 1679
+      },
+      "prompt_logprobs": null,
+      "prompt_token_ids": null,
+      "prompt_text": null,
+      "kv_transfer_params": null,
+      "ec_transfer_params": null,
+      "metrics": null,
+      "cost": {
+        "usd": 0.0008353,
+        "diem": 0
+      },
+      "venice_parameters": {
+        "strip_thinking_response": false,
+        "disable_thinking": false,
+        "enable_e2ee": true,
+        "enable_web_search": "off",
+        "enable_web_scraping": false,
+        "enable_web_citations": false,
+        "include_search_results_in_stream": false,
+        "include_venice_system_prompt": true,
+        "enable_x_search": false,
+        "web_search_citations": [],
+        "return_search_results_as_documents": false
+      }
+    }
+  },
+  "success": true,
+  "error": null,
+  "total_latency_seconds": 0.812
+}

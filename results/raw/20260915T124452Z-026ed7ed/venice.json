@@ -1,0 +1,31 @@
+{
+  "provider": "venice",
+  "model": "qwen/qwen3.8-27b",
+  "provider_model_id": "qwen-3-8-27b",
+  "timestamp": "2026-09-15T12:44:52.236771+00:00",
+  "request": {
+    "url": "https://api.venice.ai/api/v1/chat/completions",
+    "headers": {
+      "Authorization": "Bearer <redacted>",
+      "Content-Type": "application/json"
+    },
+    "json": {
+      "model": "qwen-3-8-27b",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Reply with exactly: hello"
+        }
+      ],
+      "temperature": 0,
+      "stream": false
+    }
+  },
+  "response": null,
+  "success": false,
+  "error": {
+    "type": "URLError",
+    "message": "<urlopen error [Errno 8] nodename nor servname provided, or not known>"
+  },
+  "total_latency_seconds": 0.015
+}

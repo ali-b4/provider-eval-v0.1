@@ -1,0 +1,94 @@
+{
+  "provider": "chutes",
+  "model": "qwen/qwen3.8-27b",
+  "provider_model_id": "Qwen/Qwen3.8-27B-TEE",
+  "timestamp": "2026-09-15T12:45:02.746077+00:00",
+  "request": {
+    "url": "https://llm.chutes.ai/v1/chat/completions",
+    "headers": {
+      "Authorization": "Bearer <redacted>",
+      "Content-Type": "application/json"
+    },
+    "json": {
+      "model": "Qwen/Qwen3.8-27B-TEE",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Reply with exactly: hello"
+        }
+      ],
+      "temperature": 0,
+      "stream": false
+    }
+  },
+  "response": {
+    "status_code": 200,
+    "headers": {
+      "server": "nginx",
+      "date": "Tue, 15 Sep 2026 12:45:04 GMT",
+      "content-type": "application/json",
+      "Content-Length": "868",
+      "vary": "Accept-Encoding",
+      "x-chutes-invocationid": "9652747d-99fe-4f93-8aa7-92081c73b947",
+      "x-chutes-quota-total": "0",
+      "x-chutes-quota-used": "0",
+      "x-chutes-quota-remaining": "0",
+      "x-chutes-rl-user": "60",
+      "strict-transport-security": "max-age=31536000; includeSubDomains",
+      "access-control-allow-origin": "*",
+      "access-control-allow-methods": "GET, POST, OPTIONS, PUT, DELETE, PATCH",
+      "access-control-allow-headers": "*, Authorization",
+      "access-control-expose-headers": "X-Chutes-Quota-Total,X-Chutes-Quota-Used,X-Chutes-Quota-Remaining,X-Chutes-RL-User,X-Chutes-RL-Chute,X-Chutes-InvocationID,DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization,X-Enable-Thinking,X-Provider,X-Provider-Version,X-Title,Content-Type,Authorization,Content-Type,Cache-Control,X-Chute-Id,X-Instance-Id,X-E2E-Nonce,X-E2E-Stream,X-E2E-Path",
+      "access-control-max-age": "1728000",
+      "via": "1.1 google",
+      "Alt-Svc": "clear",
+      "Connection": "close"
+    },
+    "body": {
+      "id": "chatcmpl-b38439825035a92b",
+      "object": "chat.completion",
+      "created": 1789476303,
+      "model": "Qwen/Qwen3.8-27B-TEE",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "\n\nhello",
+            "refusal": null,
+            "annotations": null,
+            "audio": null,
+            "function_call": null,
+            "reasoning": "We need to reply with exactly: hello. User says \"Reply with exactly: hello\". Need final only hello. Ensure no extra.\n"
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null,
+          "token_ids": null,
+          "routed_experts": null
+        }
+      ],
+      "service_tier": null,
+      "system_fingerprint": "vllm-0.1.dev19754+g3a0914114-37d8eef1",
+      "usage": {
+        "prompt_tokens": 57,
+        "total_tokens": 89,
+        "completion_tokens": 32,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "created_cache_tokens": 0,
+          "multimodal_tokens": null
+        }
+      },
+      "prompt_logprobs": null,
+      "prompt_token_ids": null,
+      "prompt_text": null,
+      "kv_transfer_params": null,
+      "ec_transfer_params": null,
+      "metrics": null
+    }
+  },
+  "success": true,
+  "error": null,
+  "total_latency_seconds": 1.947
+}

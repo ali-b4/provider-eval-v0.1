@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Provider request comparison</title><style>
+*{box-sizing:border-box}body{margin:0;background:#f4f6f8;color:#182434;font:15px system-ui,sans-serif}
+header{padding:20px 24px;border-bottom:1px solid #dbe1e8}header strong{font-size:22px}header p{margin-bottom:0;color:#536275}
+main{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;padding:18px;min-width:900px}
+section{background:white;border:1px solid #dbe1e8;border-radius:10px;padding:18px;min-width:0}
+h1{font-size:21px;margin:0}h2,summary{font-size:14px;font-weight:600}summary{cursor:pointer;padding:12px 0}
+pre{font:12px/1.6 ui-monospace,monospace;white-space:pre-wrap;overflow-wrap:anywhere;background:#f5f7fa;border-radius:6px;padding:12px;max-height:65vh;overflow:auto}
+.model{color:#536275;overflow-wrap:anywhere;font-size:12px}.ok{color:#087345}.failed{color:#b42318}
+</style></head><body><header><strong>Provider request comparison</strong>
+<p>20260915T124743Z-6a8307f1 · Non-streaming · Elapsed time includes the full request. Expand Request JSON to inspect the input.</p>
+</header><main><section><h1>Venice</h1><p class="ok">Success · 200 · 0.738s</p><p class="model">qwen-3-8-27b</p><h2>Response JSON</h2><pre>{
+  &quot;status_code&quot;: 200,
+  &quot;headers&quot;: {
+    &quot;Date&quot;: &quot;Tue, 15 Sep 2026 12:47:44 GMT&quot;,
+    &quot;Content-Type&quot;: &quot;application/json; charset=utf-8&quot;,
+    &quot;Transfer-Encoding&quot;: &quot;chunked&quot;,
+    &quot;Connection&quot;: &quot;close&quot;,
+    &quot;content-security-policy&quot;: &quot;default-src &#x27;none&#x27;; frame-ancestors &#x27;none&#x27;; upgrade-insecure-requests&quot;,
+    &quot;access-control-allow-origin&quot;: &quot;*&quot;,
+    &quot;access-control-expose-headers&quot;: &quot;*&quot;,
+    &quot;Cache-Control&quot;: &quot;no-store, no-cache, private, must-revalidate&quot;,
+    &quot;cdn-cache-control&quot;: &quot;no-store&quot;,
+    &quot;x-venice-version&quot;: &quot;outerface-api-server-us-east1-06309-mnq&quot;,
+    &quot;x-venice-balance-usd&quot;: &quot;9.99764267&quot;,
+    &quot;x-ratelimit-limit-requests&quot;: &quot;100&quot;,
+    &quot;x-ratelimit-remaining-requests&quot;: &quot;99&quot;,
+    &quot;x-ratelimit-reset-requests&quot;: &quot;1789476524020&quot;,
+    &quot;x-ratelimit-limit-tokens&quot;: &quot;2000000&quot;,
+    &quot;x-ratelimit-remaining-tokens&quot;: &quot;2000000&quot;,
+    &quot;x-ratelimit-reset-tokens&quot;: &quot;1789476524021&quot;,
+    &quot;x-ratelimit-resets&quot;: &quot;1789476494001&quot;,
+    &quot;x-ratelimit-remaining&quot;: &quot;50&quot;,
+    &quot;etag&quot;: &quot;W/\&quot;449-CJmRAscasfsnrWkg5plM5bE8UTc\&quot;&quot;,
+    &quot;vary&quot;: &quot;Accept-Encoding&quot;,
+    &quot;X-Frame-Options&quot;: &quot;SAMEORIGIN&quot;,
+    &quot;Server&quot;: &quot;cloudflare&quot;,
+    &quot;cf-cache-status&quot;: &quot;DYNAMIC&quot;,
+    &quot;set-cookie&quot;: &quot;__cf_bm=rpewAt63Vc9UW_K8uL2jbcnEqt76AScwujpkluI21JU-1789476463.9763112-1.0.1.1-WV08a1gEtlXGDr7DneMJXFmVWgFGY.8RAczn3OHMyTfZkuCEgP8OJlId2_qlY7LNAx4kLrDl7NeR3lCc5a6FQvQTqiGOqdicIWKXkDcGF0ouep_WQMMBMdEe7IhBBb50; HttpOnly; SameSite=None; Secure; Path=/; Domain=venice.ai; Expires=Tue, 15 Sep 2026 13:17:44 GMT&quot;,
+    &quot;Permissions-Policy&quot;: &quot;geolocation=(), camera=()&quot;,
+    &quot;Strict-Transport-Security&quot;: &quot;max-age=31536000; includeSubDomains; preload&quot;,
+    &quot;X-Content-Type-Options&quot;: &quot;nosniff&quot;,
+    &quot;Server-Timing&quot;: &quot;cfCacheStatus;desc=\&quot;DYNAMIC\&quot;&quot;,
+    &quot;Referrer-Policy&quot;: &quot;strict-origin&quot;,
+    &quot;CF-RAY&quot;: &quot;a3b7bddbd8d7f4e2-IAD&quot;
+  },
+  &quot;body&quot;: {
+    &quot;id&quot;: &quot;chatcmpl-b2f67dcccf71fcdc&quot;,
+    &quot;object&quot;: &quot;chat.completion&quot;,
+    &quot;created&quot;: 1789476464,
+    &quot;model&quot;: &quot;qwen-3-8-27b&quot;,
+    &quot;choices&quot;: [
+      {
+        &quot;index&quot;: 0,
+        &quot;message&quot;: {
+          &quot;role&quot;: &quot;assistant&quot;,
+          &quot;content&quot;: &quot;\n\nhello&quot;,
+          &quot;refusal&quot;: null,
+          &quot;annotations&quot;: null,
+          &quot;audio&quot;: null,
+          &quot;function_call&quot;: null,
+          &quot;reasoning_content&quot;: &quot;The user wants me to reply with exactly \&quot;hello\&quot;. This is a simple instruction. Let me just output exactly that.\n&quot;
+        },
+        &quot;logprobs&quot;: null,
+        &quot;finish_reason&quot;: &quot;stop&quot;,
+        &quot;stop_reason&quot;: null,
+        &quot;token_ids&quot;: null,
+        &quot;routed_experts&quot;: null
+      }
+    ],
+    &quot;service_tier&quot;: null,
+    &quot;usage&quot;: {
+      &quot;prompt_tokens&quot;: 1650,
+      &quot;completion_tokens&quot;: 29,
+      &quot;total_tokens&quot;: 1679
+    },
+    &quot;prompt_logprobs&quot;: null,
+    &quot;prompt_token_ids&quot;: null,
+    &quot;prompt_text&quot;: null,
+    &quot;kv_transfer_params&quot;: null,
+    &quot;ec_transfer_params&quot;: null,
+    &quot;metrics&quot;: null,
+    &quot;cost&quot;: {
+      &quot;usd&quot;: 0.0008353,
+      &quot;diem&quot;: 0
+    },
+    &quot;venice_parameters&quot;: {
+      &quot;strip_thinking_response&quot;: false,
+      &quot;disable_thinking&quot;: false,
+      &quot;enable_e2ee&quot;: true,
+      &quot;enable_web_search&quot;: &quot;off&quot;,
+      &quot;enable_web_scraping&quot;: false,
+      &quot;enable_web_citations&quot;: false,
+      &quot;include_search_results_in_stream&quot;: false,
+      &quot;include_venice_system_prompt&quot;: true,
+      &quot;enable_x_search&quot;: false,
+      &quot;web_search_citations&quot;: [],
+      &quot;return_search_results_as_documents&quot;: false
+    }
+  }
+}</pre><details><summary>Request JSON</summary><pre>{
+  &quot;url&quot;: &quot;https://api.venice.ai/api/v1/chat/completions&quot;,
+  &quot;headers&quot;: {
+    &quot;Authorization&quot;: &quot;Bearer &lt;redacted&gt;&quot;,
+    &quot;Content-Type&quot;: &quot;application/json&quot;
+  },
+  &quot;json&quot;: {
+    &quot;model&quot;: &quot;qwen-3-8-27b&quot;,
+    &quot;messages&quot;: [
+      {
+        &quot;role&quot;: &quot;user&quot;,
+        &quot;content&quot;: &quot;Reply with exactly: hello&quot;
+      }
+    ],
+    &quot;temperature&quot;: 0,
+    &quot;stream&quot;: false
+  }
+}</pre></details></section><section><h1>Chutes</h1><p class="ok">Success · 200 · 2.077s</p><p class="model">Qwen/Qwen3.8-27B-TEE</p><h2>Response JSON</h2><pre>{
+  &quot;status_code&quot;: 200,
+  &quot;headers&quot;: {
+    &quot;server&quot;: &quot;nginx&quot;,
+    &quot;date&quot;: &quot;Tue, 15 Sep 2026 12:47:45 GMT&quot;,
+    &quot;content-type&quot;: &quot;application/json&quot;,
+    &quot;Content-Length&quot;: &quot;852&quot;,
+    &quot;vary&quot;: &quot;Accept-Encoding&quot;,
+    &quot;x-chutes-invocationid&quot;: &quot;110cc5ca-d97a-4b3d-9abd-c99a2659c505&quot;,
+    &quot;x-chutes-quota-total&quot;: &quot;0&quot;,
+    &quot;x-chutes-quota-used&quot;: &quot;0&quot;,
+    &quot;x-chutes-quota-remaining&quot;: &quot;0&quot;,
+    &quot;x-chutes-rl-user&quot;: &quot;60&quot;,
+    &quot;strict-transport-security&quot;: &quot;max-age=31536000; includeSubDomains&quot;,
+    &quot;access-control-allow-origin&quot;: &quot;*&quot;,
+    &quot;access-control-allow-methods&quot;: &quot;GET, POST, OPTIONS, PUT, DELETE, PATCH&quot;,
+    &quot;access-control-allow-headers&quot;: &quot;*, Authorization&quot;,
+    &quot;access-control-expose-headers&quot;: &quot;X-Chutes-Quota-Total,X-Chutes-Quota-Used,X-Chutes-Quota-Remaining,X-Chutes-RL-User,X-Chutes-RL-Chute,X-Chutes-InvocationID,DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization,X-Enable-Thinking,X-Provider,X-Provider-Version,X-Title,Content-Type,Authorization,Content-Type,Cache-Control,X-Chute-Id,X-Instance-Id,X-E2E-Nonce,X-E2E-Stream,X-E2E-Path&quot;,
+    &quot;access-control-max-age&quot;: &quot;1728000&quot;,
+    &quot;via&quot;: &quot;1.1 google&quot;,
+    &quot;Alt-Svc&quot;: &quot;clear&quot;,
+    &quot;Connection&quot;: &quot;close&quot;
+  },
+  &quot;body&quot;: {
+    &quot;id&quot;: &quot;chatcmpl-b76761d7aa163e2f&quot;,
+    &quot;object&quot;: &quot;chat.completion&quot;,
+    &quot;created&quot;: 1789476464,
+    &quot;model&quot;: &quot;Qwen/Qwen3.8-27B-TEE&quot;,
+    &quot;choices&quot;: [
+      {
+        &quot;index&quot;: 0,
+        &quot;message&quot;: {
+          &quot;role&quot;: &quot;assistant&quot;,
+          &quot;content&quot;: &quot;\n\nhello&quot;,
+          &quot;refusal&quot;: null,
+          &quot;annotations&quot;: null,
+          &quot;audio&quot;: null,
+          &quot;function_call&quot;: null,
+          &quot;reasoning&quot;: &quot;We need to respond exactly \&quot;hello\&quot;. User says: \&quot;Reply with exactly: hello\&quot;. Need final only hello.\n&quot;
+        },
+        &quot;logprobs&quot;: null,
+        &quot;finish_reason&quot;: &quot;stop&quot;,
+        &quot;stop_reason&quot;: null,
+        &quot;token_ids&quot;: null,
+        &quot;routed_experts&quot;: null
+      }
+    ],
+    &quot;service_tier&quot;: null,
+    &quot;system_fingerprint&quot;: &quot;vllm-0.1.dev19754+g3a0914114-37d8eef1&quot;,
+    &quot;usage&quot;: {
+      &quot;prompt_tokens&quot;: 57,
+      &quot;total_tokens&quot;: 85,
+      &quot;completion_tokens&quot;: 28,
+      &quot;prompt_tokens_details&quot;: {
+        &quot;cached_tokens&quot;: 0,
+        &quot;created_cache_tokens&quot;: 0,
+        &quot;multimodal_tokens&quot;: null
+      }
+    },
+    &quot;prompt_logprobs&quot;: null,
+    &quot;prompt_token_ids&quot;: null,
+    &quot;prompt_text&quot;: null,
+    &quot;kv_transfer_params&quot;: null,
+    &quot;ec_transfer_params&quot;: null,
+    &quot;metrics&quot;: null
+  }
+}</pre><details><summary>Request JSON</summary><pre>{
+  &quot;url&quot;: &quot;https://llm.chutes.ai/v1/chat/completions&quot;,
+  &quot;headers&quot;: {
+    &quot;Authorization&quot;: &quot;Bearer &lt;redacted&gt;&quot;,
+    &quot;Content-Type&quot;: &quot;application/json&quot;
+  },
+  &quot;json&quot;: {
+    &quot;model&quot;: &quot;Qwen/Qwen3.8-27B-TEE&quot;,
+    &quot;messages&quot;: [
+      {
+        &quot;role&quot;: &quot;user&quot;,
+        &quot;content&quot;: &quot;Reply with exactly: hello&quot;
+      }
+    ],
+    &quot;temperature&quot;: 0,
+    &quot;stream&quot;: false
+  }
+}</pre></details></section><section><h1>Darkbloom</h1><p class="ok">Success · 200 · 1.97s</p><p class="model">EigenLabs/Qwen3.8-27B-4bit-mtp</p><h2>Response JSON</h2><pre>{
+  &quot;status_code&quot;: 200,
+  &quot;headers&quot;: {
+    &quot;Access-Control-Allow-Credentials&quot;: &quot;true&quot;,
+    &quot;Access-Control-Allow-Headers&quot;: &quot;Content-Type, Authorization, X-Darkbloom-Metadata-Details&quot;,
+    &quot;Access-Control-Allow-Methods&quot;: &quot;GET, POST, PUT, DELETE, OPTIONS&quot;,
+    &quot;Access-Control-Allow-Origin&quot;: &quot;https://console.darkbloom.dev&quot;,
+    &quot;Alt-Svc&quot;: &quot;h3=\&quot;:443\&quot;; ma=2592000&quot;,
+    &quot;Content-Length&quot;: &quot;1182&quot;,
+    &quot;Content-Type&quot;: &quot;application/json&quot;,
+    &quot;Date&quot;: &quot;Tue, 15 Sep 2026 12:47:45 GMT&quot;,
+    &quot;Referrer-Policy&quot;: &quot;strict-origin-when-cross-origin&quot;,
+    &quot;Via&quot;: &quot;1.1 Caddy&quot;,
+    &quot;X-Attestation-Se-Public-Key&quot;: &quot;qKyWcxKWqjUa2BQgpxJltvNBqYV4M9EGl7I/xYqcrENs/kkk/AX1mKM+t2U5lf6qfZ6EZq4yiPphwdxvsMK64w==&quot;,
+    &quot;X-Content-Type-Options&quot;: &quot;nosniff&quot;,
+    &quot;X-Frame-Options&quot;: &quot;DENY&quot;,
+    &quot;X-Inference-Job-Id&quot;: &quot;11bf43a1-c8d2-493f-a14e-0ad861e7e6fc&quot;,
+    &quot;X-Provider-Attested&quot;: &quot;true&quot;,
+    &quot;X-Provider-Chip&quot;: &quot;Apple M5 Max&quot;,
+    &quot;X-Provider-Encrypted&quot;: &quot;true&quot;,
+    &quot;X-Provider-Id&quot;: &quot;ff429866-50ea-4693-92bf-7547cb0a1a6c&quot;,
+    &quot;X-Provider-Mda-Verified&quot;: &quot;true&quot;,
+    &quot;X-Provider-Model&quot;: &quot;Mac17,6&quot;,
+    &quot;X-Provider-Secure-Enclave&quot;: &quot;true&quot;,
+    &quot;X-Provider-Trust-Level&quot;: &quot;hardware&quot;,
+    &quot;X-Ratelimit-Limit-Input-Tokens&quot;: &quot;5000000&quot;,
+    &quot;X-Ratelimit-Limit-Output-Tokens&quot;: &quot;500000&quot;,
+    &quot;X-Ratelimit-Limit-Requests&quot;: &quot;1200&quot;,
+    &quot;X-Ratelimit-Remaining-Input-Tokens&quot;: &quot;999990&quot;,
+    &quot;X-Ratelimit-Remaining-Output-Tokens&quot;: &quot;31232&quot;,
+    &quot;X-Ratelimit-Remaining-Requests&quot;: &quot;119&quot;,
+    &quot;X-Ratelimit-Reset-Input-Tokens&quot;: &quot;1s&quot;,
+    &quot;X-Ratelimit-Reset-Output-Tokens&quot;: &quot;4s&quot;,
+    &quot;X-Ratelimit-Reset-Requests&quot;: &quot;1s&quot;,
+    &quot;X-Request-Id&quot;: &quot;34299qudu8vu&quot;,
+    &quot;X-Timing&quot;: &quot;{\&quot;parse_us\&quot;:923,\&quot;reserve_us\&quot;:4054,\&quot;route_us\&quot;:24872,\&quot;queue_us\&quot;:0,\&quot;encrypt_us\&quot;:986,\&quot;dispatch_us\&quot;:10,\&quot;provider_us\&quot;:975061,\&quot;pre_handler_us\&quot;:731,\&quot;preflight_us\&quot;:575,\&quot;route_reserve_us\&quot;:368,\&quot;writer_us\&quot;:7,\&quot;socket_us\&quot;:39,\&quot;provider_ack_us\&quot;:962125}&quot;,
+    &quot;Connection&quot;: &quot;close&quot;
+  },
+  &quot;body&quot;: {
+    &quot;id&quot;: &quot;chatcmpl-11bf43a1-c8d2-493f-a14e-0ad861e7e6fc&quot;,
+    &quot;object&quot;: &quot;chat.completion&quot;,
+    &quot;created&quot;: 1789476465,
+    &quot;model&quot;: &quot;EigenLabs/Qwen3.8-27B-4bit-mtp&quot;,
+    &quot;choices&quot;: [
+      {
+        &quot;index&quot;: 0,
+        &quot;message&quot;: {
+          &quot;role&quot;: &quot;assistant&quot;,
+          &quot;content&quot;: &quot;\n\nhello&quot;,
+          &quot;reasoning&quot;: &quot;The user wants me to reply with exactly the word \&quot;hello\&quot;. This is a simple, direct request. I should output only \&quot;hello\&quot; with no additional text.\n&quot;,
+          &quot;reasoning_content&quot;: &quot;The user wants me to reply with exactly the word \&quot;hello\&quot;. This is a simple, direct request. I should output only \&quot;hello\&quot; with no additional text.\n&quot;,
+          &quot;reasoning_details&quot;: [
+            {
+              &quot;type&quot;: &quot;reasoning.text&quot;,
+              &quot;text&quot;: &quot;The user wants me to reply with exactly the word \&quot;hello\&quot;. This is a simple, direct request. I should output only \&quot;hello\&quot; with no additional text.\n&quot;,
+              &quot;id&quot;: &quot;reasoning-text-0&quot;,
+              &quot;format&quot;: &quot;unknown&quot;,
+              &quot;index&quot;: 0,
+              &quot;signature&quot;: null
+            }
+          ]
+        },
+        &quot;finish_reason&quot;: &quot;stop&quot;
+      }
+    ],
+    &quot;usage&quot;: {
+      &quot;prompt_tokens&quot;: 57,
+      &quot;completion_tokens&quot;: 38,
+      &quot;total_tokens&quot;: 95,
+      &quot;completion_tokens_details&quot;: {
+        &quot;reasoning_tokens&quot;: 34
+      }
+    },
+    &quot;se_signature&quot;: &quot;MEUCIQDA6nyjAmybX3GbNpgxQKCM5VNPxf1+jH3QdGOi6py1EAIgKhakVcx4czSf+GFqdJNAELaAGFWY9e2gVzrnkWbQkus=&quot;,
+    &quot;response_hash&quot;: &quot;500c21b7340c6425cde4b0e53c1d7e059ec5d48a54cf8ddd85381f69ed370d82&quot;
+  }
+}</pre><details><summary>Request JSON</summary><pre>{
+  &quot;url&quot;: &quot;https://api.darkbloom.dev/v1/chat/completions&quot;,
+  &quot;headers&quot;: {
+    &quot;Authorization&quot;: &quot;Bearer &lt;redacted&gt;&quot;,
+    &quot;Content-Type&quot;: &quot;application/json&quot;
+  },
+  &quot;json&quot;: {
+    &quot;model&quot;: &quot;EigenLabs/Qwen3.8-27B-4bit-mtp&quot;,
+    &quot;messages&quot;: [
+      {
+        &quot;role&quot;: &quot;user&quot;,
+        &quot;content&quot;: &quot;Reply with exactly: hello&quot;
+      }
+    ],
+    &quot;temperature&quot;: 0,
+    &quot;stream&quot;: false
+  }
+}</pre></details></section></main></body></html>

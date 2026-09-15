@@ -34,7 +34,7 @@ def load_dotenv() -> None:
             os.environ.setdefault(key.strip(), value)
 
 
-def probe(provider: str, prompt: str, timeout: float, streaming: bool = False) -> dict:
+def probe(provider: str, prompt: str, timeout: float, streaming: bool = False, *, diagnostic: str | None = None) -> dict:
     url, default_model = PROVIDERS[provider]
     model = os.getenv(f"{provider.upper()}_MODEL", default_model)
     payload = {"model": model, "messages": [{"role": "user", "content": prompt}],
@@ -43,6 +43,14 @@ def probe(provider: str, prompt: str, timeout: float, streaming: bool = False) -
         payload["stream_options"] = {"include_usage": True}
     if provider == "venice":
         payload["venice_parameters"] = {"include_venice_system_prompt": False}
+    if diagnostic not in {None, "invalid_auth", "invalid_model", "invalid_parameter", "timeout"}:
+        raise ValueError(f"Unknown diagnostic: {diagnostic}")
+    if diagnostic == "invalid_model":
+        model = payload["model"] = "provider-eval-nonexistent-model"
+    elif diagnostic == "invalid_parameter":
+        payload["temperature"] = "provider-eval-invalid-number"
+    elif diagnostic == "timeout":
+        timeout = 0.001
     result = {
         "provider": provider, "model": MODEL, "provider_model_id": model,
         "timestamp": datetime.now(timezone.utc).isoformat(),
@@ -50,12 +58,14 @@ def probe(provider: str, prompt: str, timeout: float, streaming: bool = False) -
                     "Content-Type": "application/json"}, "json": payload},
         "response": None, "success": False, "error": None, "request_sent": False,
     }
+    if diagnostic:
+        result["diagnostic"] = {"case": diagnostic, "timeout_seconds": timeout, "exclude_from_benchmark": True}
     if provider == "ionet":
         result["request"]["headers"]["User-Agent"] = "provider-eval/0.1"
         result["request"]["headers"]["Accept"] = "text/event-stream" if streaming else "application/json"
     start = time.perf_counter()
     try:
-        key = os.getenv(f"{provider.upper()}_API_KEY")
+        key = "provider-eval-invalid-key" if diagnostic == "invalid_auth" else os.getenv(f"{provider.upper()}_API_KEY")
         if not key:
             raise ValueError(f"Missing {provider.upper()}_API_KEY")
         headers = {**result["request"]["headers"], "Authorization": f"Bearer {key}"}

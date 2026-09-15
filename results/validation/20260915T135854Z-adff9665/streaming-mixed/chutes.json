@@ -1,0 +1,355 @@
+{
+  "provider": "chutes",
+  "model": "qwen/qwen3.8-27b",
+  "provider_model_id": "Qwen/Qwen3.8-27B-TEE",
+  "timestamp": "2026-09-15T13:58:54.055687+00:00",
+  "request": {
+    "url": "https://llm.chutes.ai/v1/chat/completions",
+    "headers": {
+      "Authorization": "Bearer <redacted>",
+      "Content-Type": "application/json"
+    },
+    "json": {
+      "model": "Qwen/Qwen3.8-27B-TEE",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Reply with exactly: hello"
+        }
+      ],
+      "temperature": 0,
+      "stream": true,
+      "stream_options": {
+        "include_usage": true
+      }
+    }
+  },
+  "response": {
+    "status_code": 200,
+    "headers": {
+      "server": "nginx",
+      "date": "Tue, 15 Sep 2026 13:58:55 GMT",
+      "content-type": "text/event-stream; charset=utf-8",
+      "x-chutes-invocationid": "a68bbbc0-3f03-44b4-a9e2-e20a91a1636c",
+      "cache-control": "no-cache, no-transform",
+      "x-chutes-quota-total": "0",
+      "x-chutes-quota-used": "0",
+      "x-chutes-quota-remaining": "0",
+      "x-chutes-rl-user": "60",
+      "strict-transport-security": "max-age=31536000; includeSubDomains",
+      "access-control-allow-origin": "*",
+      "access-control-allow-methods": "GET, POST, OPTIONS, PUT, DELETE, PATCH",
+      "access-control-allow-headers": "*, Authorization",
+      "access-control-expose-headers": "X-Chutes-Quota-Total,X-Chutes-Quota-Used,X-Chutes-Quota-Remaining,X-Chutes-RL-User,X-Chutes-RL-Chute,X-Chutes-InvocationID,DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization,X-Enable-Thinking,X-Provider,X-Provider-Version,X-Title,Content-Type,Authorization,Content-Type,Cache-Control,X-Chute-Id,X-Instance-Id,X-E2E-Nonce,X-E2E-Stream,X-E2E-Path",
+      "access-control-max-age": "1728000",
+      "via": "1.1 google",
+      "Alt-Svc": "clear",
+      "Connection": "close",
+      "Transfer-Encoding": "chunked"
+    },
+    "body": {
+      "choices": [
+        {
+          "message": {
+            "content": "\n\nhello",
+            "reasoning_content": "We need to reply with exactly: hello. User says \"Reply with exactly: hello\". Need final only hello. Ensure no extra.\n"
+          },
+          "finish_reason": "stop"
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 57,
+        "total_tokens": 89,
+        "completion_tokens": 32,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "created_cache_tokens": 0
+        }
+      },
+      "model": "Qwen/Qwen3.8-27B-TEE",
+      "id": "chatcmpl-8d37bc23e34d9aa4",
+      "system_fingerprint": "vllm-0.1.dev19754+g3a0914114-37d8eef1"
+    }
+  },
+  "success": true,
+  "error": null,
+  "request_sent": true,
+  "stream": {
+    "events": [
+      {
+        "arrival_seconds": 1.4950942089781165,
+        "data": "{\"id\":\"chatcmpl-8d37bc23e34d9aa4\",\"object\":\"chat.completion.chunk\",\"created\":1789480735,\"model\":\"Qwen/Qwen3.8-27B-TEE\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"content\":\"\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":{\"prompt_tokens\":57,\"total_tokens\":57,\"completion_tokens\":0},\"prompt_token_ids\":null,\"prompt_text\":null}"
+      },
+      {
+        "arrival_seconds": 1.509885041974485,
+        "data": "{\"id\":\"chatcmpl-8d37bc23e34d9aa4\",\"object\":\"chat.completion.chunk\",\"created\":1789480735,\"model\":\"Qwen/Qwen3.8-27B-TEE\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning\":\"We\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}],\"usage\":{\"prompt_tokens\":57,\"total_tokens\":58,\"completion_tokens\":1}}"
+      },
+      {
+        "arrival_seconds": 1.5251087920041755,
+        "data": "{\"id\":\"chatcmpl-8d37bc23e34d9aa4\",\"object\":\"chat.completion.chunk\",\"created\":1789480735,\"model\":\"Qwen/Qwen3.8-27B-TEE\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning\":\" need to reply\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}],\"usage\":{\"prompt_tokens\":57,\"total_tokens\":61,\"completion_tokens\":4}}"
+      },
+      {
+        "arrival_seconds": 1.595216584042646,
+        "data": "{\"id\":\"chatcmpl-8d37bc23e34d9aa4\",\"object\":\"chat.completion.chunk\",\"created\":1789480735,\"model\":\"Qwen/Qwen3.8-27B-TEE\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning\":\" with\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}],\"usage\":{\"prompt_tokens\":57,\"total_tokens\":62,\"completion_tokens\":5}}"
+      },
+      {
+        "arrival_seconds": 1.739424583967775,
+        "data": "{\"id\":\"chatcmpl-8d37bc23e34d9aa4\",\"object\":\"chat.completion.chunk\",\"created\":1789480735,\"model\":\"Qwen/Qwen3.8-27B-TEE\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning\":\" exactly:\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}],\"usage\":{\"prompt_tokens\":57,\"total_tokens\":64,\"completion_tokens\":7}}"
+      },
+      {
+        "arrival_seconds": 1.7435958749847487,
+        "data": "{\"id\":\"chatcmpl-8d37bc23e34d9aa4\",\"object\":\"chat.completion.chunk\",\"created\":1789480735,\"model\":\"Qwen/Qwen3.8-27B-TEE\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning\":\" hello. User\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}],\"usage\":{\"prompt_tokens\":57,\"total_tokens\":67,\"completion_tokens\":10}}"
+      },
+      {
+        "arrival_seconds": 1.7472700419602916,
+        "data": "{\"id\":\"chatcmpl-8d37bc23e34d9aa4\",\"object\":\"chat.completion.chunk\",\"created\":1789480735,\"model\":\"Qwen/Qwen3.8-27B-TEE\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning\":\" says \\\"\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}],\"usage\":{\"prompt_tokens\":57,\"total_tokens\":69,\"completion_tokens\":12}}"
+      },
+      {
+        "arrival_seconds": 1.7742240000516176,
+        "data": "{\"id\":\"chatcmpl-8d37bc23e34d9aa4\",\"object\":\"chat.completion.chunk\",\"created\":1789480735,\"model\":\"Qwen/Qwen3.8-27B-TEE\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning\":\"Reply with exactly:\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}],\"usage\":{\"prompt_tokens\":57,\"total_tokens\":73,\"completion_tokens\":16}}"
+      },
+      {
+        "arrival_seconds": 1.823242084006779,
+        "data": "{\"id\":\"chatcmpl-8d37bc23e34d9aa4\",\"object\":\"chat.completion.chunk\",\"created\":1789480735,\"model\":\"Qwen/Qwen3.8-27B-TEE\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning\":\" hello\\\". Need final\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}],\"usage\":{\"prompt_tokens\":57,\"total_tokens\":77,\"completion_tokens\":20}}"
+      },
+      {
+        "arrival_seconds": 1.8736782920314,
+        "data": "{\"id\":\"chatcmpl-8d37bc23e34d9aa4\",\"object\":\"chat.completion.chunk\",\"created\":1789480735,\"model\":\"Qwen/Qwen3.8-27B-TEE\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning\":\" only hello\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}],\"usage\":{\"prompt_tokens\":57,\"total_tokens\":79,\"completion_tokens\":22}}"
+      },
+      {
+        "arrival_seconds": 1.9195444169454277,
+        "data": "{\"id\":\"chatcmpl-8d37bc23e34d9aa4\",\"object\":\"chat.completion.chunk\",\"created\":1789480735,\"model\":\"Qwen/Qwen3.8-27B-TEE\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning\":\". Ensure no extra\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}],\"usage\":{\"prompt_tokens\":57,\"total_tokens\":83,\"completion_tokens\":26}}"
+      },
+      {
+        "arrival_seconds": 1.9659718750044703,
+        "data": "{\"id\":\"chatcmpl-8d37bc23e34d9aa4\",\"object\":\"chat.completion.chunk\",\"created\":1789480735,\"model\":\"Qwen/Qwen3.8-27B-TEE\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning\":\".\\n\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}],\"usage\":{\"prompt_tokens\":57,\"total_tokens\":87,\"completion_tokens\":30}}"
+      },
+      {
+        "arrival_seconds": 2.016096833976917,
+        "data": "{\"id\":\"chatcmpl-8d37bc23e34d9aa4\",\"object\":\"chat.completion.chunk\",\"created\":1789480735,\"model\":\"Qwen/Qwen3.8-27B-TEE\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"\\n\\nhello\"},\"logprobs\":null,\"finish_reason\":\"stop\",\"stop_reason\":null,\"token_ids\":null}],\"usage\":{\"prompt_tokens\":57,\"total_tokens\":89,\"completion_tokens\":32}}"
+      },
+      {
+        "arrival_seconds": 2.0222242090385407,
+        "data": "{\"id\":\"chatcmpl-8d37bc23e34d9aa4\",\"object\":\"chat.completion.chunk\",\"created\":1789480735,\"model\":\"Qwen/Qwen3.8-27B-TEE\",\"choices\":[],\"usage\":{\"prompt_tokens\":57,\"total_tokens\":89,\"completion_tokens\":32,\"prompt_tokens_details\":{\"cached_tokens\":0,\"created_cache_tokens\":0}},\"system_fingerprint\":\"vllm-0.1.dev19754+g3a0914114-37d8eef1\"}"
+      },
+      {
+        "arrival_seconds": 2.0289383749477565,
+        "data": "[DONE]"
+      }
+    ],
+    "raw_lines": [
+      "data: {\"id\":\"chatcmpl-8d37bc23e34d9aa4\",\"object\":\"chat.completion.chunk\",\"created\":1789480735,\"model\":\"Qwen/Qwen3.8-27B-TEE\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"content\":\"\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":{\"prompt_tokens\":57,\"total_tokens\":57,\"completion_tokens\":0},\"prompt_token_ids\":null,\"prompt_text\":null}",
+      "",
+      "data: {\"id\":\"chatcmpl-8d37bc23e34d9aa4\",\"object\":\"chat.completion.chunk\",\"created\":1789480735,\"model\":\"Qwen/Qwen3.8-27B-TEE\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning\":\"We\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}],\"usage\":{\"prompt_tokens\":57,\"total_tokens\":58,\"completion_tokens\":1}}",
+      "",
+      "data: {\"id\":\"chatcmpl-8d37bc23e34d9aa4\",\"object\":\"chat.completion.chunk\",\"created\":1789480735,\"model\":\"Qwen/Qwen3.8-27B-TEE\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning\":\" need to reply\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}],\"usage\":{\"prompt_tokens\":57,\"total_tokens\":61,\"completion_tokens\":4}}",
+      "",
+      "data: {\"id\":\"chatcmpl-8d37bc23e34d9aa4\",\"object\":\"chat.completion.chunk\",\"created\":1789480735,\"model\":\"Qwen/Qwen3.8-27B-TEE\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning\":\" with\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}],\"usage\":{\"prompt_tokens\":57,\"total_tokens\":62,\"completion_tokens\":5}}",
+      "",
+      "data: {\"id\":\"chatcmpl-8d37bc23e34d9aa4\",\"object\":\"chat.completion.chunk\",\"created\":1789480735,\"model\":\"Qwen/Qwen3.8-27B-TEE\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning\":\" exactly:\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}],\"usage\":{\"prompt_tokens\":57,\"total_tokens\":64,\"completion_tokens\":7}}",
+      "",
+      "data: {\"id\":\"chatcmpl-8d37bc23e34d9aa4\",\"object\":\"chat.completion.chunk\",\"created\":1789480735,\"model\":\"Qwen/Qwen3.8-27B-TEE\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning\":\" hello. User\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}],\"usage\":{\"prompt_tokens\":57,\"total_tokens\":67,\"completion_tokens\":10}}",
+      "",
+      "data: {\"id\":\"chatcmpl-8d37bc23e34d9aa4\",\"object\":\"chat.completion.chunk\",\"created\":1789480735,\"model\":\"Qwen/Qwen3.8-27B-TEE\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning\":\" says \\\"\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}],\"usage\":{\"prompt_tokens\":57,\"total_tokens\":69,\"completion_tokens\":12}}",
+      "",
+      "data: {\"id\":\"chatcmpl-8d37bc23e34d9aa4\",\"object\":\"chat.completion.chunk\",\"created\":1789480735,\"model\":\"Qwen/Qwen3.8-27B-TEE\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning\":\"Reply with exactly:\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}],\"usage\":{\"prompt_tokens\":57,\"total_tokens\":73,\"completion_tokens\":16}}",
+      "",
+      "data: {\"id\":\"chatcmpl-8d37bc23e34d9aa4\",\"object\":\"chat.completion.chunk\",\"created\":1789480735,\"model\":\"Qwen/Qwen3.8-27B-TEE\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning\":\" hello\\\". Need final\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}],\"usage\":{\"prompt_tokens\":57,\"total_tokens\":77,\"completion_tokens\":20}}",
+      "",
+      "data: {\"id\":\"chatcmpl-8d37bc23e34d9aa4\",\"object\":\"chat.completion.chunk\",\"created\":1789480735,\"model\":\"Qwen/Qwen3.8-27B-TEE\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning\":\" only hello\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}],\"usage\":{\"prompt_tokens\":57,\"total_tokens\":79,\"completion_tokens\":22}}",
+      "",
+      "data: {\"id\":\"chatcmpl-8d37bc23e34d9aa4\",\"object\":\"chat.completion.chunk\",\"created\":1789480735,\"model\":\"Qwen/Qwen3.8-27B-TEE\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning\":\". Ensure no extra\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}],\"usage\":{\"prompt_tokens\":57,\"total_tokens\":83,\"completion_tokens\":26}}",
+      "",
+      "data: {\"id\":\"chatcmpl-8d37bc23e34d9aa4\",\"object\":\"chat.completion.chunk\",\"created\":1789480735,\"model\":\"Qwen/Qwen3.8-27B-TEE\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning\":\".\\n\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}],\"usage\":{\"prompt_tokens\":57,\"total_tokens\":87,\"completion_tokens\":30}}",
+      "",
+      "data: {\"id\":\"chatcmpl-8d37bc23e34d9aa4\",\"object\":\"chat.completion.chunk\",\"created\":1789480735,\"model\":\"Qwen/Qwen3.8-27B-TEE\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"\\n\\nhello\"},\"logprobs\":null,\"finish_reason\":\"stop\",\"stop_reason\":null,\"token_ids\":null}],\"usage\":{\"prompt_tokens\":57,\"total_tokens\":89,\"completion_tokens\":32}}",
+      "",
+      "data: {\"id\":\"chatcmpl-8d37bc23e34d9aa4\",\"object\":\"chat.completion.chunk\",\"created\":1789480735,\"model\":\"Qwen/Qwen3.8-27B-TEE\",\"choices\":[],\"usage\":{\"prompt_tokens\":57,\"total_tokens\":89,\"completion_tokens\":32,\"prompt_tokens_details\":{\"cached_tokens\":0,\"created_cache_tokens\":0}},\"system_fingerprint\":\"vllm-0.1.dev19754+g3a0914114-37d8eef1\"}",
+      "",
+      "data: [DONE]",
+      ""
+    ],
+    "content": "\n\nhello",
+    "reasoning": "We need to reply with exactly: hello. User says \"Reply with exactly: hello\". Need final only hello. Ensure no extra.\n",
+    "first_token_seconds": 1.509885041974485,
+    "last_token_seconds": 2.016096833976917,
+    "complete": true
+  },
+  "total_latency_seconds": 2.029133916948922,
+  "metrics": {
+    "ttft_seconds": {
+      "value": 1.509885041974485,
+      "source": "measured",
+      "reason": null,
+      "unit": "s"
+    },
+    "total_latency_seconds": {
+      "value": 2.029133916948922,
+      "source": "measured",
+      "reason": null,
+      "unit": "s"
+    },
+    "output_tokens_per_second": {
+      "value": 63.21464751624407,
+      "source": "estimated",
+      "reason": null,
+      "unit": "tokens/s",
+      "note": "Completion tokens divided by first-to-last content/reasoning chunk interval; chunk buffering can inflate this estimate."
+    },
+    "input_tokens": {
+      "value": 57,
+      "source": "provider-reported",
+      "reason": null,
+      "unit": "tokens"
+    },
+    "output_tokens": {
+      "value": 32,
+      "source": "provider-reported",
+      "reason": null,
+      "unit": "tokens",
+      "note": "Provider completion_tokens retained as total output; reasoning detail is a subset, never added again. Separate reasoning counts may be unavailable."
+    },
+    "reasoning_tokens": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Not supplied by provider.",
+      "unit": "tokens"
+    },
+    "input_price_per_1m": {
+      "value": 0.32,
+      "source": "provider-reported",
+      "reason": null,
+      "unit": "USD/1M tokens"
+    },
+    "output_price_per_1m": {
+      "value": 2.5,
+      "source": "provider-reported",
+      "reason": null,
+      "unit": "USD/1M tokens"
+    },
+    "input_cost": {
+      "value": 1.824e-05,
+      "source": "estimated",
+      "reason": null,
+      "unit": "USD"
+    },
+    "output_cost": {
+      "value": 8e-05,
+      "source": "estimated",
+      "reason": null,
+      "unit": "USD"
+    },
+    "request_cost": {
+      "value": 9.824000000000001e-05,
+      "source": "estimated",
+      "reason": null,
+      "unit": "USD",
+      "note": "Published token rates; excludes account discounts and non-token charges."
+    },
+    "success": {
+      "value": true,
+      "source": "measured",
+      "reason": null,
+      "unit": null
+    },
+    "http_status": {
+      "value": 200,
+      "source": "provider-reported",
+      "reason": null,
+      "unit": null
+    },
+    "error_type": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "No error.",
+      "unit": null
+    },
+    "error_message": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "No error.",
+      "unit": null
+    }
+  },
+  "metadata": {
+    "provider": {
+      "value": "chutes",
+      "source": "configured",
+      "reason": null,
+      "unit": null
+    },
+    "model": {
+      "value": "qwen/qwen3.8-27b",
+      "source": "configured",
+      "reason": null,
+      "unit": null
+    },
+    "provider_model_id": {
+      "value": "Qwen/Qwen3.8-27B-TEE",
+      "source": "configured",
+      "reason": null,
+      "unit": null
+    },
+    "returned_model_id": {
+      "value": "Qwen/Qwen3.8-27B-TEE",
+      "source": "provider-reported",
+      "reason": null,
+      "unit": null
+    },
+    "pricing": {
+      "value": {
+        "provider_model_id": "Qwen/Qwen3.8-27B-TEE",
+        "input_per_1m_tokens": 0.32,
+        "output_per_1m_tokens": 2.5,
+        "context_window": 262144,
+        "quantization": "fp8",
+        "source": "https://llm.chutes.ai/v1/models",
+        "checked_at": "2026-09-15",
+        "cost_basis": "Published token rates; excludes account discounts and non-token charges.",
+        "cache_input_per_1m_tokens": 0.032
+      },
+      "source": "provider-reported",
+      "reason": null,
+      "unit": null
+    },
+    "rate_limits": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Not supplied by provider.",
+      "unit": null
+    },
+    "region": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Not supplied by provider.",
+      "unit": null
+    },
+    "version": {
+      "value": "vllm-0.1.dev19754+g3a0914114-37d8eef1",
+      "source": "provider-reported",
+      "reason": null,
+      "unit": null
+    },
+    "context_window": {
+      "value": 262144,
+      "source": "provider-reported",
+      "reason": null,
+      "unit": "tokens"
+    },
+    "quantization": {
+      "value": "fp8",
+      "source": "provider-reported",
+      "reason": null,
+      "unit": null
+    }
+  },
+  "validation": {
+    "passed": true,
+    "expected": "Successful control request",
+    "http_status": 200,
+    "error_type": null,
+    "record_complete": true,
+    "case": "mixed",
+    "exclude_from_benchmark": true
+  }
+}

@@ -1,0 +1,324 @@
+{
+  "provider": "ionet",
+  "model": "qwen/qwen3.8-27b",
+  "provider_model_id": "Qwen/Qwen3.8-27B",
+  "timestamp": "2026-09-15T13:58:26.592211+00:00",
+  "request": {
+    "url": "https://api.intelligence.io.solutions/api/v1/chat/completions",
+    "headers": {
+      "Authorization": "Bearer <redacted>",
+      "Content-Type": "application/json",
+      "User-Agent": "provider-eval/0.1",
+      "Accept": "text/event-stream"
+    },
+    "json": {
+      "model": "Qwen/Qwen3.8-27B",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Reply with exactly: hello"
+        }
+      ],
+      "temperature": 0,
+      "stream": true,
+      "stream_options": {
+        "include_usage": true
+      }
+    }
+  },
+  "response": {
+    "status_code": 200,
+    "headers": {
+      "Date": "Tue, 15 Sep 2026 13:58:27 GMT",
+      "Content-Type": "text/event-stream; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "close",
+      "Server": "cloudflare",
+      "x-request-id": "99d0d388f50a45e1bc934d92e7ad5f28",
+      "cf-cache-status": "DYNAMIC",
+      "set-cookie": "__cf_bm=UCeHlXgms4pHEcQaVp.2Negm0i7C3EDWaLFw4jqtmo0-1789480706.6989834-1.0.1.1-oe5QlLjves.FB9KxH2L3YueUwLlR67V4_NhzT9MFi0R6HptYpxGPPGqNnKvCsPKPd49uX9V93FPRmmE.p2fnP2nO_i6aD23dKWWIRtpidrwDMFhcKTQnw3G9oxyY6L8q; HttpOnly; SameSite=None; Secure; Path=/; Domain=io.solutions; Expires=Tue, 15 Sep 2026 14:28:27 GMT",
+      "Strict-Transport-Security": "max-age=31536000; includeSubDomains",
+      "CF-RAY": "a3b82570dfe1e670-IAD"
+    },
+    "body": {
+      "choices": [
+        {
+          "message": {
+            "content": "\n\nhello",
+            "reasoning_content": "We need answer exactly: hello. No need think.\n"
+          },
+          "finish_reason": "stop"
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 57,
+        "total_tokens": 73,
+        "completion_tokens": 16,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "created_cache_tokens": 0
+        }
+      },
+      "model": "Qwen/Qwen3.8-27B",
+      "id": "chatcmpl-cdc026ea-8d68-457c-939f-d746c1897f6b",
+      "system_fingerprint": "vllm-0.27.1-7470d2d2"
+    }
+  },
+  "success": true,
+  "error": null,
+  "request_sent": true,
+  "stream": {
+    "events": [
+      {
+        "arrival_seconds": 0.6283922500442713,
+        "data": "{\"id\":\"chatcmpl-cdc026ea-8d68-457c-939f-d746c1897f6b\",\"object\":\"chat.completion.chunk\",\"created\":1789480706,\"model\":\"Qwen/Qwen3.8-27B\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"content\":\"\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":{\"prompt_tokens\":57,\"total_tokens\":57,\"completion_tokens\":0},\"prompt_token_ids\":null,\"prompt_text\":null,\"provider\":\"ai.io.net\"}"
+      },
+      {
+        "arrival_seconds": 0.6284635830670595,
+        "data": "{\"id\":\"chatcmpl-cdc026ea-8d68-457c-939f-d746c1897f6b\",\"object\":\"chat.completion.chunk\",\"created\":1789480706,\"model\":\"Qwen/Qwen3.8-27B\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\"We\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}],\"usage\":{\"prompt_tokens\":57,\"total_tokens\":58,\"completion_tokens\":1},\"provider\":\"ai.io.net\"}"
+      },
+      {
+        "arrival_seconds": 0.6284847500501201,
+        "data": "{\"id\":\"chatcmpl-cdc026ea-8d68-457c-939f-d746c1897f6b\",\"object\":\"chat.completion.chunk\",\"created\":1789480706,\"model\":\"Qwen/Qwen3.8-27B\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" need answer\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}],\"usage\":{\"prompt_tokens\":57,\"total_tokens\":60,\"completion_tokens\":3},\"provider\":\"ai.io.net\"}"
+      },
+      {
+        "arrival_seconds": 0.628511333023198,
+        "data": "{\"id\":\"chatcmpl-cdc026ea-8d68-457c-939f-d746c1897f6b\",\"object\":\"chat.completion.chunk\",\"created\":1789480706,\"model\":\"Qwen/Qwen3.8-27B\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" exactly\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}],\"usage\":{\"prompt_tokens\":57,\"total_tokens\":61,\"completion_tokens\":4},\"provider\":\"ai.io.net\"}"
+      },
+      {
+        "arrival_seconds": 0.6285678331041709,
+        "data": "{\"id\":\"chatcmpl-cdc026ea-8d68-457c-939f-d746c1897f6b\",\"object\":\"chat.completion.chunk\",\"created\":1789480706,\"model\":\"Qwen/Qwen3.8-27B\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\":\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}],\"usage\":{\"prompt_tokens\":57,\"total_tokens\":62,\"completion_tokens\":5},\"provider\":\"ai.io.net\"}"
+      },
+      {
+        "arrival_seconds": 0.6344128750497475,
+        "data": "{\"id\":\"chatcmpl-cdc026ea-8d68-457c-939f-d746c1897f6b\",\"object\":\"chat.completion.chunk\",\"created\":1789480706,\"model\":\"Qwen/Qwen3.8-27B\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" hello. No\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}],\"usage\":{\"prompt_tokens\":57,\"total_tokens\":65,\"completion_tokens\":8},\"provider\":\"ai.io.net\"}"
+      },
+      {
+        "arrival_seconds": 0.6641600830480456,
+        "data": "{\"id\":\"chatcmpl-cdc026ea-8d68-457c-939f-d746c1897f6b\",\"object\":\"chat.completion.chunk\",\"created\":1789480706,\"model\":\"Qwen/Qwen3.8-27B\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" need think\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}],\"usage\":{\"prompt_tokens\":57,\"total_tokens\":67,\"completion_tokens\":10},\"provider\":\"ai.io.net\"}"
+      },
+      {
+        "arrival_seconds": 0.684621375054121,
+        "data": "{\"id\":\"chatcmpl-cdc026ea-8d68-457c-939f-d746c1897f6b\",\"object\":\"chat.completion.chunk\",\"created\":1789480706,\"model\":\"Qwen/Qwen3.8-27B\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\".\\n\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}],\"usage\":{\"prompt_tokens\":57,\"total_tokens\":70,\"completion_tokens\":13},\"provider\":\"ai.io.net\"}"
+      },
+      {
+        "arrival_seconds": 0.720588417025283,
+        "data": "{\"id\":\"chatcmpl-cdc026ea-8d68-457c-939f-d746c1897f6b\",\"object\":\"chat.completion.chunk\",\"created\":1789480706,\"model\":\"Qwen/Qwen3.8-27B\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"\\n\\nhello\"},\"logprobs\":null,\"finish_reason\":\"stop\",\"stop_reason\":null,\"token_ids\":null}],\"usage\":{\"prompt_tokens\":57,\"total_tokens\":73,\"completion_tokens\":16},\"provider\":\"ai.io.net\"}"
+      },
+      {
+        "arrival_seconds": 0.7206775830127299,
+        "data": "{\"id\":\"chatcmpl-cdc026ea-8d68-457c-939f-d746c1897f6b\",\"object\":\"chat.completion.chunk\",\"created\":1789480706,\"model\":\"Qwen/Qwen3.8-27B\",\"choices\":[],\"usage\":{\"prompt_tokens\":57,\"total_tokens\":73,\"completion_tokens\":16,\"prompt_tokens_details\":{\"cached_tokens\":0,\"created_cache_tokens\":0}},\"system_fingerprint\":\"vllm-0.27.1-7470d2d2\",\"provider\":\"ai.io.net\"}"
+      },
+      {
+        "arrival_seconds": 0.7206940830219537,
+        "data": "[DONE]"
+      }
+    ],
+    "raw_lines": [
+      "data: {\"id\":\"chatcmpl-cdc026ea-8d68-457c-939f-d746c1897f6b\",\"object\":\"chat.completion.chunk\",\"created\":1789480706,\"model\":\"Qwen/Qwen3.8-27B\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"content\":\"\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":{\"prompt_tokens\":57,\"total_tokens\":57,\"completion_tokens\":0},\"prompt_token_ids\":null,\"prompt_text\":null,\"provider\":\"ai.io.net\"}",
+      "",
+      "data: {\"id\":\"chatcmpl-cdc026ea-8d68-457c-939f-d746c1897f6b\",\"object\":\"chat.completion.chunk\",\"created\":1789480706,\"model\":\"Qwen/Qwen3.8-27B\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\"We\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}],\"usage\":{\"prompt_tokens\":57,\"total_tokens\":58,\"completion_tokens\":1},\"provider\":\"ai.io.net\"}",
+      "",
+      "data: {\"id\":\"chatcmpl-cdc026ea-8d68-457c-939f-d746c1897f6b\",\"object\":\"chat.completion.chunk\",\"created\":1789480706,\"model\":\"Qwen/Qwen3.8-27B\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" need answer\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}],\"usage\":{\"prompt_tokens\":57,\"total_tokens\":60,\"completion_tokens\":3},\"provider\":\"ai.io.net\"}",
+      "",
+      "data: {\"id\":\"chatcmpl-cdc026ea-8d68-457c-939f-d746c1897f6b\",\"object\":\"chat.completion.chunk\",\"created\":1789480706,\"model\":\"Qwen/Qwen3.8-27B\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" exactly\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}],\"usage\":{\"prompt_tokens\":57,\"total_tokens\":61,\"completion_tokens\":4},\"provider\":\"ai.io.net\"}",
+      "",
+      "data: {\"id\":\"chatcmpl-cdc026ea-8d68-457c-939f-d746c1897f6b\",\"object\":\"chat.completion.chunk\",\"created\":1789480706,\"model\":\"Qwen/Qwen3.8-27B\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\":\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}],\"usage\":{\"prompt_tokens\":57,\"total_tokens\":62,\"completion_tokens\":5},\"provider\":\"ai.io.net\"}",
+      "",
+      "data: {\"id\":\"chatcmpl-cdc026ea-8d68-457c-939f-d746c1897f6b\",\"object\":\"chat.completion.chunk\",\"created\":1789480706,\"model\":\"Qwen/Qwen3.8-27B\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" hello. No\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}],\"usage\":{\"prompt_tokens\":57,\"total_tokens\":65,\"completion_tokens\":8},\"provider\":\"ai.io.net\"}",
+      "",
+      "data: {\"id\":\"chatcmpl-cdc026ea-8d68-457c-939f-d746c1897f6b\",\"object\":\"chat.completion.chunk\",\"created\":1789480706,\"model\":\"Qwen/Qwen3.8-27B\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" need think\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}],\"usage\":{\"prompt_tokens\":57,\"total_tokens\":67,\"completion_tokens\":10},\"provider\":\"ai.io.net\"}",
+      "",
+      "data: {\"id\":\"chatcmpl-cdc026ea-8d68-457c-939f-d746c1897f6b\",\"object\":\"chat.completion.chunk\",\"created\":1789480706,\"model\":\"Qwen/Qwen3.8-27B\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\".\\n\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}],\"usage\":{\"prompt_tokens\":57,\"total_tokens\":70,\"completion_tokens\":13},\"provider\":\"ai.io.net\"}",
+      "",
+      "data: {\"id\":\"chatcmpl-cdc026ea-8d68-457c-939f-d746c1897f6b\",\"object\":\"chat.completion.chunk\",\"created\":1789480706,\"model\":\"Qwen/Qwen3.8-27B\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"\\n\\nhello\"},\"logprobs\":null,\"finish_reason\":\"stop\",\"stop_reason\":null,\"token_ids\":null}],\"usage\":{\"prompt_tokens\":57,\"total_tokens\":73,\"completion_tokens\":16},\"provider\":\"ai.io.net\"}",
+      "",
+      "data: {\"id\":\"chatcmpl-cdc026ea-8d68-457c-939f-d746c1897f6b\",\"object\":\"chat.completion.chunk\",\"created\":1789480706,\"model\":\"Qwen/Qwen3.8-27B\",\"choices\":[],\"usage\":{\"prompt_tokens\":57,\"total_tokens\":73,\"completion_tokens\":16,\"prompt_tokens_details\":{\"cached_tokens\":0,\"created_cache_tokens\":0}},\"system_fingerprint\":\"vllm-0.27.1-7470d2d2\",\"provider\":\"ai.io.net\"}",
+      "",
+      "data: [DONE]",
+      ""
+    ],
+    "content": "\n\nhello",
+    "reasoning": "We need answer exactly: hello. No need think.\n",
+    "first_token_seconds": 0.6284635830670595,
+    "last_token_seconds": 0.720588417025283,
+    "complete": true
+  },
+  "total_latency_seconds": 0.7208558330312371,
+  "metrics": {
+    "ttft_seconds": {
+      "value": 0.6284635830670595,
+      "source": "measured",
+      "reason": null,
+      "unit": "s"
+    },
+    "total_latency_seconds": {
+      "value": 0.7208558330312371,
+      "source": "measured",
+      "reason": null,
+      "unit": "s"
+    },
+    "output_tokens_per_second": {
+      "value": 173.67738222742022,
+      "source": "estimated",
+      "reason": null,
+      "unit": "tokens/s",
+      "note": "Completion tokens divided by first-to-last content/reasoning chunk interval; chunk buffering can inflate this estimate."
+    },
+    "input_tokens": {
+      "value": 57,
+      "source": "provider-reported",
+      "reason": null,
+      "unit": "tokens"
+    },
+    "output_tokens": {
+      "value": 16,
+      "source": "provider-reported",
+      "reason": null,
+      "unit": "tokens",
+      "note": "Provider completion_tokens retained as total output; reasoning detail is a subset, never added again. Separate reasoning counts may be unavailable."
+    },
+    "reasoning_tokens": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Not supplied by provider.",
+      "unit": "tokens"
+    },
+    "input_price_per_1m": {
+      "value": 0.308,
+      "source": "provider-reported",
+      "reason": null,
+      "unit": "USD/1M tokens"
+    },
+    "output_price_per_1m": {
+      "value": 2.73,
+      "source": "provider-reported",
+      "reason": null,
+      "unit": "USD/1M tokens"
+    },
+    "input_cost": {
+      "value": 1.7556e-05,
+      "source": "estimated",
+      "reason": null,
+      "unit": "USD"
+    },
+    "output_cost": {
+      "value": 4.368e-05,
+      "source": "estimated",
+      "reason": null,
+      "unit": "USD"
+    },
+    "request_cost": {
+      "value": 6.1236e-05,
+      "source": "estimated",
+      "reason": null,
+      "unit": "USD",
+      "note": "Published per-token catalog rates converted to USD per million tokens; excludes account discounts and non-token charges."
+    },
+    "success": {
+      "value": true,
+      "source": "measured",
+      "reason": null,
+      "unit": null
+    },
+    "http_status": {
+      "value": 200,
+      "source": "provider-reported",
+      "reason": null,
+      "unit": null
+    },
+    "error_type": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "No error.",
+      "unit": null
+    },
+    "error_message": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "No error.",
+      "unit": null
+    }
+  },
+  "metadata": {
+    "provider": {
+      "value": "ionet",
+      "source": "configured",
+      "reason": null,
+      "unit": null
+    },
+    "model": {
+      "value": "qwen/qwen3.8-27b",
+      "source": "configured",
+      "reason": null,
+      "unit": null
+    },
+    "provider_model_id": {
+      "value": "Qwen/Qwen3.8-27B",
+      "source": "configured",
+      "reason": null,
+      "unit": null
+    },
+    "returned_model_id": {
+      "value": "Qwen/Qwen3.8-27B",
+      "source": "provider-reported",
+      "reason": null,
+      "unit": null
+    },
+    "pricing": {
+      "value": {
+        "provider_model_id": "Qwen/Qwen3.8-27B",
+        "input_per_1m_tokens": 0.308,
+        "output_per_1m_tokens": 2.73,
+        "cache_input_per_1m_tokens": 0.154,
+        "context_window": 65536,
+        "quantization": "fp8",
+        "source": "https://api.intelligence.io.solutions/api/v1/models",
+        "checked_at": "2026-09-15",
+        "cost_basis": "Published per-token catalog rates converted to USD per million tokens; excludes account discounts and non-token charges."
+      },
+      "source": "provider-reported",
+      "reason": null,
+      "unit": null
+    },
+    "rate_limits": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Not supplied by provider.",
+      "unit": null
+    },
+    "region": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Not supplied by provider.",
+      "unit": null
+    },
+    "version": {
+      "value": "vllm-0.27.1-7470d2d2",
+      "source": "provider-reported",
+      "reason": null,
+      "unit": null
+    },
+    "context_window": {
+      "value": 65536,
+      "source": "provider-reported",
+      "reason": null,
+      "unit": "tokens"
+    },
+    "quantization": {
+      "value": "fp8",
+      "source": "provider-reported",
+      "reason": null,
+      "unit": null
+    }
+  },
+  "validation": {
+    "passed": true,
+    "expected": "Successful control request",
+    "http_status": 200,
+    "error_type": null,
+    "record_complete": true,
+    "case": "mixed",
+    "exclude_from_benchmark": true
+  }
+}

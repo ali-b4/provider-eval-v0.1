@@ -1,0 +1,261 @@
+{
+  "provider": "darkbloom",
+  "model": "qwen/qwen3.8-27b",
+  "provider_model_id": "EigenLabs/Qwen3.8-27B-4bit-mtp",
+  "timestamp": "2026-09-15T13:58:24.035108+00:00",
+  "request": {
+    "url": "https://api.darkbloom.dev/v1/chat/completions",
+    "headers": {
+      "Authorization": "Bearer <redacted>",
+      "Content-Type": "application/json"
+    },
+    "json": {
+      "model": "EigenLabs/Qwen3.8-27B-4bit-mtp",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Reply with exactly: hello"
+        }
+      ],
+      "temperature": "provider-eval-invalid-number",
+      "stream": true,
+      "stream_options": {
+        "include_usage": true
+      }
+    }
+  },
+  "response": {
+    "status_code": 400,
+    "headers": {
+      "Access-Control-Allow-Credentials": "true",
+      "Access-Control-Allow-Headers": "Content-Type, Authorization, X-Darkbloom-Metadata-Details",
+      "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+      "Access-Control-Allow-Origin": "https://console.darkbloom.dev",
+      "Alt-Svc": "h3=\":443\"; ma=2592000",
+      "Content-Length": "112",
+      "Content-Type": "application/json",
+      "Date": "Tue, 15 Sep 2026 13:58:26 GMT",
+      "Referrer-Policy": "strict-origin-when-cross-origin",
+      "Via": "1.1 Caddy",
+      "X-Content-Type-Options": "nosniff",
+      "X-Frame-Options": "DENY",
+      "X-Ratelimit-Limit-Input-Tokens": "5000000",
+      "X-Ratelimit-Limit-Output-Tokens": "500000",
+      "X-Ratelimit-Limit-Requests": "1200",
+      "X-Ratelimit-Remaining-Input-Tokens": "999990",
+      "X-Ratelimit-Remaining-Output-Tokens": "9216",
+      "X-Ratelimit-Remaining-Requests": "119",
+      "X-Ratelimit-Reset-Input-Tokens": "1s",
+      "X-Ratelimit-Reset-Output-Tokens": "7s",
+      "X-Ratelimit-Reset-Requests": "1s",
+      "X-Request-Id": "j7c845m0h3a3",
+      "Connection": "close"
+    },
+    "body": {
+      "error": {
+        "code": "invalid_request_error",
+        "message": "invalid inference request",
+        "type": "invalid_request_error"
+      }
+    }
+  },
+  "success": false,
+  "error": {
+    "type": "HTTPError",
+    "message": "HTTP 400: {\"error\": {\"code\": \"invalid_request_error\", \"message\": \"invalid inference request\", \"type\": \"invalid_request_error\"}}"
+  },
+  "request_sent": true,
+  "diagnostic": {
+    "case": "invalid_parameter",
+    "timeout_seconds": 45,
+    "exclude_from_benchmark": true
+  },
+  "total_latency_seconds": 2.5418224999448285,
+  "metrics": {
+    "ttft_seconds": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "No generated content received.",
+      "unit": "s"
+    },
+    "total_latency_seconds": {
+      "value": 2.5418224999448285,
+      "source": "measured",
+      "reason": null,
+      "unit": "s"
+    },
+    "output_tokens_per_second": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Requires a successful stream, usage, and a positive generation interval.",
+      "unit": "tokens/s",
+      "note": "Completion tokens divided by first-to-last content/reasoning chunk interval; chunk buffering can inflate this estimate."
+    },
+    "input_tokens": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Not supplied by provider.",
+      "unit": "tokens"
+    },
+    "output_tokens": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Not supplied by provider.",
+      "unit": "tokens",
+      "note": "Provider completion_tokens retained as total output; reasoning detail is a subset, never added again. Separate reasoning counts may be unavailable."
+    },
+    "reasoning_tokens": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Not supplied by provider.",
+      "unit": "tokens"
+    },
+    "input_price_per_1m": {
+      "value": 0.15,
+      "source": "provider-reported",
+      "reason": null,
+      "unit": "USD/1M tokens"
+    },
+    "output_price_per_1m": {
+      "value": 2.0,
+      "source": "provider-reported",
+      "reason": null,
+      "unit": "USD/1M tokens"
+    },
+    "input_cost": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Usage or verified pricing unavailable.",
+      "unit": "USD"
+    },
+    "output_cost": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Usage or verified pricing unavailable.",
+      "unit": "USD"
+    },
+    "request_cost": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Usage or verified pricing unavailable.",
+      "unit": "USD",
+      "note": "Published standard direct-consumer rates with $0.0001 minimum; service accounts and custom rates may differ."
+    },
+    "success": {
+      "value": false,
+      "source": "measured",
+      "reason": null,
+      "unit": null
+    },
+    "http_status": {
+      "value": 400,
+      "source": "provider-reported",
+      "reason": null,
+      "unit": null
+    },
+    "error_type": {
+      "value": "HTTPError",
+      "source": "measured",
+      "reason": null,
+      "unit": null
+    },
+    "error_message": {
+      "value": "HTTP 400: {\"error\": {\"code\": \"invalid_request_error\", \"message\": \"invalid inference request\", \"type\": \"invalid_request_error\"}}",
+      "source": "measured",
+      "reason": null,
+      "unit": null
+    }
+  },
+  "metadata": {
+    "provider": {
+      "value": "darkbloom",
+      "source": "configured",
+      "reason": null,
+      "unit": null
+    },
+    "model": {
+      "value": "qwen/qwen3.8-27b",
+      "source": "configured",
+      "reason": null,
+      "unit": null
+    },
+    "provider_model_id": {
+      "value": "EigenLabs/Qwen3.8-27B-4bit-mtp",
+      "source": "configured",
+      "reason": null,
+      "unit": null
+    },
+    "returned_model_id": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Not supplied by provider.",
+      "unit": null
+    },
+    "pricing": {
+      "value": {
+        "provider_model_id": "EigenLabs/Qwen3.8-27B-4bit-mtp",
+        "input_per_1m_tokens": 0.15,
+        "output_per_1m_tokens": 2.0,
+        "context_window": null,
+        "quantization": "4bit (model ID)",
+        "source": "https://api.darkbloom.dev/v1/pricing",
+        "checked_at": "2026-09-15",
+        "cost_basis": "Published standard direct-consumer rates with $0.0001 minimum; service accounts and custom rates may differ.",
+        "minimum_request_cost_usd": 0.0001,
+        "billing_source": "https://github.com/Layr-Labs/d-inference/blob/master/docs/reference/pricing-model.md"
+      },
+      "source": "provider-reported",
+      "reason": null,
+      "unit": null
+    },
+    "rate_limits": {
+      "value": {
+        "x-ratelimit-limit-input-tokens": "5000000",
+        "x-ratelimit-limit-output-tokens": "500000",
+        "x-ratelimit-limit-requests": "1200",
+        "x-ratelimit-remaining-input-tokens": "999990",
+        "x-ratelimit-remaining-output-tokens": "9216",
+        "x-ratelimit-remaining-requests": "119",
+        "x-ratelimit-reset-input-tokens": "1s",
+        "x-ratelimit-reset-output-tokens": "7s",
+        "x-ratelimit-reset-requests": "1s"
+      },
+      "source": "provider-reported",
+      "reason": null,
+      "unit": null
+    },
+    "region": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Not supplied by provider.",
+      "unit": null
+    },
+    "version": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Not supplied by provider.",
+      "unit": null
+    },
+    "context_window": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Not supplied by provider.",
+      "unit": "tokens"
+    },
+    "quantization": {
+      "value": "4bit (model ID)",
+      "source": "provider-reported",
+      "reason": null,
+      "unit": null
+    }
+  },
+  "validation": {
+    "passed": true,
+    "expected": "Invalid request rejected; inspect provider details",
+    "http_status": 400,
+    "error_type": "HTTPError",
+    "record_complete": true,
+    "case": "invalid_parameter",
+    "exclude_from_benchmark": true
+  }
+}

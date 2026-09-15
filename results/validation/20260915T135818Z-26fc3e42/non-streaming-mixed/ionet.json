@@ -1,0 +1,266 @@
+{
+  "provider": "ionet",
+  "model": "qwen/qwen3.8-27b",
+  "provider_model_id": "Qwen/Qwen3.8-27B",
+  "timestamp": "2026-09-15T13:58:20.760181+00:00",
+  "request": {
+    "url": "https://api.intelligence.io.solutions/api/v1/chat/completions",
+    "headers": {
+      "Authorization": "Bearer <redacted>",
+      "Content-Type": "application/json",
+      "User-Agent": "provider-eval/0.1",
+      "Accept": "application/json"
+    },
+    "json": {
+      "model": "Qwen/Qwen3.8-27B",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Reply with exactly: hello"
+        }
+      ],
+      "temperature": 0,
+      "stream": false
+    }
+  },
+  "response": {
+    "status_code": 200,
+    "headers": {
+      "Date": "Tue, 15 Sep 2026 13:58:21 GMT",
+      "Content-Type": "application/json",
+      "Content-Length": "849",
+      "Connection": "close",
+      "Server": "cloudflare",
+      "x-request-id": "3d8181846ab8420a8378d55f53ae2195",
+      "cf-cache-status": "DYNAMIC",
+      "set-cookie": "__cf_bm=KVNWQtmET9_gX46s3wnUySi5t4MT2ibP6Y.Ykz3RaXw-1789480700.851769-1.0.1.1-4Np6.mYeo1MnmOCvAQrp9aPUDyhsOj8xW1GcJyRKZu95mayinrAr82TkQat1cOBt5afR25qWksWwkOZLuaG0ioazlps.lPBIQM.PMFhmuIE9CHRPCaviDEjYgS4rIesH; HttpOnly; SameSite=None; Secure; Path=/; Domain=io.solutions; Expires=Tue, 15 Sep 2026 14:28:21 GMT",
+      "Strict-Transport-Security": "max-age=31536000; includeSubDomains",
+      "CF-RAY": "a3b8254c5c859d2e-IAD"
+    },
+    "body": {
+      "id": "01a0a55c-8c1f-7040-c15d-59430f09d1eb",
+      "object": "chat.completion",
+      "created": 1789480701,
+      "model": "Qwen/Qwen3.8-27B",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "reasoning_content": "We need answer exactly: hello. No need think.\n",
+            "content": "\n\nhello",
+            "refusal": null,
+            "annotations": null,
+            "audio": null,
+            "function_call": null
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null,
+          "token_ids": null,
+          "routed_experts": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 57,
+        "total_tokens": 73,
+        "completion_tokens": 16,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_creation_input_tokens": 57,
+          "created_cache_tokens": 0,
+          "multimodal_tokens": null
+        }
+      },
+      "prompt_logprobs": null,
+      "service_tier": null,
+      "system_fingerprint": "vllm-0.27.1-7470d2d2",
+      "prompt_token_ids": null,
+      "prompt_text": null,
+      "kv_transfer_params": null,
+      "ec_transfer_params": null,
+      "metrics": null,
+      "provider": "ai.io.net"
+    }
+  },
+  "success": true,
+  "error": null,
+  "request_sent": true,
+  "total_latency_seconds": 0.7163301249966025,
+  "metrics": {
+    "ttft_seconds": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Non-streaming does not expose first-token arrival.",
+      "unit": "s"
+    },
+    "total_latency_seconds": {
+      "value": 0.7163301249966025,
+      "source": "measured",
+      "reason": null,
+      "unit": "s"
+    },
+    "output_tokens_per_second": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Requires a successful stream, usage, and a positive generation interval.",
+      "unit": "tokens/s",
+      "note": "Completion tokens divided by first-to-last content/reasoning chunk interval; chunk buffering can inflate this estimate."
+    },
+    "input_tokens": {
+      "value": 57,
+      "source": "provider-reported",
+      "reason": null,
+      "unit": "tokens"
+    },
+    "output_tokens": {
+      "value": 16,
+      "source": "provider-reported",
+      "reason": null,
+      "unit": "tokens",
+      "note": "Provider completion_tokens retained as total output; reasoning detail is a subset, never added again. Separate reasoning counts may be unavailable."
+    },
+    "reasoning_tokens": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Not supplied by provider.",
+      "unit": "tokens"
+    },
+    "input_price_per_1m": {
+      "value": 0.308,
+      "source": "provider-reported",
+      "reason": null,
+      "unit": "USD/1M tokens"
+    },
+    "output_price_per_1m": {
+      "value": 2.73,
+      "source": "provider-reported",
+      "reason": null,
+      "unit": "USD/1M tokens"
+    },
+    "input_cost": {
+      "value": 1.7556e-05,
+      "source": "estimated",
+      "reason": null,
+      "unit": "USD"
+    },
+    "output_cost": {
+      "value": 4.368e-05,
+      "source": "estimated",
+      "reason": null,
+      "unit": "USD"
+    },
+    "request_cost": {
+      "value": 6.1236e-05,
+      "source": "estimated",
+      "reason": null,
+      "unit": "USD",
+      "note": "Published per-token catalog rates converted to USD per million tokens; excludes account discounts and non-token charges."
+    },
+    "success": {
+      "value": true,
+      "source": "measured",
+      "reason": null,
+      "unit": null
+    },
+    "http_status": {
+      "value": 200,
+      "source": "provider-reported",
+      "reason": null,
+      "unit": null
+    },
+    "error_type": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "No error.",
+      "unit": null
+    },
+    "error_message": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "No error.",
+      "unit": null
+    }
+  },
+  "metadata": {
+    "provider": {
+      "value": "ionet",
+      "source": "configured",
+      "reason": null,
+      "unit": null
+    },
+    "model": {
+      "value": "qwen/qwen3.8-27b",
+      "source": "configured",
+      "reason": null,
+      "unit": null
+    },
+    "provider_model_id": {
+      "value": "Qwen/Qwen3.8-27B",
+      "source": "configured",
+      "reason": null,
+      "unit": null
+    },
+    "returned_model_id": {
+      "value": "Qwen/Qwen3.8-27B",
+      "source": "provider-reported",
+      "reason": null,
+      "unit": null
+    },
+    "pricing": {
+      "value": {
+        "provider_model_id": "Qwen/Qwen3.8-27B",
+        "input_per_1m_tokens": 0.308,
+        "output_per_1m_tokens": 2.73,
+        "cache_input_per_1m_tokens": 0.154,
+        "context_window": 65536,
+        "quantization": "fp8",
+        "source": "https://api.intelligence.io.solutions/api/v1/models",
+        "checked_at": "2026-09-15",
+        "cost_basis": "Published per-token catalog rates converted to USD per million tokens; excludes account discounts and non-token charges."
+      },
+      "source": "provider-reported",
+      "reason": null,
+      "unit": null
+    },
+    "rate_limits": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Not supplied by provider.",
+      "unit": null
+    },
+    "region": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Not supplied by provider.",
+      "unit": null
+    },
+    "version": {
+      "value": "vllm-0.27.1-7470d2d2",
+      "source": "provider-reported",
+      "reason": null,
+      "unit": null
+    },
+    "context_window": {
+      "value": 65536,
+      "source": "provider-reported",
+      "reason": null,
+      "unit": "tokens"
+    },
+    "quantization": {
+      "value": "fp8",
+      "source": "provider-reported",
+      "reason": null,
+      "unit": null
+    }
+  },
+  "validation": {
+    "passed": true,
+    "expected": "Successful control request",
+    "http_status": 200,
+    "error_type": null,
+    "record_complete": true,
+    "case": "mixed",
+    "exclude_from_benchmark": true
+  }
+}

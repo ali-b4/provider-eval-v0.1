@@ -1,0 +1,50 @@
+{
+  "passed": 4,
+  "total": 4,
+  "checks": [
+    {
+      "provider": "venice",
+      "mode": "streaming",
+      "case": "mixed",
+      "report": "streaming-mixed/report.html",
+      "passed": true,
+      "expected": "Authentication rejected",
+      "http_status": 401,
+      "error_type": "HTTPError",
+      "record_complete": true
+    },
+    {
+      "provider": "ionet",
+      "mode": "streaming",
+      "case": "mixed",
+      "report": "streaming-mixed/report.html",
+      "passed": true,
+      "expected": "Successful control request",
+      "http_status": 200,
+      "error_type": null,
+      "record_complete": true
+    },
+    {
+      "provider": "darkbloom",
+      "mode": "streaming",
+      "case": "mixed",
+      "report": "streaming-mixed/report.html",
+      "passed": true,
+      "expected": "Successful control request",
+      "http_status": 200,
+      "error_type": null,
+      "record_complete": true
+    },
+    {
+      "provider": "chutes",
+      "mode": "streaming",
+      "case": "mixed",
+      "report": "streaming-mixed/report.html",
+      "passed": true,
+      "expected": "Successful control request",
+      "http_status": 200,
+      "error_type": null,
+      "record_complete": true
+    }
+  ]
+}

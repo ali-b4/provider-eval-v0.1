@@ -1,0 +1,216 @@
+{
+  "provider": "chutes",
+  "model": "qwen/qwen3.8-27b",
+  "provider_model_id": "Qwen/Qwen3.8-27B-TEE",
+  "timestamp": "2026-09-15T13:58:26.581731+00:00",
+  "request": {
+    "url": "https://llm.chutes.ai/v1/chat/completions",
+    "headers": {
+      "Authorization": "Bearer <redacted>",
+      "Content-Type": "application/json"
+    },
+    "json": {
+      "model": "Qwen/Qwen3.8-27B-TEE",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Reply with exactly: hello"
+        }
+      ],
+      "temperature": 0,
+      "stream": true,
+      "stream_options": {
+        "include_usage": true
+      }
+    }
+  },
+  "response": null,
+  "success": false,
+  "error": {
+    "type": "URLError",
+    "message": "<urlopen error timed out>"
+  },
+  "request_sent": true,
+  "diagnostic": {
+    "case": "timeout",
+    "timeout_seconds": 0.001,
+    "exclude_from_benchmark": true
+  },
+  "total_latency_seconds": 0.005343416007235646,
+  "metrics": {
+    "ttft_seconds": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "No generated content received.",
+      "unit": "s"
+    },
+    "total_latency_seconds": {
+      "value": 0.005343416007235646,
+      "source": "measured",
+      "reason": null,
+      "unit": "s"
+    },
+    "output_tokens_per_second": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Requires a successful stream, usage, and a positive generation interval.",
+      "unit": "tokens/s",
+      "note": "Completion tokens divided by first-to-last content/reasoning chunk interval; chunk buffering can inflate this estimate."
+    },
+    "input_tokens": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Not supplied by provider.",
+      "unit": "tokens"
+    },
+    "output_tokens": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Not supplied by provider.",
+      "unit": "tokens",
+      "note": "Provider completion_tokens retained as total output; reasoning detail is a subset, never added again. Separate reasoning counts may be unavailable."
+    },
+    "reasoning_tokens": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Not supplied by provider.",
+      "unit": "tokens"
+    },
+    "input_price_per_1m": {
+      "value": 0.32,
+      "source": "provider-reported",
+      "reason": null,
+      "unit": "USD/1M tokens"
+    },
+    "output_price_per_1m": {
+      "value": 2.5,
+      "source": "provider-reported",
+      "reason": null,
+      "unit": "USD/1M tokens"
+    },
+    "input_cost": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Usage or verified pricing unavailable.",
+      "unit": "USD"
+    },
+    "output_cost": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Usage or verified pricing unavailable.",
+      "unit": "USD"
+    },
+    "request_cost": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Usage or verified pricing unavailable.",
+      "unit": "USD",
+      "note": "Published token rates; excludes account discounts and non-token charges."
+    },
+    "success": {
+      "value": false,
+      "source": "measured",
+      "reason": null,
+      "unit": null
+    },
+    "http_status": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Not supplied by provider.",
+      "unit": null
+    },
+    "error_type": {
+      "value": "URLError",
+      "source": "measured",
+      "reason": null,
+      "unit": null
+    },
+    "error_message": {
+      "value": "<urlopen error timed out>",
+      "source": "measured",
+      "reason": null,
+      "unit": null
+    }
+  },
+  "metadata": {
+    "provider": {
+      "value": "chutes",
+      "source": "configured",
+      "reason": null,
+      "unit": null
+    },
+    "model": {
+      "value": "qwen/qwen3.8-27b",
+      "source": "configured",
+      "reason": null,
+      "unit": null
+    },
+    "provider_model_id": {
+      "value": "Qwen/Qwen3.8-27B-TEE",
+      "source": "configured",
+      "reason": null,
+      "unit": null
+    },
+    "returned_model_id": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Not supplied by provider.",
+      "unit": null
+    },
+    "pricing": {
+      "value": {
+        "provider_model_id": "Qwen/Qwen3.8-27B-TEE",
+        "input_per_1m_tokens": 0.32,
+        "output_per_1m_tokens": 2.5,
+        "context_window": 262144,
+        "quantization": "fp8",
+        "source": "https://llm.chutes.ai/v1/models",
+        "checked_at": "2026-09-15",
+        "cost_basis": "Published token rates; excludes account discounts and non-token charges.",
+        "cache_input_per_1m_tokens": 0.032
+      },
+      "source": "provider-reported",
+      "reason": null,
+      "unit": null
+    },
+    "rate_limits": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Not supplied by provider.",
+      "unit": null
+    },
+    "region": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Not supplied by provider.",
+      "unit": null
+    },
+    "version": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Not supplied by provider.",
+      "unit": null
+    },
+    "context_window": {
+      "value": 262144,
+      "source": "provider-reported",
+      "reason": null,
+      "unit": "tokens"
+    },
+    "quantization": {
+      "value": "fp8",
+      "source": "provider-reported",
+      "reason": null,
+      "unit": null
+    }
+  },
+  "validation": {
+    "passed": true,
+    "expected": "Local timeout (not a provider outage)",
+    "http_status": null,
+    "error_type": "URLError",
+    "record_complete": true,
+    "case": "timeout",
+    "exclude_from_benchmark": true
+  }
+}

@@ -2,7 +2,7 @@
 
 This is a deliberately concrete probe, not a harness or provider abstraction.
 
-1. **Python**: `scripts/chutes_raw_request.py` reads `CHUTES_API_KEY` and `CHUTES_MODEL`, builds one JSON payload, and uses only Python's standard library.
+1. **Python**: `scripts/chutes_raw_request.py` delegates to `scripts/raw_request.py`, which uses the shared request code in `scripts/manual_request.py`. It reads `CHUTES_API_KEY` and `CHUTES_MODEL` and uses only Python's standard library.
 2. **HTTP request**: `POST https://llm.chutes.ai/v1/chat/completions`. The API key is sent as `Authorization: Bearer ...`; the model and messages are JSON fields.
 3. **Provider API**: Chutes' shared OpenAI-compatible gateway receives the request and selects the named model.
 4. **Inference**: the selected model generates a non-streaming completion from the message.

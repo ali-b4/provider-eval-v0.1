@@ -1,0 +1,225 @@
+{
+  "provider": "ionet",
+  "model": "qwen/qwen3.8-27b",
+  "provider_model_id": "provider-eval-nonexistent-model",
+  "timestamp": "2026-09-15T13:58:23.660117+00:00",
+  "request": {
+    "url": "https://api.intelligence.io.solutions/api/v1/chat/completions",
+    "headers": {
+      "Authorization": "Bearer <redacted>",
+      "Content-Type": "application/json",
+      "User-Agent": "provider-eval/0.1",
+      "Accept": "text/event-stream"
+    },
+    "json": {
+      "model": "provider-eval-nonexistent-model",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Reply with exactly: hello"
+        }
+      ],
+      "temperature": 0,
+      "stream": true,
+      "stream_options": {
+        "include_usage": true
+      }
+    }
+  },
+  "response": {
+    "status_code": 400,
+    "headers": {
+      "Date": "Tue, 15 Sep 2026 13:58:23 GMT",
+      "Content-Type": "application/json",
+      "Content-Length": "1077",
+      "Connection": "close",
+      "Server": "cloudflare",
+      "x-request-id": "b8298aad11f24a1e9204809b600d52f4",
+      "cf-cache-status": "DYNAMIC",
+      "set-cookie": "__cf_bm=7rNqoZIQZUuS5HYfZ.3K5HOjXdfIDBjHU7osVN2_phc-1789480703.7511606-1.0.1.1-84Erl6C03mrL1rq4qDcMxC6bNTQhh4ZC91VcwMiKz0Kog_IGFvpb8d9QvBs_UpptgdjQr9uHJ0gGLU2..nxNIMG2dHOzy9a1vkLcL8U3pXVpABhWFZ55YJE4YWNWnbjB; HttpOnly; SameSite=None; Secure; Path=/; Domain=io.solutions; Expires=Tue, 15 Sep 2026 14:28:23 GMT",
+      "Strict-Transport-Security": "max-age=31536000; includeSubDomains",
+      "CF-RAY": "a3b8255e7935fc57-IAD"
+    },
+    "body": {
+      "detail": "The requested model is not available for Chat Completions API. Available models: ['deepseek-ai/DeepSeek-V4.1-Flash', 'zai-org/GLM-5.3-Flash', 'zai-org/GLM-5.3', 'Qwen/Qwen3.8-27B', 'deepseek-ai/DeepSeek-V4-Flash-0731', 'moonshotai/Kimi-K3', 'XiaomiMiMo/MiMo-V2.5', 'zai-org/GLM-5.2', 'moonshotai/Kimi-K2.7-Code', 'Qwen/Qwen3.6-35B-A3B', 'Qwen/Qwen3.6-27B', 'MiniMaxAI/MiniMax-M2.7', 'deepseek-ai/DeepSeek-V4-Flash', 'deepseek-ai/DeepSeek-V4-Pro', 'moonshotai/Kimi-K2.6', 'zai-org/GLM-5.1', 'MiniMaxAI/MiniMax-M2.5', 'moonshotai/Kimi-K2.5', 'zai-org/GLM-5', 'deepseek-ai/DeepSeek-V3.2', 'moonshotai/Kimi-K2-Thinking', 'zai-org/GLM-4.5-Air', 'google/gemma-4-26b-a4b-it', 'zai-org/GLM-4.7-Flash', 'zai-org/GLM-4.7', 'moonshotai/Kimi-K2-Instruct-0905', 'openai/gpt-oss-120b', 'deepseek-ai/DeepSeek-R1-0528', 'zai-org/GLM-4.6', 'Qwen/Qwen3-Next-80B-A3B-Instruct', 'Intel/Qwen3-Coder-480B-A35B-Instruct-int4-mixed-ar', 'meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8', 'mistralai/Mistral-Nemo-Instruct-2407', 'openai/gpt-oss-20b', 'meta-llama/Llama-3.3-70B-Instruct']"
+    }
+  },
+  "success": false,
+  "error": {
+    "type": "HTTPError",
+    "message": "HTTP 400: {\"detail\": \"The requested model is not available for Chat Completions API. Available models: ['deepseek-ai/DeepSeek-V4.1-Flash', 'zai-org/GLM-5.3-Flash', 'zai-org/GLM-5.3', 'Qwen/Qwen3.8-27B', 'deepseek-ai/DeepSeek-V4-Flash-0731', 'moonshotai/Kimi-K3', 'XiaomiMiMo/MiMo-V2.5', 'zai-org/GLM-5.2', 'moonshotai/Kimi-K2.7-Code', 'Qwen/Qwen3.6-35B-A3B', 'Qwen/Qwen3.6-27B', 'MiniMaxAI/MiniMax-M2.7', 'deepseek-ai/DeepSeek-V4-Flash', 'deepseek-ai/DeepSeek-V4-Pro', 'moonshotai/Kimi-K2.6', 'zai-org/GLM-5.1', 'MiniMaxAI/MiniMax-M2.5', 'moonshotai/Kimi-K2.5', 'zai-org/GLM-5', 'deepseek-ai/DeepSeek-V3.2', 'moonshotai/Kimi-K2-Thinking', 'zai-org/GLM-4.5-Air', 'google/gemma-4-26b-a4b-it', 'zai-org/GLM-4.7-Flash', 'zai-org/GLM-4.7', 'moonshotai/Kimi-K2-Instruct-0905', 'openai/gpt-oss-120b', 'deepseek-ai/DeepSeek-R1-0528', 'zai-org/GLM-4.6', 'Qwen/Qwen3-Next-80B-A3B-Instruct', 'Intel/Qwen3-Coder-480B-A35B-Instruct-int4-mixed-ar', 'meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8', 'mistralai/Mistral-Nemo-Instruct-2407', 'openai/gpt-oss-20b', 'meta-llama/Llama-3.3-70B-Instruct']\"}"
+  },
+  "request_sent": true,
+  "diagnostic": {
+    "case": "invalid_model",
+    "timeout_seconds": 45,
+    "exclude_from_benchmark": true
+  },
+  "total_latency_seconds": 0.2046187079977244,
+  "metrics": {
+    "ttft_seconds": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "No generated content received.",
+      "unit": "s"
+    },
+    "total_latency_seconds": {
+      "value": 0.2046187079977244,
+      "source": "measured",
+      "reason": null,
+      "unit": "s"
+    },
+    "output_tokens_per_second": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Requires a successful stream, usage, and a positive generation interval.",
+      "unit": "tokens/s",
+      "note": "Completion tokens divided by first-to-last content/reasoning chunk interval; chunk buffering can inflate this estimate."
+    },
+    "input_tokens": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Not supplied by provider.",
+      "unit": "tokens"
+    },
+    "output_tokens": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Not supplied by provider.",
+      "unit": "tokens",
+      "note": "Provider completion_tokens retained as total output; reasoning detail is a subset, never added again. Separate reasoning counts may be unavailable."
+    },
+    "reasoning_tokens": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Not supplied by provider.",
+      "unit": "tokens"
+    },
+    "input_price_per_1m": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "No verified price for this model.",
+      "unit": "USD/1M tokens"
+    },
+    "output_price_per_1m": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "No verified price for this model.",
+      "unit": "USD/1M tokens"
+    },
+    "input_cost": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Usage or verified pricing unavailable.",
+      "unit": "USD"
+    },
+    "output_cost": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Usage or verified pricing unavailable.",
+      "unit": "USD"
+    },
+    "request_cost": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Usage or verified pricing unavailable.",
+      "unit": "USD",
+      "note": null
+    },
+    "success": {
+      "value": false,
+      "source": "measured",
+      "reason": null,
+      "unit": null
+    },
+    "http_status": {
+      "value": 400,
+      "source": "provider-reported",
+      "reason": null,
+      "unit": null
+    },
+    "error_type": {
+      "value": "HTTPError",
+      "source": "measured",
+      "reason": null,
+      "unit": null
+    },
+    "error_message": {
+      "value": "HTTP 400: {\"detail\": \"The requested model is not available for Chat Completions API. Available models: ['deepseek-ai/DeepSeek-V4.1-Flash', 'zai-org/GLM-5.3-Flash', 'zai-org/GLM-5.3', 'Qwen/Qwen3.8-27B', 'deepseek-ai/DeepSeek-V4-Flash-0731', 'moonshotai/Kimi-K3', 'XiaomiMiMo/MiMo-V2.5', 'zai-org/GLM-5.2', 'moonshotai/Kimi-K2.7-Code', 'Qwen/Qwen3.6-35B-A3B', 'Qwen/Qwen3.6-27B', 'MiniMaxAI/MiniMax-M2.7', 'deepseek-ai/DeepSeek-V4-Flash', 'deepseek-ai/DeepSeek-V4-Pro', 'moonshotai/Kimi-K2.6', 'zai-org/GLM-5.1', 'MiniMaxAI/MiniMax-M2.5', 'moonshotai/Kimi-K2.5', 'zai-org/GLM-5', 'deepseek-ai/DeepSeek-V3.2', 'moonshotai/Kimi-K2-Thinking', 'zai-org/GLM-4.5-Air', 'google/gemma-4-26b-a4b-it', 'zai-org/GLM-4.7-Flash', 'zai-org/GLM-4.7', 'moonshotai/Kimi-K2-Instruct-0905', 'openai/gpt-oss-120b', 'deepseek-ai/DeepSeek-R1-0528', 'zai-org/GLM-4.6', 'Qwen/Qwen3-Next-80B-A3B-Instruct', 'Intel/Qwen3-Coder-480B-A35B-Instruct-int4-mixed-ar', 'meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8', 'mistralai/Mistral-Nemo-Instruct-2407', 'openai/gpt-oss-20b', 'meta-llama/Llama-3.3-70B-Instruct']\"}",
+      "source": "measured",
+      "reason": null,
+      "unit": null
+    }
+  },
+  "metadata": {
+    "provider": {
+      "value": "ionet",
+      "source": "configured",
+      "reason": null,
+      "unit": null
+    },
+    "model": {
+      "value": "qwen/qwen3.8-27b",
+      "source": "configured",
+      "reason": null,
+      "unit": null
+    },
+    "provider_model_id": {
+      "value": "provider-eval-nonexistent-model",
+      "source": "configured",
+      "reason": null,
+      "unit": null
+    },
+    "returned_model_id": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Not supplied by provider.",
+      "unit": null
+    },
+    "pricing": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "No verified model pricing.",
+      "unit": null
+    },
+    "rate_limits": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Not supplied by provider.",
+      "unit": null
+    },
+    "region": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Not supplied by provider.",
+      "unit": null
+    },
+    "version": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Not supplied by provider.",
+      "unit": null
+    },
+    "context_window": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Not supplied by provider.",
+      "unit": "tokens"
+    },
+    "quantization": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Not supplied by provider.",
+      "unit": null
+    }
+  },
+  "validation": {
+    "passed": true,
+    "expected": "Invalid request rejected; inspect provider details",
+    "http_status": 400,
+    "error_type": "HTTPError",
+    "record_complete": true,
+    "case": "invalid_model",
+    "exclude_from_benchmark": true
+  }
+}

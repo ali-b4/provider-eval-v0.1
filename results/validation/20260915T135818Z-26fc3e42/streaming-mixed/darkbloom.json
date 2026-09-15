@@ -1,0 +1,258 @@
+{
+  "provider": "darkbloom",
+  "model": "qwen/qwen3.8-27b",
+  "provider_model_id": "EigenLabs/Qwen3.8-27B-4bit-mtp",
+  "timestamp": "2026-09-15T13:58:26.592002+00:00",
+  "request": {
+    "url": "https://api.darkbloom.dev/v1/chat/completions",
+    "headers": {
+      "Authorization": "Bearer <redacted>",
+      "Content-Type": "application/json"
+    },
+    "json": {
+      "model": "EigenLabs/Qwen3.8-27B-4bit-mtp",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Reply with exactly: hello"
+        }
+      ],
+      "temperature": 0,
+      "stream": true,
+      "stream_options": {
+        "include_usage": true
+      }
+    }
+  },
+  "response": {
+    "status_code": 429,
+    "headers": {
+      "Access-Control-Allow-Credentials": "true",
+      "Access-Control-Allow-Headers": "Content-Type, Authorization, X-Darkbloom-Metadata-Details",
+      "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+      "Access-Control-Allow-Origin": "https://console.darkbloom.dev",
+      "Alt-Svc": "h3=\":443\"; ma=2592000",
+      "Content-Length": "135",
+      "Content-Type": "application/json",
+      "Date": "Tue, 15 Sep 2026 13:58:26 GMT",
+      "Referrer-Policy": "strict-origin-when-cross-origin",
+      "Retry-After": "1",
+      "Via": "1.1 Caddy",
+      "X-Content-Type-Options": "nosniff",
+      "X-Frame-Options": "DENY",
+      "X-Ratelimit-Limit-Input-Tokens": "5000000",
+      "X-Ratelimit-Limit-Output-Tokens": "500000",
+      "X-Ratelimit-Limit-Requests": "1200",
+      "X-Ratelimit-Remaining-Input-Tokens": "1000000",
+      "X-Ratelimit-Remaining-Output-Tokens": "30575",
+      "X-Ratelimit-Remaining-Requests": "119",
+      "X-Ratelimit-Reset-Input-Tokens": "0s",
+      "X-Ratelimit-Reset-Output-Tokens": "5s",
+      "X-Ratelimit-Reset-Requests": "1s",
+      "X-Request-Id": "f8gvhb6273bh",
+      "Connection": "close"
+    },
+    "body": {
+      "error": {
+        "code": "rate_limit_exceeded",
+        "message": "output_tokens rate limit exceeded \u2014 retry after 1s",
+        "type": "rate_limit_exceeded"
+      }
+    }
+  },
+  "success": false,
+  "error": {
+    "type": "HTTPError",
+    "message": "HTTP 429: {\"error\": {\"code\": \"rate_limit_exceeded\", \"message\": \"output_tokens rate limit exceeded \\u2014 retry after 1s\", \"type\": \"rate_limit_exceeded\"}}"
+  },
+  "request_sent": true,
+  "total_latency_seconds": 0.07386520900763571,
+  "metrics": {
+    "ttft_seconds": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "No generated content received.",
+      "unit": "s"
+    },
+    "total_latency_seconds": {
+      "value": 0.07386520900763571,
+      "source": "measured",
+      "reason": null,
+      "unit": "s"
+    },
+    "output_tokens_per_second": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Requires a successful stream, usage, and a positive generation interval.",
+      "unit": "tokens/s",
+      "note": "Completion tokens divided by first-to-last content/reasoning chunk interval; chunk buffering can inflate this estimate."
+    },
+    "input_tokens": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Not supplied by provider.",
+      "unit": "tokens"
+    },
+    "output_tokens": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Not supplied by provider.",
+      "unit": "tokens",
+      "note": "Provider completion_tokens retained as total output; reasoning detail is a subset, never added again. Separate reasoning counts may be unavailable."
+    },
+    "reasoning_tokens": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Not supplied by provider.",
+      "unit": "tokens"
+    },
+    "input_price_per_1m": {
+      "value": 0.15,
+      "source": "provider-reported",
+      "reason": null,
+      "unit": "USD/1M tokens"
+    },
+    "output_price_per_1m": {
+      "value": 2.0,
+      "source": "provider-reported",
+      "reason": null,
+      "unit": "USD/1M tokens"
+    },
+    "input_cost": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Usage or verified pricing unavailable.",
+      "unit": "USD"
+    },
+    "output_cost": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Usage or verified pricing unavailable.",
+      "unit": "USD"
+    },
+    "request_cost": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Usage or verified pricing unavailable.",
+      "unit": "USD",
+      "note": "Published standard direct-consumer rates with $0.0001 minimum; service accounts and custom rates may differ."
+    },
+    "success": {
+      "value": false,
+      "source": "measured",
+      "reason": null,
+      "unit": null
+    },
+    "http_status": {
+      "value": 429,
+      "source": "provider-reported",
+      "reason": null,
+      "unit": null
+    },
+    "error_type": {
+      "value": "HTTPError",
+      "source": "measured",
+      "reason": null,
+      "unit": null
+    },
+    "error_message": {
+      "value": "HTTP 429: {\"error\": {\"code\": \"rate_limit_exceeded\", \"message\": \"output_tokens rate limit exceeded \\u2014 retry after 1s\", \"type\": \"rate_limit_exceeded\"}}",
+      "source": "measured",
+      "reason": null,
+      "unit": null
+    }
+  },
+  "metadata": {
+    "provider": {
+      "value": "darkbloom",
+      "source": "configured",
+      "reason": null,
+      "unit": null
+    },
+    "model": {
+      "value": "qwen/qwen3.8-27b",
+      "source": "configured",
+      "reason": null,
+      "unit": null
+    },
+    "provider_model_id": {
+      "value": "EigenLabs/Qwen3.8-27B-4bit-mtp",
+      "source": "configured",
+      "reason": null,
+      "unit": null
+    },
+    "returned_model_id": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Not supplied by provider.",
+      "unit": null
+    },
+    "pricing": {
+      "value": {
+        "provider_model_id": "EigenLabs/Qwen3.8-27B-4bit-mtp",
+        "input_per_1m_tokens": 0.15,
+        "output_per_1m_tokens": 2.0,
+        "context_window": null,
+        "quantization": "4bit (model ID)",
+        "source": "https://api.darkbloom.dev/v1/pricing",
+        "checked_at": "2026-09-15",
+        "cost_basis": "Published standard direct-consumer rates with $0.0001 minimum; service accounts and custom rates may differ.",
+        "minimum_request_cost_usd": 0.0001,
+        "billing_source": "https://github.com/Layr-Labs/d-inference/blob/master/docs/reference/pricing-model.md"
+      },
+      "source": "provider-reported",
+      "reason": null,
+      "unit": null
+    },
+    "rate_limits": {
+      "value": {
+        "retry-after": "1",
+        "x-ratelimit-limit-input-tokens": "5000000",
+        "x-ratelimit-limit-output-tokens": "500000",
+        "x-ratelimit-limit-requests": "1200",
+        "x-ratelimit-remaining-input-tokens": "1000000",
+        "x-ratelimit-remaining-output-tokens": "30575",
+        "x-ratelimit-remaining-requests": "119",
+        "x-ratelimit-reset-input-tokens": "0s",
+        "x-ratelimit-reset-output-tokens": "5s",
+        "x-ratelimit-reset-requests": "1s"
+      },
+      "source": "provider-reported",
+      "reason": null,
+      "unit": null
+    },
+    "region": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Not supplied by provider.",
+      "unit": null
+    },
+    "version": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Not supplied by provider.",
+      "unit": null
+    },
+    "context_window": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Not supplied by provider.",
+      "unit": "tokens"
+    },
+    "quantization": {
+      "value": "4bit (model ID)",
+      "source": "provider-reported",
+      "reason": null,
+      "unit": null
+    }
+  },
+  "validation": {
+    "passed": false,
+    "expected": "Successful control request",
+    "http_status": 429,
+    "error_type": "HTTPError",
+    "record_complete": true,
+    "case": "mixed",
+    "exclude_from_benchmark": true
+  }
+}

@@ -1,0 +1,271 @@
+{
+  "provider": "chutes",
+  "model": "qwen/qwen3.8-27b",
+  "provider_model_id": "Qwen/Qwen3.8-27B-TEE",
+  "timestamp": "2026-09-15T13:58:20.759979+00:00",
+  "request": {
+    "url": "https://llm.chutes.ai/v1/chat/completions",
+    "headers": {
+      "Authorization": "Bearer <redacted>",
+      "Content-Type": "application/json"
+    },
+    "json": {
+      "model": "Qwen/Qwen3.8-27B-TEE",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Reply with exactly: hello"
+        }
+      ],
+      "temperature": 0,
+      "stream": false
+    }
+  },
+  "response": {
+    "status_code": 200,
+    "headers": {
+      "server": "nginx",
+      "date": "Tue, 15 Sep 2026 13:58:23 GMT",
+      "content-type": "application/json",
+      "Content-Length": "852",
+      "vary": "Accept-Encoding",
+      "x-chutes-invocationid": "44b86378-1f61-453b-8edd-9dcf4d87a72a",
+      "x-chutes-quota-total": "0",
+      "x-chutes-quota-used": "0",
+      "x-chutes-quota-remaining": "0",
+      "x-chutes-rl-user": "60",
+      "strict-transport-security": "max-age=31536000; includeSubDomains",
+      "access-control-allow-origin": "*",
+      "access-control-allow-methods": "GET, POST, OPTIONS, PUT, DELETE, PATCH",
+      "access-control-allow-headers": "*, Authorization",
+      "access-control-expose-headers": "X-Chutes-Quota-Total,X-Chutes-Quota-Used,X-Chutes-Quota-Remaining,X-Chutes-RL-User,X-Chutes-RL-Chute,X-Chutes-InvocationID,DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization,X-Enable-Thinking,X-Provider,X-Provider-Version,X-Title,Content-Type,Authorization,Content-Type,Cache-Control,X-Chute-Id,X-Instance-Id,X-E2E-Nonce,X-E2E-Stream,X-E2E-Path",
+      "access-control-max-age": "1728000",
+      "via": "1.1 google",
+      "Alt-Svc": "clear",
+      "Connection": "close"
+    },
+    "body": {
+      "id": "chatcmpl-b3fbf2ec3b8e127b",
+      "object": "chat.completion",
+      "created": 1789480702,
+      "model": "Qwen/Qwen3.8-27B-TEE",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "\n\nhello",
+            "refusal": null,
+            "annotations": null,
+            "audio": null,
+            "function_call": null,
+            "reasoning": "We need to respond exactly \"hello\". User says: \"Reply with exactly: hello\". Need final only hello.\n"
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null,
+          "token_ids": null,
+          "routed_experts": null
+        }
+      ],
+      "service_tier": null,
+      "system_fingerprint": "vllm-0.1.dev19754+g3a0914114-37d8eef1",
+      "usage": {
+        "prompt_tokens": 57,
+        "total_tokens": 85,
+        "completion_tokens": 28,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "created_cache_tokens": 0,
+          "multimodal_tokens": null
+        }
+      },
+      "prompt_logprobs": null,
+      "prompt_token_ids": null,
+      "prompt_text": null,
+      "kv_transfer_params": null,
+      "ec_transfer_params": null,
+      "metrics": null
+    }
+  },
+  "success": true,
+  "error": null,
+  "request_sent": true,
+  "total_latency_seconds": 2.7253491249866784,
+  "metrics": {
+    "ttft_seconds": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Non-streaming does not expose first-token arrival.",
+      "unit": "s"
+    },
+    "total_latency_seconds": {
+      "value": 2.7253491249866784,
+      "source": "measured",
+      "reason": null,
+      "unit": "s"
+    },
+    "output_tokens_per_second": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Requires a successful stream, usage, and a positive generation interval.",
+      "unit": "tokens/s",
+      "note": "Completion tokens divided by first-to-last content/reasoning chunk interval; chunk buffering can inflate this estimate."
+    },
+    "input_tokens": {
+      "value": 57,
+      "source": "provider-reported",
+      "reason": null,
+      "unit": "tokens"
+    },
+    "output_tokens": {
+      "value": 28,
+      "source": "provider-reported",
+      "reason": null,
+      "unit": "tokens",
+      "note": "Provider completion_tokens retained as total output; reasoning detail is a subset, never added again. Separate reasoning counts may be unavailable."
+    },
+    "reasoning_tokens": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Not supplied by provider.",
+      "unit": "tokens"
+    },
+    "input_price_per_1m": {
+      "value": 0.32,
+      "source": "provider-reported",
+      "reason": null,
+      "unit": "USD/1M tokens"
+    },
+    "output_price_per_1m": {
+      "value": 2.5,
+      "source": "provider-reported",
+      "reason": null,
+      "unit": "USD/1M tokens"
+    },
+    "input_cost": {
+      "value": 1.824e-05,
+      "source": "estimated",
+      "reason": null,
+      "unit": "USD"
+    },
+    "output_cost": {
+      "value": 7e-05,
+      "source": "estimated",
+      "reason": null,
+      "unit": "USD"
+    },
+    "request_cost": {
+      "value": 8.824e-05,
+      "source": "estimated",
+      "reason": null,
+      "unit": "USD",
+      "note": "Published token rates; excludes account discounts and non-token charges."
+    },
+    "success": {
+      "value": true,
+      "source": "measured",
+      "reason": null,
+      "unit": null
+    },
+    "http_status": {
+      "value": 200,
+      "source": "provider-reported",
+      "reason": null,
+      "unit": null
+    },
+    "error_type": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "No error.",
+      "unit": null
+    },
+    "error_message": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "No error.",
+      "unit": null
+    }
+  },
+  "metadata": {
+    "provider": {
+      "value": "chutes",
+      "source": "configured",
+      "reason": null,
+      "unit": null
+    },
+    "model": {
+      "value": "qwen/qwen3.8-27b",
+      "source": "configured",
+      "reason": null,
+      "unit": null
+    },
+    "provider_model_id": {
+      "value": "Qwen/Qwen3.8-27B-TEE",
+      "source": "configured",
+      "reason": null,
+      "unit": null
+    },
+    "returned_model_id": {
+      "value": "Qwen/Qwen3.8-27B-TEE",
+      "source": "provider-reported",
+      "reason": null,
+      "unit": null
+    },
+    "pricing": {
+      "value": {
+        "provider_model_id": "Qwen/Qwen3.8-27B-TEE",
+        "input_per_1m_tokens": 0.32,
+        "output_per_1m_tokens": 2.5,
+        "context_window": 262144,
+        "quantization": "fp8",
+        "source": "https://llm.chutes.ai/v1/models",
+        "checked_at": "2026-09-15",
+        "cost_basis": "Published token rates; excludes account discounts and non-token charges.",
+        "cache_input_per_1m_tokens": 0.032
+      },
+      "source": "provider-reported",
+      "reason": null,
+      "unit": null
+    },
+    "rate_limits": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Not supplied by provider.",
+      "unit": null
+    },
+    "region": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Not supplied by provider.",
+      "unit": null
+    },
+    "version": {
+      "value": "vllm-0.1.dev19754+g3a0914114-37d8eef1",
+      "source": "provider-reported",
+      "reason": null,
+      "unit": null
+    },
+    "context_window": {
+      "value": 262144,
+      "source": "provider-reported",
+      "reason": null,
+      "unit": "tokens"
+    },
+    "quantization": {
+      "value": "fp8",
+      "source": "provider-reported",
+      "reason": null,
+      "unit": null
+    }
+  },
+  "validation": {
+    "passed": true,
+    "expected": "Successful control request",
+    "http_status": 200,
+    "error_type": null,
+    "record_complete": true,
+    "case": "mixed",
+    "exclude_from_benchmark": true
+  }
+}

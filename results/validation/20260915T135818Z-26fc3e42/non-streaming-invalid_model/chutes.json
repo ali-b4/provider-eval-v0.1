@@ -1,0 +1,224 @@
+{
+  "provider": "chutes",
+  "model": "qwen/qwen3.8-27b",
+  "provider_model_id": "provider-eval-nonexistent-model",
+  "timestamp": "2026-09-15T13:58:18.350265+00:00",
+  "request": {
+    "url": "https://llm.chutes.ai/v1/chat/completions",
+    "headers": {
+      "Authorization": "Bearer <redacted>",
+      "Content-Type": "application/json"
+    },
+    "json": {
+      "model": "provider-eval-nonexistent-model",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Reply with exactly: hello"
+        }
+      ],
+      "temperature": 0,
+      "stream": false
+    }
+  },
+  "response": {
+    "status_code": 404,
+    "headers": {
+      "server": "nginx",
+      "date": "Tue, 15 Sep 2026 13:58:18 GMT",
+      "content-type": "application/json",
+      "Content-Length": "61",
+      "vary": "Accept-Encoding",
+      "strict-transport-security": "max-age=31536000; includeSubDomains",
+      "access-control-allow-origin": "*",
+      "access-control-allow-methods": "GET, POST, OPTIONS, PUT, DELETE, PATCH",
+      "access-control-allow-headers": "*, Authorization",
+      "access-control-expose-headers": "X-Chutes-Quota-Total,X-Chutes-Quota-Used,X-Chutes-Quota-Remaining,X-Chutes-RL-User,X-Chutes-RL-Chute,X-Chutes-InvocationID,DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization,X-Enable-Thinking,X-Provider,X-Provider-Version,X-Title,Content-Type,Authorization,Content-Type,Cache-Control,X-Chute-Id,X-Instance-Id,X-E2E-Nonce,X-E2E-Stream,X-E2E-Path",
+      "access-control-max-age": "1728000",
+      "via": "1.1 google",
+      "Alt-Svc": "clear",
+      "Connection": "close"
+    },
+    "body": {
+      "detail": "model not found: provider-eval-nonexistent-model"
+    }
+  },
+  "success": false,
+  "error": {
+    "type": "HTTPError",
+    "message": "HTTP 404: {\"detail\": \"model not found: provider-eval-nonexistent-model\"}"
+  },
+  "request_sent": true,
+  "diagnostic": {
+    "case": "invalid_model",
+    "timeout_seconds": 45,
+    "exclude_from_benchmark": true
+  },
+  "total_latency_seconds": 0.45647624996490777,
+  "metrics": {
+    "ttft_seconds": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Non-streaming does not expose first-token arrival.",
+      "unit": "s"
+    },
+    "total_latency_seconds": {
+      "value": 0.45647624996490777,
+      "source": "measured",
+      "reason": null,
+      "unit": "s"
+    },
+    "output_tokens_per_second": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Requires a successful stream, usage, and a positive generation interval.",
+      "unit": "tokens/s",
+      "note": "Completion tokens divided by first-to-last content/reasoning chunk interval; chunk buffering can inflate this estimate."
+    },
+    "input_tokens": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Not supplied by provider.",
+      "unit": "tokens"
+    },
+    "output_tokens": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Not supplied by provider.",
+      "unit": "tokens",
+      "note": "Provider completion_tokens retained as total output; reasoning detail is a subset, never added again. Separate reasoning counts may be unavailable."
+    },
+    "reasoning_tokens": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Not supplied by provider.",
+      "unit": "tokens"
+    },
+    "input_price_per_1m": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "No verified price for this model.",
+      "unit": "USD/1M tokens"
+    },
+    "output_price_per_1m": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "No verified price for this model.",
+      "unit": "USD/1M tokens"
+    },
+    "input_cost": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Usage or verified pricing unavailable.",
+      "unit": "USD"
+    },
+    "output_cost": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Usage or verified pricing unavailable.",
+      "unit": "USD"
+    },
+    "request_cost": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Usage or verified pricing unavailable.",
+      "unit": "USD",
+      "note": null
+    },
+    "success": {
+      "value": false,
+      "source": "measured",
+      "reason": null,
+      "unit": null
+    },
+    "http_status": {
+      "value": 404,
+      "source": "provider-reported",
+      "reason": null,
+      "unit": null
+    },
+    "error_type": {
+      "value": "HTTPError",
+      "source": "measured",
+      "reason": null,
+      "unit": null
+    },
+    "error_message": {
+      "value": "HTTP 404: {\"detail\": \"model not found: provider-eval-nonexistent-model\"}",
+      "source": "measured",
+      "reason": null,
+      "unit": null
+    }
+  },
+  "metadata": {
+    "provider": {
+      "value": "chutes",
+      "source": "configured",
+      "reason": null,
+      "unit": null
+    },
+    "model": {
+      "value": "qwen/qwen3.8-27b",
+      "source": "configured",
+      "reason": null,
+      "unit": null
+    },
+    "provider_model_id": {
+      "value": "provider-eval-nonexistent-model",
+      "source": "configured",
+      "reason": null,
+      "unit": null
+    },
+    "returned_model_id": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Not supplied by provider.",
+      "unit": null
+    },
+    "pricing": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "No verified model pricing.",
+      "unit": null
+    },
+    "rate_limits": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Not supplied by provider.",
+      "unit": null
+    },
+    "region": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Not supplied by provider.",
+      "unit": null
+    },
+    "version": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Not supplied by provider.",
+      "unit": null
+    },
+    "context_window": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Not supplied by provider.",
+      "unit": "tokens"
+    },
+    "quantization": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Not supplied by provider.",
+      "unit": null
+    }
+  },
+  "validation": {
+    "passed": true,
+    "expected": "Invalid request rejected; inspect provider details",
+    "http_status": 404,
+    "error_type": "HTTPError",
+    "record_complete": true,
+    "case": "invalid_model",
+    "exclude_from_benchmark": true
+  }
+}

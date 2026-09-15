@@ -1,0 +1,252 @@
+{
+  "provider": "venice",
+  "model": "qwen/qwen3.8-27b",
+  "provider_model_id": "qwen-3-8-27b",
+  "timestamp": "2026-09-15T13:58:26.591549+00:00",
+  "request": {
+    "url": "https://api.venice.ai/api/v1/chat/completions",
+    "headers": {
+      "Authorization": "Bearer <redacted>",
+      "Content-Type": "application/json"
+    },
+    "json": {
+      "model": "qwen-3-8-27b",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Reply with exactly: hello"
+        }
+      ],
+      "temperature": 0,
+      "stream": true,
+      "stream_options": {
+        "include_usage": true
+      },
+      "venice_parameters": {
+        "include_venice_system_prompt": false
+      }
+    }
+  },
+  "response": {
+    "status_code": 401,
+    "headers": {
+      "Date": "Tue, 15 Sep 2026 13:58:26 GMT",
+      "Content-Type": "application/json; charset=utf-8",
+      "Content-Length": "33",
+      "Connection": "close",
+      "content-security-policy": "default-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests",
+      "access-control-allow-origin": "*",
+      "access-control-expose-headers": "*",
+      "Cache-Control": "no-store, no-cache, private, must-revalidate",
+      "cdn-cache-control": "no-store",
+      "x-ratelimit-resets": "1789480728192",
+      "x-ratelimit-remaining": "44",
+      "etag": "W/\"21-4c+cq0f+0nYvCps40lzZMJn3sis\"",
+      "vary": "Accept-Encoding",
+      "x-cloud-trace-context": "f0f15ae1c11ee44a45f35d2710b229b7",
+      "Server": "cloudflare",
+      "cf-cache-status": "DYNAMIC",
+      "set-cookie": "__cf_bm=F.mkQy71NZyGTvPweMjQTULiHHz2Z444Mli_5Vg6ZPI-1789480706.6890693-1.0.1.1-1GWpMlMkv.YCD5uC393uBYj1bd5z2A7djqd_Bj2XRTtz5eEGVj2xxVBRYVYBEDMJoq2jM9Ypjf_1rruNMKsw3.UvfTxyOP0SuvlgdTXiNQfLb9c3nv8KUpv6YUobXhuT; HttpOnly; SameSite=None; Secure; Path=/; Domain=venice.ai; Expires=Tue, 15 Sep 2026 14:28:26 GMT",
+      "Permissions-Policy": "geolocation=(), camera=()",
+      "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload",
+      "X-Content-Type-Options": "nosniff",
+      "Server-Timing": "cfCacheStatus;desc=\"DYNAMIC\"",
+      "Referrer-Policy": "strict-origin",
+      "X-Frame-Options": "SAMEORIGIN",
+      "CF-RAY": "a3b82570caebc999-IAD"
+    },
+    "body": {
+      "error": "Authentication failed"
+    }
+  },
+  "success": false,
+  "error": {
+    "type": "HTTPError",
+    "message": "HTTP 401: {\"error\": \"Authentication failed\"}"
+  },
+  "request_sent": true,
+  "diagnostic": {
+    "case": "invalid_auth",
+    "timeout_seconds": 45,
+    "exclude_from_benchmark": true
+  },
+  "total_latency_seconds": 0.10270400007721037,
+  "metrics": {
+    "ttft_seconds": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "No generated content received.",
+      "unit": "s"
+    },
+    "total_latency_seconds": {
+      "value": 0.10270400007721037,
+      "source": "measured",
+      "reason": null,
+      "unit": "s"
+    },
+    "output_tokens_per_second": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Requires a successful stream, usage, and a positive generation interval.",
+      "unit": "tokens/s",
+      "note": "Completion tokens divided by first-to-last content/reasoning chunk interval; chunk buffering can inflate this estimate."
+    },
+    "input_tokens": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Not supplied by provider.",
+      "unit": "tokens"
+    },
+    "output_tokens": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Not supplied by provider.",
+      "unit": "tokens",
+      "note": "Provider completion_tokens retained as total output; reasoning detail is a subset, never added again. Separate reasoning counts may be unavailable."
+    },
+    "reasoning_tokens": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Not supplied by provider.",
+      "unit": "tokens"
+    },
+    "input_price_per_1m": {
+      "value": 0.45,
+      "source": "provider-reported",
+      "reason": null,
+      "unit": "USD/1M tokens"
+    },
+    "output_price_per_1m": {
+      "value": 3.2,
+      "source": "provider-reported",
+      "reason": null,
+      "unit": "USD/1M tokens"
+    },
+    "input_cost": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Usage or verified pricing unavailable.",
+      "unit": "USD"
+    },
+    "output_cost": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Usage or verified pricing unavailable.",
+      "unit": "USD"
+    },
+    "request_cost": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Usage or verified pricing unavailable.",
+      "unit": "USD",
+      "note": "Published token rates; excludes account discounts and non-token charges."
+    },
+    "success": {
+      "value": false,
+      "source": "measured",
+      "reason": null,
+      "unit": null
+    },
+    "http_status": {
+      "value": 401,
+      "source": "provider-reported",
+      "reason": null,
+      "unit": null
+    },
+    "error_type": {
+      "value": "HTTPError",
+      "source": "measured",
+      "reason": null,
+      "unit": null
+    },
+    "error_message": {
+      "value": "HTTP 401: {\"error\": \"Authentication failed\"}",
+      "source": "measured",
+      "reason": null,
+      "unit": null
+    }
+  },
+  "metadata": {
+    "provider": {
+      "value": "venice",
+      "source": "configured",
+      "reason": null,
+      "unit": null
+    },
+    "model": {
+      "value": "qwen/qwen3.8-27b",
+      "source": "configured",
+      "reason": null,
+      "unit": null
+    },
+    "provider_model_id": {
+      "value": "qwen-3-8-27b",
+      "source": "configured",
+      "reason": null,
+      "unit": null
+    },
+    "returned_model_id": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Not supplied by provider.",
+      "unit": null
+    },
+    "pricing": {
+      "value": {
+        "provider_model_id": "qwen-3-8-27b",
+        "input_per_1m_tokens": 0.45,
+        "output_per_1m_tokens": 3.2,
+        "context_window": 262144,
+        "quantization": "fp8",
+        "source": "https://api.venice.ai/api/v1/models",
+        "checked_at": "2026-09-15",
+        "cost_basis": "Published token rates; excludes account discounts and non-token charges."
+      },
+      "source": "provider-reported",
+      "reason": null,
+      "unit": null
+    },
+    "rate_limits": {
+      "value": {
+        "x-ratelimit-resets": "1789480728192",
+        "x-ratelimit-remaining": "44"
+      },
+      "source": "provider-reported",
+      "reason": null,
+      "unit": null
+    },
+    "region": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Not supplied by provider.",
+      "unit": null
+    },
+    "version": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Not supplied by provider.",
+      "unit": null
+    },
+    "context_window": {
+      "value": 262144,
+      "source": "provider-reported",
+      "reason": null,
+      "unit": "tokens"
+    },
+    "quantization": {
+      "value": "fp8",
+      "source": "provider-reported",
+      "reason": null,
+      "unit": null
+    }
+  },
+  "validation": {
+    "passed": true,
+    "expected": "Authentication rejected",
+    "http_status": 401,
+    "error_type": "HTTPError",
+    "record_complete": true,
+    "case": "mixed",
+    "exclude_from_benchmark": true
+  }
+}

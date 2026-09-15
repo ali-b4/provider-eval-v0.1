@@ -1,0 +1,285 @@
+{
+  "provider": "venice",
+  "model": "qwen/qwen3.8-27b",
+  "provider_model_id": "qwen-3-8-27b",
+  "timestamp": "2026-09-15T13:58:24.034849+00:00",
+  "request": {
+    "url": "https://api.venice.ai/api/v1/chat/completions",
+    "headers": {
+      "Authorization": "Bearer <redacted>",
+      "Content-Type": "application/json"
+    },
+    "json": {
+      "model": "qwen-3-8-27b",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Reply with exactly: hello"
+        }
+      ],
+      "temperature": "provider-eval-invalid-number",
+      "stream": true,
+      "stream_options": {
+        "include_usage": true
+      },
+      "venice_parameters": {
+        "include_venice_system_prompt": false
+      }
+    }
+  },
+  "response": {
+    "status_code": 400,
+    "headers": {
+      "Date": "Tue, 15 Sep 2026 13:58:24 GMT",
+      "Content-Type": "application/json; charset=utf-8",
+      "Content-Length": "269",
+      "Connection": "close",
+      "content-security-policy": "default-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests",
+      "access-control-allow-origin": "*",
+      "access-control-expose-headers": "*",
+      "Cache-Control": "no-store, no-cache, private, must-revalidate",
+      "cdn-cache-control": "no-store",
+      "x-venice-version": "outerface-api-server-us-east1-06309-mnq",
+      "x-venice-balance-usd": "9.99635657",
+      "x-ratelimit-limit-requests": "100",
+      "x-ratelimit-remaining-requests": "98",
+      "x-ratelimit-reset-requests": "1789480764162",
+      "x-ratelimit-limit-tokens": "2000000",
+      "x-ratelimit-remaining-tokens": "2000000",
+      "x-ratelimit-reset-tokens": "1789480764163",
+      "x-ratelimit-resets": "1789480728958",
+      "x-ratelimit-remaining": "48",
+      "etag": "W/\"10d-g1Y1DrXF7nf8kpDqHGnGx99n7CQ\"",
+      "vary": "Accept-Encoding",
+      "x-cloud-trace-context": "4ba9f7ff67a8ce07a63d6ef06bc58ca4",
+      "Server": "cloudflare",
+      "cf-cache-status": "DYNAMIC",
+      "set-cookie": "__cf_bm=J3GXyA_vFkrGaxT7fjL7WAO9DM5b5IwGFCOCY7ngv_M-1789480704.1271365-1.0.1.1-CnTiYRErf9r9piU94eRzNc_a4FzwA9W7Bba4KvuLdBtJZthhl.LoU98stdM9n81hdGpSPqvhYVwWjuWTGM4h6BgBViUizxd5YxOsXOs7KWqYyBmpVcLvhFuWGMoGmGlk; HttpOnly; SameSite=None; Secure; Path=/; Domain=venice.ai; Expires=Tue, 15 Sep 2026 14:28:24 GMT",
+      "Permissions-Policy": "geolocation=(), camera=()",
+      "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload",
+      "X-Content-Type-Options": "nosniff",
+      "Server-Timing": "cfCacheStatus;desc=\"DYNAMIC\"",
+      "Referrer-Policy": "strict-origin",
+      "X-Frame-Options": "SAMEORIGIN",
+      "CF-RAY": "a3b82560cc56e631-IAD"
+    },
+    "body": {
+      "details": {
+        "_errors": [],
+        "temperature": {
+          "_errors": [
+            "Expected number, received string"
+          ]
+        }
+      },
+      "error": "Invalid request parameters",
+      "issues": [
+        {
+          "code": "invalid_type",
+          "expected": "number",
+          "received": "string",
+          "path": [
+            "temperature"
+          ],
+          "message": "Expected number, received string"
+        }
+      ]
+    }
+  },
+  "success": false,
+  "error": {
+    "type": "HTTPError",
+    "message": "HTTP 400: {\"details\": {\"_errors\": [], \"temperature\": {\"_errors\": [\"Expected number, received string\"]}}, \"error\": \"Invalid request parameters\", \"issues\": [{\"code\": \"invalid_type\", \"expected\": \"number\", \"received\": \"string\", \"path\": [\"temperature\"], \"message\": \"Expected number, received string\"}]}"
+  },
+  "request_sent": true,
+  "diagnostic": {
+    "case": "invalid_parameter",
+    "timeout_seconds": 45,
+    "exclude_from_benchmark": true
+  },
+  "total_latency_seconds": 0.10844141594134271,
+  "metrics": {
+    "ttft_seconds": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "No generated content received.",
+      "unit": "s"
+    },
+    "total_latency_seconds": {
+      "value": 0.10844141594134271,
+      "source": "measured",
+      "reason": null,
+      "unit": "s"
+    },
+    "output_tokens_per_second": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Requires a successful stream, usage, and a positive generation interval.",
+      "unit": "tokens/s",
+      "note": "Completion tokens divided by first-to-last content/reasoning chunk interval; chunk buffering can inflate this estimate."
+    },
+    "input_tokens": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Not supplied by provider.",
+      "unit": "tokens"
+    },
+    "output_tokens": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Not supplied by provider.",
+      "unit": "tokens",
+      "note": "Provider completion_tokens retained as total output; reasoning detail is a subset, never added again. Separate reasoning counts may be unavailable."
+    },
+    "reasoning_tokens": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Not supplied by provider.",
+      "unit": "tokens"
+    },
+    "input_price_per_1m": {
+      "value": 0.45,
+      "source": "provider-reported",
+      "reason": null,
+      "unit": "USD/1M tokens"
+    },
+    "output_price_per_1m": {
+      "value": 3.2,
+      "source": "provider-reported",
+      "reason": null,
+      "unit": "USD/1M tokens"
+    },
+    "input_cost": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Usage or verified pricing unavailable.",
+      "unit": "USD"
+    },
+    "output_cost": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Usage or verified pricing unavailable.",
+      "unit": "USD"
+    },
+    "request_cost": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Usage or verified pricing unavailable.",
+      "unit": "USD",
+      "note": "Published token rates; excludes account discounts and non-token charges."
+    },
+    "success": {
+      "value": false,
+      "source": "measured",
+      "reason": null,
+      "unit": null
+    },
+    "http_status": {
+      "value": 400,
+      "source": "provider-reported",
+      "reason": null,
+      "unit": null
+    },
+    "error_type": {
+      "value": "HTTPError",
+      "source": "measured",
+      "reason": null,
+      "unit": null
+    },
+    "error_message": {
+      "value": "HTTP 400: {\"details\": {\"_errors\": [], \"temperature\": {\"_errors\": [\"Expected number, received string\"]}}, \"error\": \"Invalid request parameters\", \"issues\": [{\"code\": \"invalid_type\", \"expected\": \"number\", \"received\": \"string\", \"path\": [\"temperature\"], \"message\": \"Expected number, received string\"}]}",
+      "source": "measured",
+      "reason": null,
+      "unit": null
+    }
+  },
+  "metadata": {
+    "provider": {
+      "value": "venice",
+      "source": "configured",
+      "reason": null,
+      "unit": null
+    },
+    "model": {
+      "value": "qwen/qwen3.8-27b",
+      "source": "configured",
+      "reason": null,
+      "unit": null
+    },
+    "provider_model_id": {
+      "value": "qwen-3-8-27b",
+      "source": "configured",
+      "reason": null,
+      "unit": null
+    },
+    "returned_model_id": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Not supplied by provider.",
+      "unit": null
+    },
+    "pricing": {
+      "value": {
+        "provider_model_id": "qwen-3-8-27b",
+        "input_per_1m_tokens": 0.45,
+        "output_per_1m_tokens": 3.2,
+        "context_window": 262144,
+        "quantization": "fp8",
+        "source": "https://api.venice.ai/api/v1/models",
+        "checked_at": "2026-09-15",
+        "cost_basis": "Published token rates; excludes account discounts and non-token charges."
+      },
+      "source": "provider-reported",
+      "reason": null,
+      "unit": null
+    },
+    "rate_limits": {
+      "value": {
+        "x-ratelimit-limit-requests": "100",
+        "x-ratelimit-remaining-requests": "98",
+        "x-ratelimit-reset-requests": "1789480764162",
+        "x-ratelimit-limit-tokens": "2000000",
+        "x-ratelimit-remaining-tokens": "2000000",
+        "x-ratelimit-reset-tokens": "1789480764163",
+        "x-ratelimit-resets": "1789480728958",
+        "x-ratelimit-remaining": "48"
+      },
+      "source": "provider-reported",
+      "reason": null,
+      "unit": null
+    },
+    "region": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Not supplied by provider.",
+      "unit": null
+    },
+    "version": {
+      "value": "outerface-api-server-us-east1-06309-mnq",
+      "source": "provider-reported",
+      "reason": null,
+      "unit": null
+    },
+    "context_window": {
+      "value": 262144,
+      "source": "provider-reported",
+      "reason": null,
+      "unit": "tokens"
+    },
+    "quantization": {
+      "value": "fp8",
+      "source": "provider-reported",
+      "reason": null,
+      "unit": null
+    }
+  },
+  "validation": {
+    "passed": true,
+    "expected": "Invalid request rejected; inspect provider details",
+    "http_status": 400,
+    "error_type": "HTTPError",
+    "record_complete": true,
+    "case": "invalid_parameter",
+    "exclude_from_benchmark": true
+  }
+}

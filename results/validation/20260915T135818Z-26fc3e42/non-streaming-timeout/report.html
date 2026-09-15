@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Provider request comparison</title><style>
+*{box-sizing:border-box}body{margin:0;background:#f4f6f8;color:#182434;font:15px system-ui,sans-serif}
+header{padding:20px 24px;border-bottom:1px solid #dbe1e8}header strong{font-size:22px}header p{margin-bottom:0;color:#536275}
+main{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;padding:18px;min-width:1200px}
+section{display:flex;flex-direction:column;background:white;border:1px solid #dbe1e8;border-radius:10px;padding:18px;min-width:0}
+h1{font-size:21px;margin:0}h2,summary{font-size:14px;font-weight:600}summary{cursor:pointer;padding:12px 0}
+pre{font:12px/1.6 ui-monospace,monospace;white-space:pre-wrap;overflow-wrap:anywhere;background:#f5f7fa;border-radius:6px;padding:12px;max-height:65vh;overflow:auto}
+table{border-collapse:collapse;width:100%;font-size:12px}th,td{text-align:left;vertical-align:top;padding:8px;border-bottom:1px solid #e4e8ed;overflow-wrap:anywhere}th{width:40%}small{display:block;color:#536275;margin-top:4px}.metrics{max-height:65vh;overflow:auto}.model{min-height:32px;color:#536275;overflow-wrap:anywhere;font-size:12px}.ok{color:#087345}.failed{color:#b42318}
+</style></head><body><header><strong>Provider request comparison</strong>
+<p>non-streaming-timeout · Streaming mode is recorded in Request JSON. Elapsed time includes the full request. Expand Metrics for measurements, sources, and unavailable reasons.</p>
+</header><main><section><h1>Venice</h1><p class="failed">Failed · No HTTP response · 0.005710541037842631s</p><p class="model">qwen-3-8-27b</p><details class="metrics"><summary>Metrics</summary><table><tr><th>Time to first token</th><td>Unavailable s<small>Non-streaming does not expose first-token arrival.</small></td></tr><tr><th>Total latency</th><td>0.005710541 s<small>measured</small></td></tr><tr><th>Output throughput</th><td>Unavailable tokens/s<small>Requires a successful stream, usage, and a positive generation interval.. Completion tokens divided by first-to-last content/reasoning chunk interval; chunk buffering can inflate this estimate.</small></td></tr><tr><th>Input tokens</th><td>Unavailable tokens<small>Not supplied by provider.</small></td></tr><tr><th>Output tokens</th><td>Unavailable tokens<small>Not supplied by provider.. Provider completion_tokens retained as total output; reasoning detail is a subset, never added again. Separate reasoning counts may be unavailable.</small></td></tr><tr><th>Reasoning tokens</th><td>Unavailable tokens<small>Not supplied by provider.</small></td></tr><tr><th>Input price</th><td>0.45 USD/1M tokens<small>provider-reported</small></td></tr><tr><th>Output price</th><td>3.2 USD/1M tokens<small>provider-reported</small></td></tr><tr><th>Input cost</th><td>Unavailable USD<small>Usage or verified pricing unavailable.</small></td></tr><tr><th>Output cost</th><td>Unavailable USD<small>Usage or verified pricing unavailable.</small></td></tr><tr><th>Request cost</th><td>Unavailable USD<small>Usage or verified pricing unavailable.. Published token rates; excludes account discounts and non-token charges.</small></td></tr><tr><th>Success</th><td>False <small>measured</small></td></tr><tr><th>Http status</th><td>Unavailable <small>Not supplied by provider.</small></td></tr><tr><th>Error type</th><td>URLError <small>measured</small></td></tr><tr><th>Error message</th><td>&lt;urlopen error timed out&gt; <small>measured</small></td></tr><tr><th>Provider</th><td>venice <small>configured</small></td></tr><tr><th>Model</th><td>qwen/qwen3.8-27b <small>configured</small></td></tr><tr><th>Provider model id</th><td>qwen-3-8-27b <small>configured</small></td></tr><tr><th>Returned model id</th><td>Unavailable <small>Not supplied by provider.</small></td></tr><tr><th>Pricing</th><td>{&quot;provider_model_id&quot;: &quot;qwen-3-8-27b&quot;, &quot;input_per_1m_tokens&quot;: 0.45, &quot;output_per_1m_tokens&quot;: 3.2, &quot;context_window&quot;: 262144, &quot;quantization&quot;: &quot;fp8&quot;, &quot;source&quot;: &quot;https://api.venice.ai/api/v1/models&quot;, &quot;checked_at&quot;: &quot;2026-09-15&quot;, &quot;cost_basis&quot;: &quot;Published token rates; excludes account discounts and non-token charges.&quot;} <small>provider-reported</small></td></tr><tr><th>Rate limits</th><td>Unavailable <small>Not supplied by provider.</small></td></tr><tr><th>Region</th><td>Unavailable <small>Not supplied by provider.</small></td></tr><tr><th>Version</th><td>Unavailable <small>Not supplied by provider.</small></td></tr><tr><th>Context window</th><td>262144 tokens<small>provider-reported</small></td></tr><tr><th>Quantization</th><td>fp8 <small>provider-reported</small></td></tr></table></details><h2>Error</h2><pre>{
+  &quot;type&quot;: &quot;URLError&quot;,
+  &quot;message&quot;: &quot;&lt;urlopen error timed out&gt;&quot;
+}</pre><h2>Response JSON</h2><pre>null</pre><details><summary>Request JSON</summary><pre>{
+  &quot;url&quot;: &quot;https://api.venice.ai/api/v1/chat/completions&quot;,
+  &quot;headers&quot;: {
+    &quot;Authorization&quot;: &quot;Bearer &lt;redacted&gt;&quot;,
+    &quot;Content-Type&quot;: &quot;application/json&quot;
+  },
+  &quot;json&quot;: {
+    &quot;model&quot;: &quot;qwen-3-8-27b&quot;,
+    &quot;messages&quot;: [
+      {
+        &quot;role&quot;: &quot;user&quot;,
+        &quot;content&quot;: &quot;Reply with exactly: hello&quot;
+      }
+    ],
+    &quot;temperature&quot;: 0,
+    &quot;stream&quot;: false,
+    &quot;venice_parameters&quot;: {
+      &quot;include_venice_system_prompt&quot;: false
+    }
+  }
+}</pre></details></section><section><h1>Chutes</h1><p class="failed">Failed · No HTTP response · 0.004072584095411003s</p><p class="model">Qwen/Qwen3.8-27B-TEE</p><details class="metrics"><summary>Metrics</summary><table><tr><th>Time to first token</th><td>Unavailable s<small>Non-streaming does not expose first-token arrival.</small></td></tr><tr><th>Total latency</th><td>0.0040725841 s<small>measured</small></td></tr><tr><th>Output throughput</th><td>Unavailable tokens/s<small>Requires a successful stream, usage, and a positive generation interval.. Completion tokens divided by first-to-last content/reasoning chunk interval; chunk buffering can inflate this estimate.</small></td></tr><tr><th>Input tokens</th><td>Unavailable tokens<small>Not supplied by provider.</small></td></tr><tr><th>Output tokens</th><td>Unavailable tokens<small>Not supplied by provider.. Provider completion_tokens retained as total output; reasoning detail is a subset, never added again. Separate reasoning counts may be unavailable.</small></td></tr><tr><th>Reasoning tokens</th><td>Unavailable tokens<small>Not supplied by provider.</small></td></tr><tr><th>Input price</th><td>0.32 USD/1M tokens<small>provider-reported</small></td></tr><tr><th>Output price</th><td>2.5 USD/1M tokens<small>provider-reported</small></td></tr><tr><th>Input cost</th><td>Unavailable USD<small>Usage or verified pricing unavailable.</small></td></tr><tr><th>Output cost</th><td>Unavailable USD<small>Usage or verified pricing unavailable.</small></td></tr><tr><th>Request cost</th><td>Unavailable USD<small>Usage or verified pricing unavailable.. Published token rates; excludes account discounts and non-token charges.</small></td></tr><tr><th>Success</th><td>False <small>measured</small></td></tr><tr><th>Http status</th><td>Unavailable <small>Not supplied by provider.</small></td></tr><tr><th>Error type</th><td>URLError <small>measured</small></td></tr><tr><th>Error message</th><td>&lt;urlopen error timed out&gt; <small>measured</small></td></tr><tr><th>Provider</th><td>chutes <small>configured</small></td></tr><tr><th>Model</th><td>qwen/qwen3.8-27b <small>configured</small></td></tr><tr><th>Provider model id</th><td>Qwen/Qwen3.8-27B-TEE <small>configured</small></td></tr><tr><th>Returned model id</th><td>Unavailable <small>Not supplied by provider.</small></td></tr><tr><th>Pricing</th><td>{&quot;provider_model_id&quot;: &quot;Qwen/Qwen3.8-27B-TEE&quot;, &quot;input_per_1m_tokens&quot;: 0.32, &quot;output_per_1m_tokens&quot;: 2.5, &quot;context_window&quot;: 262144, &quot;quantization&quot;: &quot;fp8&quot;, &quot;source&quot;: &quot;https://llm.chutes.ai/v1/models&quot;, &quot;checked_at&quot;: &quot;2026-09-15&quot;, &quot;cost_basis&quot;: &quot;Published token rates; excludes account discounts and non-token charges.&quot;, &quot;cache_input_per_1m_tokens&quot;: 0.032} <small>provider-reported</small></td></tr><tr><th>Rate limits</th><td>Unavailable <small>Not supplied by provider.</small></td></tr><tr><th>Region</th><td>Unavailable <small>Not supplied by provider.</small></td></tr><tr><th>Version</th><td>Unavailable <small>Not supplied by provider.</small></td></tr><tr><th>Context window</th><td>262144 tokens<small>provider-reported</small></td></tr><tr><th>Quantization</th><td>fp8 <small>provider-reported</small></td></tr></table></details><h2>Error</h2><pre>{
+  &quot;type&quot;: &quot;URLError&quot;,
+  &quot;message&quot;: &quot;&lt;urlopen error timed out&gt;&quot;
+}</pre><h2>Response JSON</h2><pre>null</pre><details><summary>Request JSON</summary><pre>{
+  &quot;url&quot;: &quot;https://llm.chutes.ai/v1/chat/completions&quot;,
+  &quot;headers&quot;: {
+    &quot;Authorization&quot;: &quot;Bearer &lt;redacted&gt;&quot;,
+    &quot;Content-Type&quot;: &quot;application/json&quot;
+  },
+  &quot;json&quot;: {
+    &quot;model&quot;: &quot;Qwen/Qwen3.8-27B-TEE&quot;,
+    &quot;messages&quot;: [
+      {
+        &quot;role&quot;: &quot;user&quot;,
+        &quot;content&quot;: &quot;Reply with exactly: hello&quot;
+      }
+    ],
+    &quot;temperature&quot;: 0,
+    &quot;stream&quot;: false
+  }
+}</pre></details></section><section><h1>Darkbloom</h1><p class="failed">Failed · No HTTP response · 0.004030832904390991s</p><p class="model">EigenLabs/Qwen3.8-27B-4bit-mtp</p><details class="metrics"><summary>Metrics</summary><table><tr><th>Time to first token</th><td>Unavailable s<small>Non-streaming does not expose first-token arrival.</small></td></tr><tr><th>Total latency</th><td>0.0040308329 s<small>measured</small></td></tr><tr><th>Output throughput</th><td>Unavailable tokens/s<small>Requires a successful stream, usage, and a positive generation interval.. Completion tokens divided by first-to-last content/reasoning chunk interval; chunk buffering can inflate this estimate.</small></td></tr><tr><th>Input tokens</th><td>Unavailable tokens<small>Not supplied by provider.</small></td></tr><tr><th>Output tokens</th><td>Unavailable tokens<small>Not supplied by provider.. Provider completion_tokens retained as total output; reasoning detail is a subset, never added again. Separate reasoning counts may be unavailable.</small></td></tr><tr><th>Reasoning tokens</th><td>Unavailable tokens<small>Not supplied by provider.</small></td></tr><tr><th>Input price</th><td>0.15 USD/1M tokens<small>provider-reported</small></td></tr><tr><th>Output price</th><td>2 USD/1M tokens<small>provider-reported</small></td></tr><tr><th>Input cost</th><td>Unavailable USD<small>Usage or verified pricing unavailable.</small></td></tr><tr><th>Output cost</th><td>Unavailable USD<small>Usage or verified pricing unavailable.</small></td></tr><tr><th>Request cost</th><td>Unavailable USD<small>Usage or verified pricing unavailable.. Published standard direct-consumer rates with $0.0001 minimum; service accounts and custom rates may differ.</small></td></tr><tr><th>Success</th><td>False <small>measured</small></td></tr><tr><th>Http status</th><td>Unavailable <small>Not supplied by provider.</small></td></tr><tr><th>Error type</th><td>URLError <small>measured</small></td></tr><tr><th>Error message</th><td>&lt;urlopen error timed out&gt; <small>measured</small></td></tr><tr><th>Provider</th><td>darkbloom <small>configured</small></td></tr><tr><th>Model</th><td>qwen/qwen3.8-27b <small>configured</small></td></tr><tr><th>Provider model id</th><td>EigenLabs/Qwen3.8-27B-4bit-mtp <small>configured</small></td></tr><tr><th>Returned model id</th><td>Unavailable <small>Not supplied by provider.</small></td></tr><tr><th>Pricing</th><td>{&quot;provider_model_id&quot;: &quot;EigenLabs/Qwen3.8-27B-4bit-mtp&quot;, &quot;input_per_1m_tokens&quot;: 0.15, &quot;output_per_1m_tokens&quot;: 2.0, &quot;context_window&quot;: null, &quot;quantization&quot;: &quot;4bit (model ID)&quot;, &quot;source&quot;: &quot;https://api.darkbloom.dev/v1/pricing&quot;, &quot;checked_at&quot;: &quot;2026-09-15&quot;, &quot;cost_basis&quot;: &quot;Published standard direct-consumer rates with $0.0001 minimum; service accounts and custom rates may differ.&quot;, &quot;minimum_request_cost_usd&quot;: 0.0001, &quot;billing_source&quot;: &quot;https://github.com/Layr-Labs/d-inference/blob/master/docs/reference/pricing-model.md&quot;} <small>provider-reported</small></td></tr><tr><th>Rate limits</th><td>Unavailable <small>Not supplied by provider.</small></td></tr><tr><th>Region</th><td>Unavailable <small>Not supplied by provider.</small></td></tr><tr><th>Version</th><td>Unavailable <small>Not supplied by provider.</small></td></tr><tr><th>Context window</th><td>Unavailable tokens<small>Not supplied by provider.</small></td></tr><tr><th>Quantization</th><td>4bit (model ID) <small>provider-reported</small></td></tr></table></details><h2>Error</h2><pre>{
+  &quot;type&quot;: &quot;URLError&quot;,
+  &quot;message&quot;: &quot;&lt;urlopen error timed out&gt;&quot;
+}</pre><h2>Response JSON</h2><pre>null</pre><details><summary>Request JSON</summary><pre>{
+  &quot;url&quot;: &quot;https://api.darkbloom.dev/v1/chat/completions&quot;,
+  &quot;headers&quot;: {
+    &quot;Authorization&quot;: &quot;Bearer &lt;redacted&gt;&quot;,
+    &quot;Content-Type&quot;: &quot;application/json&quot;
+  },
+  &quot;json&quot;: {
+    &quot;model&quot;: &quot;EigenLabs/Qwen3.8-27B-4bit-mtp&quot;,
+    &quot;messages&quot;: [
+      {
+        &quot;role&quot;: &quot;user&quot;,
+        &quot;content&quot;: &quot;Reply with exactly: hello&quot;
+      }
+    ],
+    &quot;temperature&quot;: 0,
+    &quot;stream&quot;: false
+  }
+}</pre></details></section><section><h1>io.net</h1><p class="failed">Failed · No HTTP response · 0.0053409169195219874s</p><p class="model">Qwen/Qwen3.8-27B</p><details class="metrics"><summary>Metrics</summary><table><tr><th>Time to first token</th><td>Unavailable s<small>Non-streaming does not expose first-token arrival.</small></td></tr><tr><th>Total latency</th><td>0.0053409169 s<small>measured</small></td></tr><tr><th>Output throughput</th><td>Unavailable tokens/s<small>Requires a successful stream, usage, and a positive generation interval.. Completion tokens divided by first-to-last content/reasoning chunk interval; chunk buffering can inflate this estimate.</small></td></tr><tr><th>Input tokens</th><td>Unavailable tokens<small>Not supplied by provider.</small></td></tr><tr><th>Output tokens</th><td>Unavailable tokens<small>Not supplied by provider.. Provider completion_tokens retained as total output; reasoning detail is a subset, never added again. Separate reasoning counts may be unavailable.</small></td></tr><tr><th>Reasoning tokens</th><td>Unavailable tokens<small>Not supplied by provider.</small></td></tr><tr><th>Input price</th><td>0.308 USD/1M tokens<small>provider-reported</small></td></tr><tr><th>Output price</th><td>2.73 USD/1M tokens<small>provider-reported</small></td></tr><tr><th>Input cost</th><td>Unavailable USD<small>Usage or verified pricing unavailable.</small></td></tr><tr><th>Output cost</th><td>Unavailable USD<small>Usage or verified pricing unavailable.</small></td></tr><tr><th>Request cost</th><td>Unavailable USD<small>Usage or verified pricing unavailable.. Published per-token catalog rates converted to USD per million tokens; excludes account discounts and non-token charges.</small></td></tr><tr><th>Success</th><td>False <small>measured</small></td></tr><tr><th>Http status</th><td>Unavailable <small>Not supplied by provider.</small></td></tr><tr><th>Error type</th><td>URLError <small>measured</small></td></tr><tr><th>Error message</th><td>&lt;urlopen error timed out&gt; <small>measured</small></td></tr><tr><th>Provider</th><td>ionet <small>configured</small></td></tr><tr><th>Model</th><td>qwen/qwen3.8-27b <small>configured</small></td></tr><tr><th>Provider model id</th><td>Qwen/Qwen3.8-27B <small>configured</small></td></tr><tr><th>Returned model id</th><td>Unavailable <small>Not supplied by provider.</small></td></tr><tr><th>Pricing</th><td>{&quot;provider_model_id&quot;: &quot;Qwen/Qwen3.8-27B&quot;, &quot;input_per_1m_tokens&quot;: 0.308, &quot;output_per_1m_tokens&quot;: 2.73, &quot;cache_input_per_1m_tokens&quot;: 0.154, &quot;context_window&quot;: 65536, &quot;quantization&quot;: &quot;fp8&quot;, &quot;source&quot;: &quot;https://api.intelligence.io.solutions/api/v1/models&quot;, &quot;checked_at&quot;: &quot;2026-09-15&quot;, &quot;cost_basis&quot;: &quot;Published per-token catalog rates converted to USD per million tokens; excludes account discounts and non-token charges.&quot;} <small>provider-reported</small></td></tr><tr><th>Rate limits</th><td>Unavailable <small>Not supplied by provider.</small></td></tr><tr><th>Region</th><td>Unavailable <small>Not supplied by provider.</small></td></tr><tr><th>Version</th><td>Unavailable <small>Not supplied by provider.</small></td></tr><tr><th>Context window</th><td>65536 tokens<small>provider-reported</small></td></tr><tr><th>Quantization</th><td>fp8 <small>provider-reported</small></td></tr></table></details><h2>Error</h2><pre>{
+  &quot;type&quot;: &quot;URLError&quot;,
+  &quot;message&quot;: &quot;&lt;urlopen error timed out&gt;&quot;
+}</pre><h2>Response JSON</h2><pre>null</pre><details><summary>Request JSON</summary><pre>{
+  &quot;url&quot;: &quot;https://api.intelligence.io.solutions/api/v1/chat/completions&quot;,
+  &quot;headers&quot;: {
+    &quot;Authorization&quot;: &quot;Bearer &lt;redacted&gt;&quot;,
+    &quot;Content-Type&quot;: &quot;application/json&quot;,
+    &quot;User-Agent&quot;: &quot;provider-eval/0.1&quot;,
+    &quot;Accept&quot;: &quot;application/json&quot;
+  },
+  &quot;json&quot;: {
+    &quot;model&quot;: &quot;Qwen/Qwen3.8-27B&quot;,
+    &quot;messages&quot;: [
+      {
+        &quot;role&quot;: &quot;user&quot;,
+        &quot;content&quot;: &quot;Reply with exactly: hello&quot;
+      }
+    ],
+    &quot;temperature&quot;: 0,
+    &quot;stream&quot;: false
+  }
+}</pre></details></section></main></body></html>

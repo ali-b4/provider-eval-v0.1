@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Provider request comparison</title><style>
+*{box-sizing:border-box}body{margin:0;background:#f4f6f8;color:#182434;font:15px system-ui,sans-serif}
+header{padding:20px 24px;border-bottom:1px solid #dbe1e8}header strong{font-size:22px}header p{margin-bottom:0;color:#536275}
+main{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;padding:18px;min-width:1200px}
+section{display:flex;flex-direction:column;background:white;border:1px solid #dbe1e8;border-radius:10px;padding:18px;min-width:0}
+h1{font-size:21px;margin:0}h2,summary{font-size:14px;font-weight:600}summary{cursor:pointer;padding:12px 0}
+pre{font:12px/1.6 ui-monospace,monospace;white-space:pre-wrap;overflow-wrap:anywhere;background:#f5f7fa;border-radius:6px;padding:12px;max-height:65vh;overflow:auto}
+table{border-collapse:collapse;width:100%;font-size:12px}th,td{text-align:left;vertical-align:top;padding:8px;border-bottom:1px solid #e4e8ed;overflow-wrap:anywhere}th{width:40%}small{display:block;color:#536275;margin-top:4px}.metrics{max-height:65vh;overflow:auto}.model{min-height:32px;color:#536275;overflow-wrap:anywhere;font-size:12px}.ok{color:#087345}.failed{color:#b42318}
+</style></head><body><header><strong>Provider request comparison</strong>
+<p>non-streaming-invalid_auth · Streaming mode is recorded in Request JSON. Elapsed time includes the full request. Expand Metrics for measurements, sources, and unavailable reasons.</p>
+</header><main><section><h1>Venice</h1><p class="failed">Failed · 401 · 0.14433779194951057s</p><p class="model">qwen-3-8-27b</p><details class="metrics"><summary>Metrics</summary><table><tr><th>Time to first token</th><td>Unavailable s<small>Non-streaming does not expose first-token arrival.</small></td></tr><tr><th>Total latency</th><td>0.14433779 s<small>measured</small></td></tr><tr><th>Output throughput</th><td>Unavailable tokens/s<small>Requires a successful stream, usage, and a positive generation interval.. Completion tokens divided by first-to-last content/reasoning chunk interval; chunk buffering can inflate this estimate.</small></td></tr><tr><th>Input tokens</th><td>Unavailable tokens<small>Not supplied by provider.</small></td></tr><tr><th>Output tokens</th><td>Unavailable tokens<small>Not supplied by provider.. Provider completion_tokens retained as total output; reasoning detail is a subset, never added again. Separate reasoning counts may be unavailable.</small></td></tr><tr><th>Reasoning tokens</th><td>Unavailable tokens<small>Not supplied by provider.</small></td></tr><tr><th>Input price</th><td>0.45 USD/1M tokens<small>provider-reported</small></td></tr><tr><th>Output price</th><td>3.2 USD/1M tokens<small>provider-reported</small></td></tr><tr><th>Input cost</th><td>Unavailable USD<small>Usage or verified pricing unavailable.</small></td></tr><tr><th>Output cost</th><td>Unavailable USD<small>Usage or verified pricing unavailable.</small></td></tr><tr><th>Request cost</th><td>Unavailable USD<small>Usage or verified pricing unavailable.. Published token rates; excludes account discounts and non-token charges.</small></td></tr><tr><th>Success</th><td>False <small>measured</small></td></tr><tr><th>Http status</th><td>401 <small>provider-reported</small></td></tr><tr><th>Error type</th><td>HTTPError <small>measured</small></td></tr><tr><th>Error message</th><td>HTTP 401: {&quot;error&quot;: &quot;Authentication failed&quot;} <small>measured</small></td></tr><tr><th>Provider</th><td>venice <small>configured</small></td></tr><tr><th>Model</th><td>qwen/qwen3.8-27b <small>configured</small></td></tr><tr><th>Provider model id</th><td>qwen-3-8-27b <small>configured</small></td></tr><tr><th>Returned model id</th><td>Unavailable <small>Not supplied by provider.</small></td></tr><tr><th>Pricing</th><td>{&quot;provider_model_id&quot;: &quot;qwen-3-8-27b&quot;, &quot;input_per_1m_tokens&quot;: 0.45, &quot;output_per_1m_tokens&quot;: 3.2, &quot;context_window&quot;: 262144, &quot;quantization&quot;: &quot;fp8&quot;, &quot;source&quot;: &quot;https://api.venice.ai/api/v1/models&quot;, &quot;checked_at&quot;: &quot;2026-09-15&quot;, &quot;cost_basis&quot;: &quot;Published token rates; excludes account discounts and non-token charges.&quot;} <small>provider-reported</small></td></tr><tr><th>Rate limits</th><td>{&quot;x-ratelimit-resets&quot;: &quot;1789480728185&quot;, &quot;x-ratelimit-remaining&quot;: &quot;50&quot;} <small>provider-reported</small></td></tr><tr><th>Region</th><td>Unavailable <small>Not supplied by provider.</small></td></tr><tr><th>Version</th><td>Unavailable <small>Not supplied by provider.</small></td></tr><tr><th>Context window</th><td>262144 tokens<small>provider-reported</small></td></tr><tr><th>Quantization</th><td>fp8 <small>provider-reported</small></td></tr></table></details><h2>Error</h2><pre>{
+  &quot;type&quot;: &quot;HTTPError&quot;,
+  &quot;message&quot;: &quot;HTTP 401: {\&quot;error\&quot;: \&quot;Authentication failed\&quot;}&quot;
+}</pre><h2>Response JSON</h2><pre>{
+  &quot;status_code&quot;: 401,
+  &quot;headers&quot;: {
+    &quot;Date&quot;: &quot;Tue, 15 Sep 2026 13:58:18 GMT&quot;,
+    &quot;Content-Type&quot;: &quot;application/json; charset=utf-8&quot;,
+    &quot;Content-Length&quot;: &quot;33&quot;,
+    &quot;Connection&quot;: &quot;close&quot;,
+    &quot;content-security-policy&quot;: &quot;default-src &#x27;none&#x27;; frame-ancestors &#x27;none&#x27;; upgrade-insecure-requests&quot;,
+    &quot;access-control-allow-origin&quot;: &quot;*&quot;,
+    &quot;access-control-expose-headers&quot;: &quot;*&quot;,
+    &quot;Cache-Control&quot;: &quot;no-store, no-cache, private, must-revalidate&quot;,
+    &quot;cdn-cache-control&quot;: &quot;no-store&quot;,
+    &quot;x-ratelimit-resets&quot;: &quot;1789480728185&quot;,
+    &quot;x-ratelimit-remaining&quot;: &quot;50&quot;,
+    &quot;etag&quot;: &quot;W/\&quot;21-4c+cq0f+0nYvCps40lzZMJn3sis\&quot;&quot;,
+    &quot;vary&quot;: &quot;Accept-Encoding&quot;,
+    &quot;x-cloud-trace-context&quot;: &quot;8da9d8b22e00c6a7e604ac8164f855a2&quot;,
+    &quot;Server&quot;: &quot;cloudflare&quot;,
+    &quot;cf-cache-status&quot;: &quot;DYNAMIC&quot;,
+    &quot;set-cookie&quot;: &quot;__cf_bm=917Vzx9XxSKEqjv8KgtQxvn40I8REtiqUEtTaVs8jxk-1789480698.1656325-1.0.1.1-kqQDd5sApnc06BYzZglSONne8HBfBDOsoKCXMD2CLIHAmtuLVWCdUtrUmPZ1SmnuxDR23Nk4MCp43kzNKQuBNQAPCAw1brzAkmKc.hYyEco9ZU8njBeKOPG3dQ.lcl0R; HttpOnly; SameSite=None; Secure; Path=/; Domain=venice.ai; Expires=Tue, 15 Sep 2026 14:28:18 GMT&quot;,
+    &quot;Permissions-Policy&quot;: &quot;geolocation=(), camera=()&quot;,
+    &quot;Strict-Transport-Security&quot;: &quot;max-age=31536000; includeSubDomains; preload&quot;,
+    &quot;X-Content-Type-Options&quot;: &quot;nosniff&quot;,
+    &quot;Server-Timing&quot;: &quot;cfCacheStatus;desc=\&quot;DYNAMIC\&quot;&quot;,
+    &quot;Referrer-Policy&quot;: &quot;strict-origin&quot;,
+    &quot;X-Frame-Options&quot;: &quot;SAMEORIGIN&quot;,
+    &quot;CF-RAY&quot;: &quot;a3b8253b8bb3e72b-IAD&quot;
+  },
+  &quot;body&quot;: {
+    &quot;error&quot;: &quot;Authentication failed&quot;
+  }
+}</pre><details><summary>Request JSON</summary><pre>{
+  &quot;url&quot;: &quot;https://api.venice.ai/api/v1/chat/completions&quot;,
+  &quot;headers&quot;: {
+    &quot;Authorization&quot;: &quot;Bearer &lt;redacted&gt;&quot;,
+    &quot;Content-Type&quot;: &quot;application/json&quot;
+  },
+  &quot;json&quot;: {
+    &quot;model&quot;: &quot;qwen-3-8-27b&quot;,
+    &quot;messages&quot;: [
+      {
+        &quot;role&quot;: &quot;user&quot;,
+        &quot;content&quot;: &quot;Reply with exactly: hello&quot;
+      }
+    ],
+    &quot;temperature&quot;: 0,
+    &quot;stream&quot;: false,
+    &quot;venice_parameters&quot;: {
+      &quot;include_venice_system_prompt&quot;: false
+    }
+  }
+}</pre></details></section><section><h1>Chutes</h1><p class="failed">Failed · 401 · 0.2325725839473307s</p><p class="model">Qwen/Qwen3.8-27B-TEE</p><details class="metrics"><summary>Metrics</summary><table><tr><th>Time to first token</th><td>Unavailable s<small>Non-streaming does not expose first-token arrival.</small></td></tr><tr><th>Total latency</th><td>0.23257258 s<small>measured</small></td></tr><tr><th>Output throughput</th><td>Unavailable tokens/s<small>Requires a successful stream, usage, and a positive generation interval.. Completion tokens divided by first-to-last content/reasoning chunk interval; chunk buffering can inflate this estimate.</small></td></tr><tr><th>Input tokens</th><td>Unavailable tokens<small>Not supplied by provider.</small></td></tr><tr><th>Output tokens</th><td>Unavailable tokens<small>Not supplied by provider.. Provider completion_tokens retained as total output; reasoning detail is a subset, never added again. Separate reasoning counts may be unavailable.</small></td></tr><tr><th>Reasoning tokens</th><td>Unavailable tokens<small>Not supplied by provider.</small></td></tr><tr><th>Input price</th><td>0.32 USD/1M tokens<small>provider-reported</small></td></tr><tr><th>Output price</th><td>2.5 USD/1M tokens<small>provider-reported</small></td></tr><tr><th>Input cost</th><td>Unavailable USD<small>Usage or verified pricing unavailable.</small></td></tr><tr><th>Output cost</th><td>Unavailable USD<small>Usage or verified pricing unavailable.</small></td></tr><tr><th>Request cost</th><td>Unavailable USD<small>Usage or verified pricing unavailable.. Published token rates; excludes account discounts and non-token charges.</small></td></tr><tr><th>Success</th><td>False <small>measured</small></td></tr><tr><th>Http status</th><td>401 <small>provider-reported</small></td></tr><tr><th>Error type</th><td>HTTPError <small>measured</small></td></tr><tr><th>Error message</th><td>HTTP 401: {&quot;detail&quot;: &quot;Invalid token.&quot;} <small>measured</small></td></tr><tr><th>Provider</th><td>chutes <small>configured</small></td></tr><tr><th>Model</th><td>qwen/qwen3.8-27b <small>configured</small></td></tr><tr><th>Provider model id</th><td>Qwen/Qwen3.8-27B-TEE <small>configured</small></td></tr><tr><th>Returned model id</th><td>Unavailable <small>Not supplied by provider.</small></td></tr><tr><th>Pricing</th><td>{&quot;provider_model_id&quot;: &quot;Qwen/Qwen3.8-27B-TEE&quot;, &quot;input_per_1m_tokens&quot;: 0.32, &quot;output_per_1m_tokens&quot;: 2.5, &quot;context_window&quot;: 262144, &quot;quantization&quot;: &quot;fp8&quot;, &quot;source&quot;: &quot;https://llm.chutes.ai/v1/models&quot;, &quot;checked_at&quot;: &quot;2026-09-15&quot;, &quot;cost_basis&quot;: &quot;Published token rates; excludes account discounts and non-token charges.&quot;, &quot;cache_input_per_1m_tokens&quot;: 0.032} <small>provider-reported</small></td></tr><tr><th>Rate limits</th><td>Unavailable <small>Not supplied by provider.</small></td></tr><tr><th>Region</th><td>Unavailable <small>Not supplied by provider.</small></td></tr><tr><th>Version</th><td>Unavailable <small>Not supplied by provider.</small></td></tr><tr><th>Context window</th><td>262144 tokens<small>provider-reported</small></td></tr><tr><th>Quantization</th><td>fp8 <small>provider-reported</small></td></tr></table></details><h2>Error</h2><pre>{
+  &quot;type&quot;: &quot;HTTPError&quot;,
+  &quot;message&quot;: &quot;HTTP 401: {\&quot;detail\&quot;: \&quot;Invalid token.\&quot;}&quot;
+}</pre><h2>Response JSON</h2><pre>{
+  &quot;status_code&quot;: 401,
+  &quot;headers&quot;: {
+    &quot;server&quot;: &quot;nginx&quot;,
+    &quot;date&quot;: &quot;Tue, 15 Sep 2026 13:58:18 GMT&quot;,
+    &quot;content-type&quot;: &quot;application/json&quot;,
+    &quot;Content-Length&quot;: &quot;27&quot;,
+    &quot;strict-transport-security&quot;: &quot;max-age=31536000; includeSubDomains&quot;,
+    &quot;access-control-allow-origin&quot;: &quot;*&quot;,
+    &quot;access-control-allow-methods&quot;: &quot;GET, POST, OPTIONS, PUT, DELETE, PATCH&quot;,
+    &quot;access-control-allow-headers&quot;: &quot;*, Authorization&quot;,
+    &quot;access-control-expose-headers&quot;: &quot;X-Chutes-Quota-Total,X-Chutes-Quota-Used,X-Chutes-Quota-Remaining,X-Chutes-RL-User,X-Chutes-RL-Chute,X-Chutes-InvocationID,DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization,X-Enable-Thinking,X-Provider,X-Provider-Version,X-Title,Content-Type,Authorization,Content-Type,Cache-Control,X-Chute-Id,X-Instance-Id,X-E2E-Nonce,X-E2E-Stream,X-E2E-Path&quot;,
+    &quot;access-control-max-age&quot;: &quot;1728000&quot;,
+    &quot;via&quot;: &quot;1.1 google&quot;,
+    &quot;Alt-Svc&quot;: &quot;clear&quot;,
+    &quot;Connection&quot;: &quot;close&quot;
+  },
+  &quot;body&quot;: {
+    &quot;detail&quot;: &quot;Invalid token.&quot;
+  }
+}</pre><details><summary>Request JSON</summary><pre>{
+  &quot;url&quot;: &quot;https://llm.chutes.ai/v1/chat/completions&quot;,
+  &quot;headers&quot;: {
+    &quot;Authorization&quot;: &quot;Bearer &lt;redacted&gt;&quot;,
+    &quot;Content-Type&quot;: &quot;application/json&quot;
+  },
+  &quot;json&quot;: {
+    &quot;model&quot;: &quot;Qwen/Qwen3.8-27B-TEE&quot;,
+    &quot;messages&quot;: [
+      {
+        &quot;role&quot;: &quot;user&quot;,
+        &quot;content&quot;: &quot;Reply with exactly: hello&quot;
+      }
+    ],
+    &quot;temperature&quot;: 0,
+    &quot;stream&quot;: false
+  }
+}</pre></details></section><section><h1>Darkbloom</h1><p class="failed">Failed · 401 · 0.10322133405134082s</p><p class="model">EigenLabs/Qwen3.8-27B-4bit-mtp</p><details class="metrics"><summary>Metrics</summary><table><tr><th>Time to first token</th><td>Unavailable s<small>Non-streaming does not expose first-token arrival.</small></td></tr><tr><th>Total latency</th><td>0.10322133 s<small>measured</small></td></tr><tr><th>Output throughput</th><td>Unavailable tokens/s<small>Requires a successful stream, usage, and a positive generation interval.. Completion tokens divided by first-to-last content/reasoning chunk interval; chunk buffering can inflate this estimate.</small></td></tr><tr><th>Input tokens</th><td>Unavailable tokens<small>Not supplied by provider.</small></td></tr><tr><th>Output tokens</th><td>Unavailable tokens<small>Not supplied by provider.. Provider completion_tokens retained as total output; reasoning detail is a subset, never added again. Separate reasoning counts may be unavailable.</small></td></tr><tr><th>Reasoning tokens</th><td>Unavailable tokens<small>Not supplied by provider.</small></td></tr><tr><th>Input price</th><td>0.15 USD/1M tokens<small>provider-reported</small></td></tr><tr><th>Output price</th><td>2 USD/1M tokens<small>provider-reported</small></td></tr><tr><th>Input cost</th><td>Unavailable USD<small>Usage or verified pricing unavailable.</small></td></tr><tr><th>Output cost</th><td>Unavailable USD<small>Usage or verified pricing unavailable.</small></td></tr><tr><th>Request cost</th><td>Unavailable USD<small>Usage or verified pricing unavailable.. Published standard direct-consumer rates with $0.0001 minimum; service accounts and custom rates may differ.</small></td></tr><tr><th>Success</th><td>False <small>measured</small></td></tr><tr><th>Http status</th><td>401 <small>provider-reported</small></td></tr><tr><th>Error type</th><td>HTTPError <small>measured</small></td></tr><tr><th>Error message</th><td>HTTP 401: {&quot;error&quot;: {&quot;code&quot;: &quot;authentication_error&quot;, &quot;message&quot;: &quot;invalid API key&quot;, &quot;type&quot;: &quot;authentication_error&quot;}} <small>measured</small></td></tr><tr><th>Provider</th><td>darkbloom <small>configured</small></td></tr><tr><th>Model</th><td>qwen/qwen3.8-27b <small>configured</small></td></tr><tr><th>Provider model id</th><td>EigenLabs/Qwen3.8-27B-4bit-mtp <small>configured</small></td></tr><tr><th>Returned model id</th><td>Unavailable <small>Not supplied by provider.</small></td></tr><tr><th>Pricing</th><td>{&quot;provider_model_id&quot;: &quot;EigenLabs/Qwen3.8-27B-4bit-mtp&quot;, &quot;input_per_1m_tokens&quot;: 0.15, &quot;output_per_1m_tokens&quot;: 2.0, &quot;context_window&quot;: null, &quot;quantization&quot;: &quot;4bit (model ID)&quot;, &quot;source&quot;: &quot;https://api.darkbloom.dev/v1/pricing&quot;, &quot;checked_at&quot;: &quot;2026-09-15&quot;, &quot;cost_basis&quot;: &quot;Published standard direct-consumer rates with $0.0001 minimum; service accounts and custom rates may differ.&quot;, &quot;minimum_request_cost_usd&quot;: 0.0001, &quot;billing_source&quot;: &quot;https://github.com/Layr-Labs/d-inference/blob/master/docs/reference/pricing-model.md&quot;} <small>provider-reported</small></td></tr><tr><th>Rate limits</th><td>Unavailable <small>Not supplied by provider.</small></td></tr><tr><th>Region</th><td>Unavailable <small>Not supplied by provider.</small></td></tr><tr><th>Version</th><td>Unavailable <small>Not supplied by provider.</small></td></tr><tr><th>Context window</th><td>Unavailable tokens<small>Not supplied by provider.</small></td></tr><tr><th>Quantization</th><td>4bit (model ID) <small>provider-reported</small></td></tr></table></details><h2>Error</h2><pre>{
+  &quot;type&quot;: &quot;HTTPError&quot;,
+  &quot;message&quot;: &quot;HTTP 401: {\&quot;error\&quot;: {\&quot;code\&quot;: \&quot;authentication_error\&quot;, \&quot;message\&quot;: \&quot;invalid API key\&quot;, \&quot;type\&quot;: \&quot;authentication_error\&quot;}}&quot;
+}</pre><h2>Response JSON</h2><pre>{
+  &quot;status_code&quot;: 401,
+  &quot;headers&quot;: {
+    &quot;Access-Control-Allow-Credentials&quot;: &quot;true&quot;,
+    &quot;Access-Control-Allow-Headers&quot;: &quot;Content-Type, Authorization, X-Darkbloom-Metadata-Details&quot;,
+    &quot;Access-Control-Allow-Methods&quot;: &quot;GET, POST, PUT, DELETE, OPTIONS&quot;,
+    &quot;Access-Control-Allow-Origin&quot;: &quot;https://console.darkbloom.dev&quot;,
+    &quot;Alt-Svc&quot;: &quot;h3=\&quot;:443\&quot;; ma=2592000&quot;,
+    &quot;Content-Length&quot;: &quot;100&quot;,
+    &quot;Content-Type&quot;: &quot;application/json&quot;,
+    &quot;Date&quot;: &quot;Tue, 15 Sep 2026 13:58:18 GMT&quot;,
+    &quot;Referrer-Policy&quot;: &quot;strict-origin-when-cross-origin&quot;,
+    &quot;Via&quot;: &quot;1.1 Caddy&quot;,
+    &quot;X-Content-Type-Options&quot;: &quot;nosniff&quot;,
+    &quot;X-Frame-Options&quot;: &quot;DENY&quot;,
+    &quot;X-Request-Id&quot;: &quot;27st6i03jj83&quot;,
+    &quot;Connection&quot;: &quot;close&quot;
+  },
+  &quot;body&quot;: {
+    &quot;error&quot;: {
+      &quot;code&quot;: &quot;authentication_error&quot;,
+      &quot;message&quot;: &quot;invalid API key&quot;,
+      &quot;type&quot;: &quot;authentication_error&quot;
+    }
+  }
+}</pre><details><summary>Request JSON</summary><pre>{
+  &quot;url&quot;: &quot;https://api.darkbloom.dev/v1/chat/completions&quot;,
+  &quot;headers&quot;: {
+    &quot;Authorization&quot;: &quot;Bearer &lt;redacted&gt;&quot;,
+    &quot;Content-Type&quot;: &quot;application/json&quot;
+  },
+  &quot;json&quot;: {
+    &quot;model&quot;: &quot;EigenLabs/Qwen3.8-27B-4bit-mtp&quot;,
+    &quot;messages&quot;: [
+      {
+        &quot;role&quot;: &quot;user&quot;,
+        &quot;content&quot;: &quot;Reply with exactly: hello&quot;
+      }
+    ],
+    &quot;temperature&quot;: 0,
+    &quot;stream&quot;: false
+  }
+}</pre></details></section><section><h1>io.net</h1><p class="failed">Failed · 401 · 0.32017695799004287s</p><p class="model">Qwen/Qwen3.8-27B</p><details class="metrics"><summary>Metrics</summary><table><tr><th>Time to first token</th><td>Unavailable s<small>Non-streaming does not expose first-token arrival.</small></td></tr><tr><th>Total latency</th><td>0.32017696 s<small>measured</small></td></tr><tr><th>Output throughput</th><td>Unavailable tokens/s<small>Requires a successful stream, usage, and a positive generation interval.. Completion tokens divided by first-to-last content/reasoning chunk interval; chunk buffering can inflate this estimate.</small></td></tr><tr><th>Input tokens</th><td>Unavailable tokens<small>Not supplied by provider.</small></td></tr><tr><th>Output tokens</th><td>Unavailable tokens<small>Not supplied by provider.. Provider completion_tokens retained as total output; reasoning detail is a subset, never added again. Separate reasoning counts may be unavailable.</small></td></tr><tr><th>Reasoning tokens</th><td>Unavailable tokens<small>Not supplied by provider.</small></td></tr><tr><th>Input price</th><td>0.308 USD/1M tokens<small>provider-reported</small></td></tr><tr><th>Output price</th><td>2.73 USD/1M tokens<small>provider-reported</small></td></tr><tr><th>Input cost</th><td>Unavailable USD<small>Usage or verified pricing unavailable.</small></td></tr><tr><th>Output cost</th><td>Unavailable USD<small>Usage or verified pricing unavailable.</small></td></tr><tr><th>Request cost</th><td>Unavailable USD<small>Usage or verified pricing unavailable.. Published per-token catalog rates converted to USD per million tokens; excludes account discounts and non-token charges.</small></td></tr><tr><th>Success</th><td>False <small>measured</small></td></tr><tr><th>Http status</th><td>401 <small>provider-reported</small></td></tr><tr><th>Error type</th><td>HTTPError <small>measured</small></td></tr><tr><th>Error message</th><td>HTTP 401: {&quot;detail&quot;: &quot;Invalid API Key&quot;} <small>measured</small></td></tr><tr><th>Provider</th><td>ionet <small>configured</small></td></tr><tr><th>Model</th><td>qwen/qwen3.8-27b <small>configured</small></td></tr><tr><th>Provider model id</th><td>Qwen/Qwen3.8-27B <small>configured</small></td></tr><tr><th>Returned model id</th><td>Unavailable <small>Not supplied by provider.</small></td></tr><tr><th>Pricing</th><td>{&quot;provider_model_id&quot;: &quot;Qwen/Qwen3.8-27B&quot;, &quot;input_per_1m_tokens&quot;: 0.308, &quot;output_per_1m_tokens&quot;: 2.73, &quot;cache_input_per_1m_tokens&quot;: 0.154, &quot;context_window&quot;: 65536, &quot;quantization&quot;: &quot;fp8&quot;, &quot;source&quot;: &quot;https://api.intelligence.io.solutions/api/v1/models&quot;, &quot;checked_at&quot;: &quot;2026-09-15&quot;, &quot;cost_basis&quot;: &quot;Published per-token catalog rates converted to USD per million tokens; excludes account discounts and non-token charges.&quot;} <small>provider-reported</small></td></tr><tr><th>Rate limits</th><td>Unavailable <small>Not supplied by provider.</small></td></tr><tr><th>Region</th><td>Unavailable <small>Not supplied by provider.</small></td></tr><tr><th>Version</th><td>Unavailable <small>Not supplied by provider.</small></td></tr><tr><th>Context window</th><td>65536 tokens<small>provider-reported</small></td></tr><tr><th>Quantization</th><td>fp8 <small>provider-reported</small></td></tr></table></details><h2>Error</h2><pre>{
+  &quot;type&quot;: &quot;HTTPError&quot;,
+  &quot;message&quot;: &quot;HTTP 401: {\&quot;detail\&quot;: \&quot;Invalid API Key\&quot;}&quot;
+}</pre><h2>Response JSON</h2><pre>{
+  &quot;status_code&quot;: 401,
+  &quot;headers&quot;: {
+    &quot;Date&quot;: &quot;Tue, 15 Sep 2026 13:58:18 GMT&quot;,
+    &quot;Content-Type&quot;: &quot;application/json&quot;,
+    &quot;Content-Length&quot;: &quot;28&quot;,
+    &quot;Connection&quot;: &quot;close&quot;,
+    &quot;Server&quot;: &quot;cloudflare&quot;,
+    &quot;x-request-id&quot;: &quot;81e211a25a7c4387a7b8a82173d62527&quot;,
+    &quot;cf-cache-status&quot;: &quot;DYNAMIC&quot;,
+    &quot;Content-Security-Policy-Report-Only&quot;: &quot;script-src &#x27;unsafe-inline&#x27; &#x27;unsafe-eval&#x27;; report-uri https://csp-reporting.cloudflare.com/cdn-cgi/script_monitor/report?m=86twaObXKtV4yWX3sIBzDxzKH1L.AR9okReHixMYhko-1789480698.275471-1.0.1.1-ffpJhAdKasvkRSR9GjU12wrU2UZsTHe3SJa6lJJyVfUDGQ8tuyOQfKmR4eP7VlT68Cwcev9bKhkjVcFPRMJKxHnb0JN2jQFh.waJWhUfvZr1ecOH0XXAEnYvTppuiJDnZk_FsLwu1qXT7iYvzArjuWBAjRPL1xieqi1avBx1bedy.mw4.Lz55R5kY8MBWB3S; report-to cf-csp-endpoint&quot;,
+    &quot;Strict-Transport-Security&quot;: &quot;max-age=31536000; includeSubDomains&quot;,
+    &quot;set-cookie&quot;: &quot;__cf_bm=bofRScm2wKXMGNDN97WKxgTWfQK4dcKs4jV_HdJJxoU-1789480698.275471-1.0.1.1-dVJfJpMhdJ.cN8Ec8e8CrsVvhF0VlRvnuIOQMSUr_5Igjnma76QhsZ6xpO3nTOARCXg9FCpLFJXXU01KCE2JnXX0lZrYYdlI.oCdh4FLUrLZ_cnJtgCqs93dW..fXUpF; HttpOnly; SameSite=None; Secure; Path=/; Domain=io.solutions; Expires=Tue, 15 Sep 2026 14:28:18 GMT&quot;,
+    &quot;Report-To&quot;: &quot;{\&quot;group\&quot;:\&quot;cf-csp-endpoint\&quot;,\&quot;max_age\&quot;:86400,\&quot;endpoints\&quot;:[{\&quot;url\&quot;:\&quot;https://csp-reporting.cloudflare.com/cdn-cgi/script_monitor/report?m=86twaObXKtV4yWX3sIBzDxzKH1L.AR9okReHixMYhko-1789480698.275471-1.0.1.1-ffpJhAdKasvkRSR9GjU12wrU2UZsTHe3SJa6lJJyVfUDGQ8tuyOQfKmR4eP7VlT68Cwcev9bKhkjVcFPRMJKxHnb0JN2jQFh.waJWhUfvZr1ecOH0XXAEnYvTppuiJDnZk_FsLwu1qXT7iYvzArjuWBAjRPL1xieqi1avBx1bedy.mw4.Lz55R5kY8MBWB3S\&quot;}]}&quot;,
+    &quot;Reporting-Endpoints&quot;: &quot;cf-csp-endpoint=\&quot;https://csp-reporting.cloudflare.com/cdn-cgi/script_monitor/report?m=86twaObXKtV4yWX3sIBzDxzKH1L.AR9okReHixMYhko-1789480698.275471-1.0.1.1-ffpJhAdKasvkRSR9GjU12wrU2UZsTHe3SJa6lJJyVfUDGQ8tuyOQfKmR4eP7VlT68Cwcev9bKhkjVcFPRMJKxHnb0JN2jQFh.waJWhUfvZr1ecOH0XXAEnYvTppuiJDnZk_FsLwu1qXT7iYvzArjuWBAjRPL1xieqi1avBx1bedy.mw4.Lz55R5kY8MBWB3S\&quot;&quot;,
+    &quot;CF-RAY&quot;: &quot;a3b8253c3e1acbc5-IAD&quot;
+  },
+  &quot;body&quot;: {
+    &quot;detail&quot;: &quot;Invalid API Key&quot;
+  }
+}</pre><details><summary>Request JSON</summary><pre>{
+  &quot;url&quot;: &quot;https://api.intelligence.io.solutions/api/v1/chat/completions&quot;,
+  &quot;headers&quot;: {
+    &quot;Authorization&quot;: &quot;Bearer &lt;redacted&gt;&quot;,
+    &quot;Content-Type&quot;: &quot;application/json&quot;,
+    &quot;User-Agent&quot;: &quot;provider-eval/0.1&quot;,
+    &quot;Accept&quot;: &quot;application/json&quot;
+  },
+  &quot;json&quot;: {
+    &quot;model&quot;: &quot;Qwen/Qwen3.8-27B&quot;,
+    &quot;messages&quot;: [
+      {
+        &quot;role&quot;: &quot;user&quot;,
+        &quot;content&quot;: &quot;Reply with exactly: hello&quot;
+      }
+    ],
+    &quot;temperature&quot;: 0,
+    &quot;stream&quot;: false
+  }
+}</pre></details></section></main></body></html>

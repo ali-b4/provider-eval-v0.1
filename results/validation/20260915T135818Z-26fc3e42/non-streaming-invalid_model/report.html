@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Provider request comparison</title><style>
+*{box-sizing:border-box}body{margin:0;background:#f4f6f8;color:#182434;font:15px system-ui,sans-serif}
+header{padding:20px 24px;border-bottom:1px solid #dbe1e8}header strong{font-size:22px}header p{margin-bottom:0;color:#536275}
+main{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;padding:18px;min-width:1200px}
+section{display:flex;flex-direction:column;background:white;border:1px solid #dbe1e8;border-radius:10px;padding:18px;min-width:0}
+h1{font-size:21px;margin:0}h2,summary{font-size:14px;font-weight:600}summary{cursor:pointer;padding:12px 0}
+pre{font:12px/1.6 ui-monospace,monospace;white-space:pre-wrap;overflow-wrap:anywhere;background:#f5f7fa;border-radius:6px;padding:12px;max-height:65vh;overflow:auto}
+table{border-collapse:collapse;width:100%;font-size:12px}th,td{text-align:left;vertical-align:top;padding:8px;border-bottom:1px solid #e4e8ed;overflow-wrap:anywhere}th{width:40%}small{display:block;color:#536275;margin-top:4px}.metrics{max-height:65vh;overflow:auto}.model{min-height:32px;color:#536275;overflow-wrap:anywhere;font-size:12px}.ok{color:#087345}.failed{color:#b42318}
+</style></head><body><header><strong>Provider request comparison</strong>
+<p>non-streaming-invalid_model · Streaming mode is recorded in Request JSON. Elapsed time includes the full request. Expand Metrics for measurements, sources, and unavailable reasons.</p>
+</header><main><section><h1>Venice</h1><p class="failed">Failed · 404 · 0.10753016697708517s</p><p class="model">provider-eval-nonexistent-model</p><details class="metrics"><summary>Metrics</summary><table><tr><th>Time to first token</th><td>Unavailable s<small>Non-streaming does not expose first-token arrival.</small></td></tr><tr><th>Total latency</th><td>0.10753017 s<small>measured</small></td></tr><tr><th>Output throughput</th><td>Unavailable tokens/s<small>Requires a successful stream, usage, and a positive generation interval.. Completion tokens divided by first-to-last content/reasoning chunk interval; chunk buffering can inflate this estimate.</small></td></tr><tr><th>Input tokens</th><td>Unavailable tokens<small>Not supplied by provider.</small></td></tr><tr><th>Output tokens</th><td>Unavailable tokens<small>Not supplied by provider.. Provider completion_tokens retained as total output; reasoning detail is a subset, never added again. Separate reasoning counts may be unavailable.</small></td></tr><tr><th>Reasoning tokens</th><td>Unavailable tokens<small>Not supplied by provider.</small></td></tr><tr><th>Input price</th><td>Unavailable USD/1M tokens<small>No verified price for this model.</small></td></tr><tr><th>Output price</th><td>Unavailable USD/1M tokens<small>No verified price for this model.</small></td></tr><tr><th>Input cost</th><td>Unavailable USD<small>Usage or verified pricing unavailable.</small></td></tr><tr><th>Output cost</th><td>Unavailable USD<small>Usage or verified pricing unavailable.</small></td></tr><tr><th>Request cost</th><td>Unavailable USD<small>Usage or verified pricing unavailable.</small></td></tr><tr><th>Success</th><td>False <small>measured</small></td></tr><tr><th>Http status</th><td>404 <small>provider-reported</small></td></tr><tr><th>Error type</th><td>HTTPError <small>measured</small></td></tr><tr><th>Error message</th><td>HTTP 404: {&quot;error&quot;: &quot;Specified model not found: provider-eval-nonexistent-model. Did you mean: gemini-3-1-pro-preview, deepseek-v4-pro, deepseek-v4-pro-0813?&quot;} <small>measured</small></td></tr><tr><th>Provider</th><td>venice <small>configured</small></td></tr><tr><th>Model</th><td>qwen/qwen3.8-27b <small>configured</small></td></tr><tr><th>Provider model id</th><td>provider-eval-nonexistent-model <small>configured</small></td></tr><tr><th>Returned model id</th><td>Unavailable <small>Not supplied by provider.</small></td></tr><tr><th>Pricing</th><td>Unavailable <small>No verified model pricing.</small></td></tr><tr><th>Rate limits</th><td>{&quot;x-ratelimit-resets&quot;: &quot;1789480728462&quot;, &quot;x-ratelimit-remaining&quot;: &quot;50&quot;} <small>provider-reported</small></td></tr><tr><th>Region</th><td>Unavailable <small>Not supplied by provider.</small></td></tr><tr><th>Version</th><td>Unavailable <small>Not supplied by provider.</small></td></tr><tr><th>Context window</th><td>Unavailable tokens<small>Not supplied by provider.</small></td></tr><tr><th>Quantization</th><td>Unavailable <small>Not supplied by provider.</small></td></tr></table></details><h2>Error</h2><pre>{
+  &quot;type&quot;: &quot;HTTPError&quot;,
+  &quot;message&quot;: &quot;HTTP 404: {\&quot;error\&quot;: \&quot;Specified model not found: provider-eval-nonexistent-model. Did you mean: gemini-3-1-pro-preview, deepseek-v4-pro, deepseek-v4-pro-0813?\&quot;}&quot;
+}</pre><h2>Response JSON</h2><pre>{
+  &quot;status_code&quot;: 404,
+  &quot;headers&quot;: {
+    &quot;Date&quot;: &quot;Tue, 15 Sep 2026 13:58:18 GMT&quot;,
+    &quot;Content-Type&quot;: &quot;application/json; charset=utf-8&quot;,
+    &quot;Content-Length&quot;: &quot;148&quot;,
+    &quot;Connection&quot;: &quot;close&quot;,
+    &quot;content-security-policy&quot;: &quot;default-src &#x27;none&#x27;; frame-ancestors &#x27;none&#x27;; upgrade-insecure-requests&quot;,
+    &quot;access-control-allow-origin&quot;: &quot;*&quot;,
+    &quot;access-control-expose-headers&quot;: &quot;*&quot;,
+    &quot;Cache-Control&quot;: &quot;no-store, no-cache, private, must-revalidate&quot;,
+    &quot;cdn-cache-control&quot;: &quot;no-store&quot;,
+    &quot;x-ratelimit-resets&quot;: &quot;1789480728462&quot;,
+    &quot;x-ratelimit-remaining&quot;: &quot;50&quot;,
+    &quot;etag&quot;: &quot;W/\&quot;94-6+5aD4gXoLO84tBFVJAITFP/GUk\&quot;&quot;,
+    &quot;vary&quot;: &quot;Accept-Encoding&quot;,
+    &quot;x-cloud-trace-context&quot;: &quot;806b5592d820142c63e0ad9c6cf4fba5&quot;,
+    &quot;Server&quot;: &quot;cloudflare&quot;,
+    &quot;cf-cache-status&quot;: &quot;DYNAMIC&quot;,
+    &quot;set-cookie&quot;: &quot;__cf_bm=ToH.W6aVy2UQdykBS.I34rlW2018eaaNhcBFRZO_3as-1789480698.4410481-1.0.1.1-tWupHVmK4DjEyfM0nASqOb8dghroD6BUKpiWMNulJFJn_IMaUrW2__qEUdn5GB0RBm3KzA1n.NTnxNGWt6v3Hj5H9FnCreoorSC0upJDpbypiGAcjr_B2bdY7CoksUlU; HttpOnly; SameSite=None; Secure; Path=/; Domain=venice.ai; Expires=Tue, 15 Sep 2026 14:28:18 GMT&quot;,
+    &quot;Permissions-Policy&quot;: &quot;geolocation=(), camera=()&quot;,
+    &quot;Strict-Transport-Security&quot;: &quot;max-age=31536000; includeSubDomains; preload&quot;,
+    &quot;X-Content-Type-Options&quot;: &quot;nosniff&quot;,
+    &quot;Server-Timing&quot;: &quot;cfCacheStatus;desc=\&quot;DYNAMIC\&quot;&quot;,
+    &quot;Referrer-Policy&quot;: &quot;strict-origin&quot;,
+    &quot;X-Frame-Options&quot;: &quot;SAMEORIGIN&quot;,
+    &quot;CF-RAY&quot;: &quot;a3b8253d4f5e966d-IAD&quot;
+  },
+  &quot;body&quot;: {
+    &quot;error&quot;: &quot;Specified model not found: provider-eval-nonexistent-model. Did you mean: gemini-3-1-pro-preview, deepseek-v4-pro, deepseek-v4-pro-0813?&quot;
+  }
+}</pre><details><summary>Request JSON</summary><pre>{
+  &quot;url&quot;: &quot;https://api.venice.ai/api/v1/chat/completions&quot;,
+  &quot;headers&quot;: {
+    &quot;Authorization&quot;: &quot;Bearer &lt;redacted&gt;&quot;,
+    &quot;Content-Type&quot;: &quot;application/json&quot;
+  },
+  &quot;json&quot;: {
+    &quot;model&quot;: &quot;provider-eval-nonexistent-model&quot;,
+    &quot;messages&quot;: [
+      {
+        &quot;role&quot;: &quot;user&quot;,
+        &quot;content&quot;: &quot;Reply with exactly: hello&quot;
+      }
+    ],
+    &quot;temperature&quot;: 0,
+    &quot;stream&quot;: false,
+    &quot;venice_parameters&quot;: {
+      &quot;include_venice_system_prompt&quot;: false
+    }
+  }
+}</pre></details></section><section><h1>Chutes</h1><p class="failed">Failed · 404 · 0.45647624996490777s</p><p class="model">provider-eval-nonexistent-model</p><details class="metrics"><summary>Metrics</summary><table><tr><th>Time to first token</th><td>Unavailable s<small>Non-streaming does not expose first-token arrival.</small></td></tr><tr><th>Total latency</th><td>0.45647625 s<small>measured</small></td></tr><tr><th>Output throughput</th><td>Unavailable tokens/s<small>Requires a successful stream, usage, and a positive generation interval.. Completion tokens divided by first-to-last content/reasoning chunk interval; chunk buffering can inflate this estimate.</small></td></tr><tr><th>Input tokens</th><td>Unavailable tokens<small>Not supplied by provider.</small></td></tr><tr><th>Output tokens</th><td>Unavailable tokens<small>Not supplied by provider.. Provider completion_tokens retained as total output; reasoning detail is a subset, never added again. Separate reasoning counts may be unavailable.</small></td></tr><tr><th>Reasoning tokens</th><td>Unavailable tokens<small>Not supplied by provider.</small></td></tr><tr><th>Input price</th><td>Unavailable USD/1M tokens<small>No verified price for this model.</small></td></tr><tr><th>Output price</th><td>Unavailable USD/1M tokens<small>No verified price for this model.</small></td></tr><tr><th>Input cost</th><td>Unavailable USD<small>Usage or verified pricing unavailable.</small></td></tr><tr><th>Output cost</th><td>Unavailable USD<small>Usage or verified pricing unavailable.</small></td></tr><tr><th>Request cost</th><td>Unavailable USD<small>Usage or verified pricing unavailable.</small></td></tr><tr><th>Success</th><td>False <small>measured</small></td></tr><tr><th>Http status</th><td>404 <small>provider-reported</small></td></tr><tr><th>Error type</th><td>HTTPError <small>measured</small></td></tr><tr><th>Error message</th><td>HTTP 404: {&quot;detail&quot;: &quot;model not found: provider-eval-nonexistent-model&quot;} <small>measured</small></td></tr><tr><th>Provider</th><td>chutes <small>configured</small></td></tr><tr><th>Model</th><td>qwen/qwen3.8-27b <small>configured</small></td></tr><tr><th>Provider model id</th><td>provider-eval-nonexistent-model <small>configured</small></td></tr><tr><th>Returned model id</th><td>Unavailable <small>Not supplied by provider.</small></td></tr><tr><th>Pricing</th><td>Unavailable <small>No verified model pricing.</small></td></tr><tr><th>Rate limits</th><td>Unavailable <small>Not supplied by provider.</small></td></tr><tr><th>Region</th><td>Unavailable <small>Not supplied by provider.</small></td></tr><tr><th>Version</th><td>Unavailable <small>Not supplied by provider.</small></td></tr><tr><th>Context window</th><td>Unavailable tokens<small>Not supplied by provider.</small></td></tr><tr><th>Quantization</th><td>Unavailable <small>Not supplied by provider.</small></td></tr></table></details><h2>Error</h2><pre>{
+  &quot;type&quot;: &quot;HTTPError&quot;,
+  &quot;message&quot;: &quot;HTTP 404: {\&quot;detail\&quot;: \&quot;model not found: provider-eval-nonexistent-model\&quot;}&quot;
+}</pre><h2>Response JSON</h2><pre>{
+  &quot;status_code&quot;: 404,
+  &quot;headers&quot;: {
+    &quot;server&quot;: &quot;nginx&quot;,
+    &quot;date&quot;: &quot;Tue, 15 Sep 2026 13:58:18 GMT&quot;,
+    &quot;content-type&quot;: &quot;application/json&quot;,
+    &quot;Content-Length&quot;: &quot;61&quot;,
+    &quot;vary&quot;: &quot;Accept-Encoding&quot;,
+    &quot;strict-transport-security&quot;: &quot;max-age=31536000; includeSubDomains&quot;,
+    &quot;access-control-allow-origin&quot;: &quot;*&quot;,
+    &quot;access-control-allow-methods&quot;: &quot;GET, POST, OPTIONS, PUT, DELETE, PATCH&quot;,
+    &quot;access-control-allow-headers&quot;: &quot;*, Authorization&quot;,
+    &quot;access-control-expose-headers&quot;: &quot;X-Chutes-Quota-Total,X-Chutes-Quota-Used,X-Chutes-Quota-Remaining,X-Chutes-RL-User,X-Chutes-RL-Chute,X-Chutes-InvocationID,DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization,X-Enable-Thinking,X-Provider,X-Provider-Version,X-Title,Content-Type,Authorization,Content-Type,Cache-Control,X-Chute-Id,X-Instance-Id,X-E2E-Nonce,X-E2E-Stream,X-E2E-Path&quot;,
+    &quot;access-control-max-age&quot;: &quot;1728000&quot;,
+    &quot;via&quot;: &quot;1.1 google&quot;,
+    &quot;Alt-Svc&quot;: &quot;clear&quot;,
+    &quot;Connection&quot;: &quot;close&quot;
+  },
+  &quot;body&quot;: {
+    &quot;detail&quot;: &quot;model not found: provider-eval-nonexistent-model&quot;
+  }
+}</pre><details><summary>Request JSON</summary><pre>{
+  &quot;url&quot;: &quot;https://llm.chutes.ai/v1/chat/completions&quot;,
+  &quot;headers&quot;: {
+    &quot;Authorization&quot;: &quot;Bearer &lt;redacted&gt;&quot;,
+    &quot;Content-Type&quot;: &quot;application/json&quot;
+  },
+  &quot;json&quot;: {
+    &quot;model&quot;: &quot;provider-eval-nonexistent-model&quot;,
+    &quot;messages&quot;: [
+      {
+        &quot;role&quot;: &quot;user&quot;,
+        &quot;content&quot;: &quot;Reply with exactly: hello&quot;
+      }
+    ],
+    &quot;temperature&quot;: 0,
+    &quot;stream&quot;: false
+  }
+}</pre></details></section><section><h1>Darkbloom</h1><p class="failed">Failed · 403 · 0.06663345906417817s</p><p class="model">provider-eval-nonexistent-model</p><details class="metrics"><summary>Metrics</summary><table><tr><th>Time to first token</th><td>Unavailable s<small>Non-streaming does not expose first-token arrival.</small></td></tr><tr><th>Total latency</th><td>0.066633459 s<small>measured</small></td></tr><tr><th>Output throughput</th><td>Unavailable tokens/s<small>Requires a successful stream, usage, and a positive generation interval.. Completion tokens divided by first-to-last content/reasoning chunk interval; chunk buffering can inflate this estimate.</small></td></tr><tr><th>Input tokens</th><td>Unavailable tokens<small>Not supplied by provider.</small></td></tr><tr><th>Output tokens</th><td>Unavailable tokens<small>Not supplied by provider.. Provider completion_tokens retained as total output; reasoning detail is a subset, never added again. Separate reasoning counts may be unavailable.</small></td></tr><tr><th>Reasoning tokens</th><td>Unavailable tokens<small>Not supplied by provider.</small></td></tr><tr><th>Input price</th><td>Unavailable USD/1M tokens<small>No verified price for this model.</small></td></tr><tr><th>Output price</th><td>Unavailable USD/1M tokens<small>No verified price for this model.</small></td></tr><tr><th>Input cost</th><td>Unavailable USD<small>Usage or verified pricing unavailable.</small></td></tr><tr><th>Output cost</th><td>Unavailable USD<small>Usage or verified pricing unavailable.</small></td></tr><tr><th>Request cost</th><td>Unavailable USD<small>Usage or verified pricing unavailable.</small></td></tr><tr><th>Success</th><td>False <small>measured</small></td></tr><tr><th>Http status</th><td>403 <small>provider-reported</small></td></tr><tr><th>Error type</th><td>HTTPError <small>measured</small></td></tr><tr><th>Error message</th><td>HTTP 403: {&quot;error&quot;: {&quot;code&quot;: &quot;model_not_allowed&quot;, &quot;message&quot;: &quot;this API key is not permitted to use model \&quot;provider-eval-nonexistent-model\&quot;&quot;, &quot;param&quot;: &quot;model&quot;, &quot;type&quot;: &quot;model_not_allowed&quot;}} <small>measured</small></td></tr><tr><th>Provider</th><td>darkbloom <small>configured</small></td></tr><tr><th>Model</th><td>qwen/qwen3.8-27b <small>configured</small></td></tr><tr><th>Provider model id</th><td>provider-eval-nonexistent-model <small>configured</small></td></tr><tr><th>Returned model id</th><td>Unavailable <small>Not supplied by provider.</small></td></tr><tr><th>Pricing</th><td>Unavailable <small>No verified model pricing.</small></td></tr><tr><th>Rate limits</th><td>{&quot;x-ratelimit-limit-requests&quot;: &quot;1200&quot;, &quot;x-ratelimit-remaining-requests&quot;: &quot;119&quot;, &quot;x-ratelimit-reset-requests&quot;: &quot;1s&quot;} <small>provider-reported</small></td></tr><tr><th>Region</th><td>Unavailable <small>Not supplied by provider.</small></td></tr><tr><th>Version</th><td>Unavailable <small>Not supplied by provider.</small></td></tr><tr><th>Context window</th><td>Unavailable tokens<small>Not supplied by provider.</small></td></tr><tr><th>Quantization</th><td>Unavailable <small>Not supplied by provider.</small></td></tr></table></details><h2>Error</h2><pre>{
+  &quot;type&quot;: &quot;HTTPError&quot;,
+  &quot;message&quot;: &quot;HTTP 403: {\&quot;error\&quot;: {\&quot;code\&quot;: \&quot;model_not_allowed\&quot;, \&quot;message\&quot;: \&quot;this API key is not permitted to use model \\\&quot;provider-eval-nonexistent-model\\\&quot;\&quot;, \&quot;param\&quot;: \&quot;model\&quot;, \&quot;type\&quot;: \&quot;model_not_allowed\&quot;}}&quot;
+}</pre><h2>Response JSON</h2><pre>{
+  &quot;status_code&quot;: 403,
+  &quot;headers&quot;: {
+    &quot;Access-Control-Allow-Credentials&quot;: &quot;true&quot;,
+    &quot;Access-Control-Allow-Headers&quot;: &quot;Content-Type, Authorization, X-Darkbloom-Metadata-Details&quot;,
+    &quot;Access-Control-Allow-Methods&quot;: &quot;GET, POST, PUT, DELETE, OPTIONS&quot;,
+    &quot;Access-Control-Allow-Origin&quot;: &quot;https://console.darkbloom.dev&quot;,
+    &quot;Alt-Svc&quot;: &quot;h3=\&quot;:443\&quot;; ma=2592000&quot;,
+    &quot;Content-Length&quot;: &quot;173&quot;,
+    &quot;Content-Type&quot;: &quot;application/json&quot;,
+    &quot;Date&quot;: &quot;Tue, 15 Sep 2026 13:58:18 GMT&quot;,
+    &quot;Referrer-Policy&quot;: &quot;strict-origin-when-cross-origin&quot;,
+    &quot;Via&quot;: &quot;1.1 Caddy&quot;,
+    &quot;X-Content-Type-Options&quot;: &quot;nosniff&quot;,
+    &quot;X-Frame-Options&quot;: &quot;DENY&quot;,
+    &quot;X-Ratelimit-Limit-Requests&quot;: &quot;1200&quot;,
+    &quot;X-Ratelimit-Remaining-Requests&quot;: &quot;119&quot;,
+    &quot;X-Ratelimit-Reset-Requests&quot;: &quot;1s&quot;,
+    &quot;X-Request-Id&quot;: &quot;nb58g7qf1b45&quot;,
+    &quot;Connection&quot;: &quot;close&quot;
+  },
+  &quot;body&quot;: {
+    &quot;error&quot;: {
+      &quot;code&quot;: &quot;model_not_allowed&quot;,
+      &quot;message&quot;: &quot;this API key is not permitted to use model \&quot;provider-eval-nonexistent-model\&quot;&quot;,
+      &quot;param&quot;: &quot;model&quot;,
+      &quot;type&quot;: &quot;model_not_allowed&quot;
+    }
+  }
+}</pre><details><summary>Request JSON</summary><pre>{
+  &quot;url&quot;: &quot;https://api.darkbloom.dev/v1/chat/completions&quot;,
+  &quot;headers&quot;: {
+    &quot;Authorization&quot;: &quot;Bearer &lt;redacted&gt;&quot;,
+    &quot;Content-Type&quot;: &quot;application/json&quot;
+  },
+  &quot;json&quot;: {
+    &quot;model&quot;: &quot;provider-eval-nonexistent-model&quot;,
+    &quot;messages&quot;: [
+      {
+        &quot;role&quot;: &quot;user&quot;,
+        &quot;content&quot;: &quot;Reply with exactly: hello&quot;
+      }
+    ],
+    &quot;temperature&quot;: 0,
+    &quot;stream&quot;: false
+  }
+}</pre></details></section><section><h1>io.net</h1><p class="failed">Failed · 400 · 0.22894929198082536s</p><p class="model">provider-eval-nonexistent-model</p><details class="metrics"><summary>Metrics</summary><table><tr><th>Time to first token</th><td>Unavailable s<small>Non-streaming does not expose first-token arrival.</small></td></tr><tr><th>Total latency</th><td>0.22894929 s<small>measured</small></td></tr><tr><th>Output throughput</th><td>Unavailable tokens/s<small>Requires a successful stream, usage, and a positive generation interval.. Completion tokens divided by first-to-last content/reasoning chunk interval; chunk buffering can inflate this estimate.</small></td></tr><tr><th>Input tokens</th><td>Unavailable tokens<small>Not supplied by provider.</small></td></tr><tr><th>Output tokens</th><td>Unavailable tokens<small>Not supplied by provider.. Provider completion_tokens retained as total output; reasoning detail is a subset, never added again. Separate reasoning counts may be unavailable.</small></td></tr><tr><th>Reasoning tokens</th><td>Unavailable tokens<small>Not supplied by provider.</small></td></tr><tr><th>Input price</th><td>Unavailable USD/1M tokens<small>No verified price for this model.</small></td></tr><tr><th>Output price</th><td>Unavailable USD/1M tokens<small>No verified price for this model.</small></td></tr><tr><th>Input cost</th><td>Unavailable USD<small>Usage or verified pricing unavailable.</small></td></tr><tr><th>Output cost</th><td>Unavailable USD<small>Usage or verified pricing unavailable.</small></td></tr><tr><th>Request cost</th><td>Unavailable USD<small>Usage or verified pricing unavailable.</small></td></tr><tr><th>Success</th><td>False <small>measured</small></td></tr><tr><th>Http status</th><td>400 <small>provider-reported</small></td></tr><tr><th>Error type</th><td>HTTPError <small>measured</small></td></tr><tr><th>Error message</th><td>HTTP 400: {&quot;detail&quot;: &quot;The requested model is not available for Chat Completions API. Available models: [&#x27;deepseek-ai/DeepSeek-V4.1-Flash&#x27;, &#x27;zai-org/GLM-5.3-Flash&#x27;, &#x27;zai-org/GLM-5.3&#x27;, &#x27;Qwen/Qwen3.8-27B&#x27;, &#x27;deepseek-ai/DeepSeek-V4-Flash-0731&#x27;, &#x27;moonshotai/Kimi-K3&#x27;, &#x27;XiaomiMiMo/MiMo-V2.5&#x27;, &#x27;zai-org/GLM-5.2&#x27;, &#x27;moonshotai/Kimi-K2.7-Code&#x27;, &#x27;Qwen/Qwen3.6-35B-A3B&#x27;, &#x27;Qwen/Qwen3.6-27B&#x27;, &#x27;MiniMaxAI/MiniMax-M2.7&#x27;, &#x27;deepseek-ai/DeepSeek-V4-Flash&#x27;, &#x27;deepseek-ai/DeepSeek-V4-Pro&#x27;, &#x27;moonshotai/Kimi-K2.6&#x27;, &#x27;zai-org/GLM-5.1&#x27;, &#x27;MiniMaxAI/MiniMax-M2.5&#x27;, &#x27;moonshotai/Kimi-K2.5&#x27;, &#x27;zai-org/GLM-5&#x27;, &#x27;deepseek-ai/DeepSeek-V3.2&#x27;, &#x27;moonshotai/Kimi-K2-Thinking&#x27;, &#x27;zai-org/GLM-4.5-Air&#x27;, &#x27;google/gemma-4-26b-a4b-it&#x27;, &#x27;zai-org/GLM-4.7-Flash&#x27;, &#x27;zai-org/GLM-4.7&#x27;, &#x27;moonshotai/Kimi-K2-Instruct-0905&#x27;, &#x27;openai/gpt-oss-120b&#x27;, &#x27;deepseek-ai/DeepSeek-R1-0528&#x27;, &#x27;zai-org/GLM-4.6&#x27;, &#x27;Qwen/Qwen3-Next-80B-A3B-Instruct&#x27;, &#x27;Intel/Qwen3-Coder-480B-A35B-Instruct-int4-mixed-ar&#x27;, &#x27;meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8&#x27;, &#x27;mistralai/Mistral-Nemo-Instruct-2407&#x27;, &#x27;openai/gpt-oss-20b&#x27;, &#x27;meta-llama/Llama-3.3-70B-Instruct&#x27;]&quot;} <small>measured</small></td></tr><tr><th>Provider</th><td>ionet <small>configured</small></td></tr><tr><th>Model</th><td>qwen/qwen3.8-27b <small>configured</small></td></tr><tr><th>Provider model id</th><td>provider-eval-nonexistent-model <small>configured</small></td></tr><tr><th>Returned model id</th><td>Unavailable <small>Not supplied by provider.</small></td></tr><tr><th>Pricing</th><td>Unavailable <small>No verified model pricing.</small></td></tr><tr><th>Rate limits</th><td>Unavailable <small>Not supplied by provider.</small></td></tr><tr><th>Region</th><td>Unavailable <small>Not supplied by provider.</small></td></tr><tr><th>Version</th><td>Unavailable <small>Not supplied by provider.</small></td></tr><tr><th>Context window</th><td>Unavailable tokens<small>Not supplied by provider.</small></td></tr><tr><th>Quantization</th><td>Unavailable <small>Not supplied by provider.</small></td></tr></table></details><h2>Error</h2><pre>{
+  &quot;type&quot;: &quot;HTTPError&quot;,
+  &quot;message&quot;: &quot;HTTP 400: {\&quot;detail\&quot;: \&quot;The requested model is not available for Chat Completions API. Available models: [&#x27;deepseek-ai/DeepSeek-V4.1-Flash&#x27;, &#x27;zai-org/GLM-5.3-Flash&#x27;, &#x27;zai-org/GLM-5.3&#x27;, &#x27;Qwen/Qwen3.8-27B&#x27;, &#x27;deepseek-ai/DeepSeek-V4-Flash-0731&#x27;, &#x27;moonshotai/Kimi-K3&#x27;, &#x27;XiaomiMiMo/MiMo-V2.5&#x27;, &#x27;zai-org/GLM-5.2&#x27;, &#x27;moonshotai/Kimi-K2.7-Code&#x27;, &#x27;Qwen/Qwen3.6-35B-A3B&#x27;, &#x27;Qwen/Qwen3.6-27B&#x27;, &#x27;MiniMaxAI/MiniMax-M2.7&#x27;, &#x27;deepseek-ai/DeepSeek-V4-Flash&#x27;, &#x27;deepseek-ai/DeepSeek-V4-Pro&#x27;, &#x27;moonshotai/Kimi-K2.6&#x27;, &#x27;zai-org/GLM-5.1&#x27;, &#x27;MiniMaxAI/MiniMax-M2.5&#x27;, &#x27;moonshotai/Kimi-K2.5&#x27;, &#x27;zai-org/GLM-5&#x27;, &#x27;deepseek-ai/DeepSeek-V3.2&#x27;, &#x27;moonshotai/Kimi-K2-Thinking&#x27;, &#x27;zai-org/GLM-4.5-Air&#x27;, &#x27;google/gemma-4-26b-a4b-it&#x27;, &#x27;zai-org/GLM-4.7-Flash&#x27;, &#x27;zai-org/GLM-4.7&#x27;, &#x27;moonshotai/Kimi-K2-Instruct-0905&#x27;, &#x27;openai/gpt-oss-120b&#x27;, &#x27;deepseek-ai/DeepSeek-R1-0528&#x27;, &#x27;zai-org/GLM-4.6&#x27;, &#x27;Qwen/Qwen3-Next-80B-A3B-Instruct&#x27;, &#x27;Intel/Qwen3-Coder-480B-A35B-Instruct-int4-mixed-ar&#x27;, &#x27;meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8&#x27;, &#x27;mistralai/Mistral-Nemo-Instruct-2407&#x27;, &#x27;openai/gpt-oss-20b&#x27;, &#x27;meta-llama/Llama-3.3-70B-Instruct&#x27;]\&quot;}&quot;
+}</pre><h2>Response JSON</h2><pre>{
+  &quot;status_code&quot;: 400,
+  &quot;headers&quot;: {
+    &quot;Date&quot;: &quot;Tue, 15 Sep 2026 13:58:18 GMT&quot;,
+    &quot;Content-Type&quot;: &quot;application/json&quot;,
+    &quot;Content-Length&quot;: &quot;1077&quot;,
+    &quot;Connection&quot;: &quot;close&quot;,
+    &quot;Server&quot;: &quot;cloudflare&quot;,
+    &quot;x-request-id&quot;: &quot;ea24f85a63674e399d62aa5429d8986e&quot;,
+    &quot;cf-cache-status&quot;: &quot;DYNAMIC&quot;,
+    &quot;set-cookie&quot;: &quot;__cf_bm=YojfGy_opASSt5A_cWqUeLL8_3CqLza6KFhXXvtbfbg-1789480698.4631345-1.0.1.1-zwan6KIKIUrLBVTX.9me28raDRcdxLGu8dvuMKZ0YTh7._xUrMDwWywoUBASqTkvCyCXh8CXlsAd5_aNSVCawj0jO2hAd_8b0qzg2zYBOci4B8hjJdfuVDPkQXzjAD2B; HttpOnly; SameSite=None; Secure; Path=/; Domain=io.solutions; Expires=Tue, 15 Sep 2026 14:28:18 GMT&quot;,
+    &quot;Strict-Transport-Security&quot;: &quot;max-age=31536000; includeSubDomains&quot;,
+    &quot;CF-RAY&quot;: &quot;a3b8253d6dfefa7f-IAD&quot;
+  },
+  &quot;body&quot;: {
+    &quot;detail&quot;: &quot;The requested model is not available for Chat Completions API. Available models: [&#x27;deepseek-ai/DeepSeek-V4.1-Flash&#x27;, &#x27;zai-org/GLM-5.3-Flash&#x27;, &#x27;zai-org/GLM-5.3&#x27;, &#x27;Qwen/Qwen3.8-27B&#x27;, &#x27;deepseek-ai/DeepSeek-V4-Flash-0731&#x27;, &#x27;moonshotai/Kimi-K3&#x27;, &#x27;XiaomiMiMo/MiMo-V2.5&#x27;, &#x27;zai-org/GLM-5.2&#x27;, &#x27;moonshotai/Kimi-K2.7-Code&#x27;, &#x27;Qwen/Qwen3.6-35B-A3B&#x27;, &#x27;Qwen/Qwen3.6-27B&#x27;, &#x27;MiniMaxAI/MiniMax-M2.7&#x27;, &#x27;deepseek-ai/DeepSeek-V4-Flash&#x27;, &#x27;deepseek-ai/DeepSeek-V4-Pro&#x27;, &#x27;moonshotai/Kimi-K2.6&#x27;, &#x27;zai-org/GLM-5.1&#x27;, &#x27;MiniMaxAI/MiniMax-M2.5&#x27;, &#x27;moonshotai/Kimi-K2.5&#x27;, &#x27;zai-org/GLM-5&#x27;, &#x27;deepseek-ai/DeepSeek-V3.2&#x27;, &#x27;moonshotai/Kimi-K2-Thinking&#x27;, &#x27;zai-org/GLM-4.5-Air&#x27;, &#x27;google/gemma-4-26b-a4b-it&#x27;, &#x27;zai-org/GLM-4.7-Flash&#x27;, &#x27;zai-org/GLM-4.7&#x27;, &#x27;moonshotai/Kimi-K2-Instruct-0905&#x27;, &#x27;openai/gpt-oss-120b&#x27;, &#x27;deepseek-ai/DeepSeek-R1-0528&#x27;, &#x27;zai-org/GLM-4.6&#x27;, &#x27;Qwen/Qwen3-Next-80B-A3B-Instruct&#x27;, &#x27;Intel/Qwen3-Coder-480B-A35B-Instruct-int4-mixed-ar&#x27;, &#x27;meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8&#x27;, &#x27;mistralai/Mistral-Nemo-Instruct-2407&#x27;, &#x27;openai/gpt-oss-20b&#x27;, &#x27;meta-llama/Llama-3.3-70B-Instruct&#x27;]&quot;
+  }
+}</pre><details><summary>Request JSON</summary><pre>{
+  &quot;url&quot;: &quot;https://api.intelligence.io.solutions/api/v1/chat/completions&quot;,
+  &quot;headers&quot;: {
+    &quot;Authorization&quot;: &quot;Bearer &lt;redacted&gt;&quot;,
+    &quot;Content-Type&quot;: &quot;application/json&quot;,
+    &quot;User-Agent&quot;: &quot;provider-eval/0.1&quot;,
+    &quot;Accept&quot;: &quot;application/json&quot;
+  },
+  &quot;json&quot;: {
+    &quot;model&quot;: &quot;provider-eval-nonexistent-model&quot;,
+    &quot;messages&quot;: [
+      {
+        &quot;role&quot;: &quot;user&quot;,
+        &quot;content&quot;: &quot;Reply with exactly: hello&quot;
+      }
+    ],
+    &quot;temperature&quot;: 0,
+    &quot;stream&quot;: false
+  }
+}</pre></details></section></main></body></html>

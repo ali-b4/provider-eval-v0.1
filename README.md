@@ -6,11 +6,12 @@ The benchmark uses one fixed model:
 
 **`qwen/qwen3.8-27b`**
 
-across three inference providers:
+across four inference providers:
 
 - Venice
 - Chutes
 - Darkbloom
+- io.net
 
 Each provider will be accessed through its **direct API**. The lab will not route requests through an aggregator such as OpenRouter.
 
@@ -24,11 +25,14 @@ The model stays the same, using the existing provider-specific IDs in `.env`.
 There is no model-selection command-line option or automatic model fallback.
 
 Run from the project folder with Python 3.10 or newer. No third-party packages are required.
-Copy `.env.example` to `.env` if needed and fill in the three API keys.
+Copy `.env.example` to `.env` if needed and fill in the four API keys.
 
 ```bash
-# Default: call all three providers concurrently and open the HTML report
+# Default: call all four providers concurrently and open the HTML report
 python3 scripts/manual_request.py --open
+
+# Stream all four providers and measure first-token time
+python3 scripts/manual_request.py --stream --open
 
 # Call only the selected providers, concurrently
 python3 scripts/manual_request.py --providers venice chutes --open
@@ -37,15 +41,15 @@ python3 scripts/manual_request.py --providers venice chutes --open
 python3 scripts/manual_request.py --providers darkbloom --prompt "Explain inference in one sentence." --open
 ```
 
-Every selected provider receives the same prompt with temperature 0, streaming off,
+Every selected provider receives the same prompt with temperature 0, streaming off by default (`--stream` enables it),
 and no artificial `max_tokens` limit. Calls overlap; their exact start times may differ slightly.
-Omitting `--providers` selects all three, even if a key is missing. Missing keys and
+Omitting `--providers` selects all four, even if a key is missing. Missing keys and
 request failures appear in the report without stopping the other providers.
 
 Each run saves its own folder under `results/raw/<run-id>/`, containing:
 
 - One JSON log per selected provider: request, response body, response headers, HTTP status, elapsed time, and any error.
-- `report.html`: three equal columns for Venice, Chutes, and Darkbloom. Unselected providers are labeled “Not selected.” Each response scrolls independently; expand “Request JSON” to inspect the input.
+- `report.html`: four equal columns for Venice, Chutes, Darkbloom, and io.net. Unselected providers are labeled “Not selected.” Each response scrolls independently; expand “Request JSON” to inspect the input.
 
 The report opens after all calls finish. Omit `--open` to save it without opening a browser.
 The terminal prints only short status lines and the report path. Authorization keys are
@@ -59,15 +63,16 @@ To recreate an HTML report from saved JSON without making new API calls:
 python3 scripts/render_report.py results/raw/<run-id>
 ```
 
-These are non-streaming inspection logs. Full streaming measurements, token throughput,
-and cost calculations remain future benchmark work; `run_benchmark.py` is still a placeholder.
+Both modes save normalized metrics and a separate Metrics dropdown in each column.
+Streaming logs include timed SSE events and assembled answer/reasoning output.
+`run_benchmark.py` remains a placeholder for a future multi-workload runner.
 The older provider-specific probe scripts remain available for individual debugging.
 
 ---
 
 ## v0.1 Goals
 
-v0.1 will send standardized requests to Venice, Chutes, and Darkbloom and measure:
+v0.1 will send standardized requests to Venice, Chutes, Darkbloom, and io.net and measure:
 
 - Time to first token (TTFT)
 - Total latency
@@ -82,7 +87,7 @@ v0.1 will send standardized requests to Venice, Chutes, and Darkbloom and measur
 
 Both streaming and non-streaming requests will be tested where supported.
 
-The objective is to make the same workload runnable against all three providers and store the resulting measurements in a consistent format.
+The objective is to make the same workload runnable against all four providers and store the resulting measurements in a consistent format.
 
 ---
 
@@ -112,6 +117,11 @@ Requests will be sent directly to the Chutes API.
 
 Requests will be sent directly to the Darkbloom API.
 
+### io.net
+
+Requests are sent directly to the io.net IO Intelligence API using `IONET_API_KEY`
+and `Qwen/Qwen3.8-27B`. Select it individually with `--providers ionet`.
+
 No requests in the initial benchmark should be routed through OpenRouter or another inference aggregator.
 
 ## Provider Documentation and Source of Truth
@@ -121,6 +131,8 @@ Use the provider's own documentation as the source of truth whenever a direct re
 - [Venice API documentation](https://docs.venice.ai/overview/about-venice) — endpoint, authentication, model IDs, request fields, and response behavior.
 - [Chutes API reference](https://chutes.ai/docs/api-reference/overview) — API endpoints, authentication, model-specific guides, and OpenAI-compatible inference requests.
 - [Darkbloom documentation](https://github.com/Layr-Labs/d-inference/tree/master/docs) — consumer quickstart, model catalog, API contracts, authentication, error codes, and allowed-model behavior.
+
+- [io.net API documentation](https://io.net/docs/reference/ai-models/create-chat-completion) — direct chat endpoint, streaming, and authentication; [model catalog](https://io.net/docs/reference/ai-models/get-models-list).
 
 For naming checks, use the provider's documented model ID or model-list endpoint. For errors, first compare the HTTP status, error code, and request field named in the provider response against that provider's documentation before changing the request or adapter.
 
@@ -160,7 +172,8 @@ This allows the lab to compare providers on more than raw speed and price.
     │   ├── base.py
     │   ├── venice.py
     │   ├── chutes.py
-    │   └── darkbloom.py
+    │   ├── darkbloom.py
+    │   └── ionet.py
     │
     ├── results/
     │   ├── raw/
@@ -209,6 +222,7 @@ The provider modules:
 - `venice.py`
 - `chutes.py`
 - `darkbloom.py`
+- `ionet.py`
 
 will translate the common request format into each provider's API format and normalize the resulting responses.
 
@@ -230,7 +244,7 @@ Benchmark outputs.
 
 Executable project workflows.
 
-`manual_request.py` sends concurrent direct API requests and saves JSON logs and a three-column HTML report. `render_report.py` rebuilds the report from saved logs.
+`manual_request.py` sends concurrent direct API requests and saves JSON logs and a four-column HTML report. `render_report.py` rebuilds the report from saved logs.
 
 `run_benchmark.py` will run standardized tests across all configured providers.
 
@@ -250,7 +264,7 @@ The same test inputs should be used across providers wherever possible.
 
 The harness should eventually allow a benchmark request to be described using a common set of parameters such as:
 
-    providers (all three by default; explicit selections restrict the run)
+    providers (all four by default; explicit selections restrict the run)
     messages
     max_tokens
     temperature
@@ -286,7 +300,7 @@ Conceptually:
         ↓
     results/raw
 
-The same test should be runnable against Venice, Chutes, and Darkbloom without changing the benchmark logic.
+The same test should be runnable against Venice, Chutes, Darkbloom, and io.net without changing the benchmark logic.
 
 ---
 
@@ -459,6 +473,7 @@ An initial comparison should eventually make it possible to view results approxi
 | Venice | qwen/qwen3.8-27b | Streaming | | | | | | | |
 | Chutes | qwen/qwen3.8-27b | Streaming | | | | | | | |
 | Darkbloom | qwen/qwen3.8-27b | Streaming | | | | | | | |
+| io.net | qwen/qwen3.8-27b | Streaming | | | | | | | |
 
 v0.1 should not attempt to draw strong statistical conclusions from a small number of requests.
 
@@ -510,7 +525,7 @@ These can be added after the basic provider qualification workflow is working co
 
 v0.1 is complete when the project can:
 
-1. Send the same standardized workload directly to Venice, Chutes, and Darkbloom
+1. Send the same standardized workload directly to Venice, Chutes, Darkbloom, and io.net
 2. Run both streaming and non-streaming requests where supported
 3. Record TTFT
 4. Record total latency
@@ -520,7 +535,7 @@ v0.1 is complete when the project can:
 8. Capture provider errors without stopping the benchmark
 9. Store provider/model metadata
 10. Save normalized request-level results
-11. Produce a simple comparison of the three providers
+11. Produce a simple comparison of the four providers
 
 At that point the lab should provide a functional foundation for more rigorous provider qualification in later versions.
 
@@ -533,7 +548,7 @@ At that point the lab should provide a functional foundation for more rigorous p
 Current progress:
 
 - All three providers returned HTTP 200 in the concurrent verification run; see [comparison notes](notes/direct-request-comparison.md) and the [saved HTML report](results/raw/20260915T124502Z-11785503/report.html)
-- Concurrent direct request runner added; all three providers run by default, with optional subsets
+- Concurrent direct request runner added; all four providers now run by default, with optional subsets
 - Per-provider JSON logs and a three-column HTML report added
 - Offline tests cover concurrent selection, failures, missing keys, timeouts, and HTML escaping
 - Repository initialized
@@ -569,10 +584,14 @@ Providers:
 - Compared request and response shapes, usage fields, reasoning fields, status codes, and provider metadata.
 - Recorded provider-specific findings and remaining measurement questions in [comparison notes](notes/direct-request-comparison.md).
 
-### Next steps: measurements and streaming
+### Completed: measurements and streaming
 
-The following is planned work, not yet implemented. Keep the model fixed and continue
-calling all three providers concurrently by default; an explicit provider selection
+Implemented and verified on 2026-09-15 with six successful live requests and 10 offline tests.
+Reports: [non-streaming](results/raw/20260915T125720Z-8cf4bdc4/report.html) ·
+[streaming](results/raw/20260915T125723Z-b21f2938/report.html).
+
+The following checklist describes the implemented workflow. Keep the model fixed and continue
+calling all four providers concurrently by default; an explicit provider selection
 runs only those providers concurrently.
 
 1. **Implement non-streaming measurements.** Extend the existing request logs into consistent metric records for every provider response, including failures.
@@ -588,7 +607,7 @@ runs only those providers concurrently.
    - Total request cost.
    - HTTP/API errors, including status and error details, with an explicit success/failure outcome.
    - Provider/model metadata, including provider name, model ID, pricing, rate limits, region, version, and context window where available.
-4. **Add a separate, clean “Metrics” dropdown to each provider column in every run's `report.html`.** Display the metrics above with readable labels and units, separate from the raw request and response JSON. Keep all three columns aligned for comparison and save the same metrics in the underlying JSON records.
+4. **Add a separate, clean “Metrics” dropdown to each provider column in every run's `report.html`.** Display the metrics above with readable labels and units, separate from the raw request and response JSON. Keep all four columns aligned for comparison and save the same metrics in the underlying JSON records.
 5. **Verify measurement consistency across providers.** Resolve differences in input-token reporting and reasoning-token accounting, and use documented provider pricing for cost calculations.
 
 Every response record must contain the full metric set. When a metric cannot be
@@ -597,3 +616,37 @@ omitting it or reporting zero. For example, non-streaming responses do not expos
 true TTFT or the generation interval needed for output throughput; failures may
 also leave usage and costs unknown. Clearly distinguish measured, provider-reported,
 and estimated values.
+
+
+### Remaining qualification work
+
+- Explain the remaining input-count difference (Venice 94 versus 57) and independently verify Venice/Chutes reasoning accounting; preserve reported totals meanwhile.
+- Refresh dated prices before future comparisons; estimates use standard published rates, not account billing receipts.
+- Investigate unavailable endpoint metadata such as serving region and Darkbloom context window.
+- Build the multi-workload `run_benchmark.py` workflow after this measurement foundation.
+
+New Venice requests disable its default system prompt to reduce hidden input differences.
+See [measurement definitions and limits](notes/metrics.md) for timing, pricing, and accounting rules.
+
+
+### Added: io.net — 2026-09-15
+
+- All four providers now run concurrently by default, with four equal report columns and the same metric fields.
+- io.net uses `IONET_API_KEY` and the verified `Qwen/Qwen3.8-27B` model ID. Optional `IONET_MODEL` follows the same configuration convention as the other providers.
+- Prompt, temperature, token-limit policy, streaming options, and measurement formulas are unchanged.
+- io.net pricing and endpoint metadata are recorded in `config/pricing.json` and its saved catalog snapshot.
+- All eight live requests succeeded: [non-streaming report](results/raw/20260915T133047Z-327d32ba/report.html) and [streaming report](results/raw/20260915T133050Z-cc5f32d4/report.html).
+- All 12 offline tests pass, including four-provider concurrency, io.net request settings, usage/cost accounting, key redaction, and report columns.
+
+```bash
+# Same experiment, now all four providers
+python3 scripts/manual_request.py --open
+python3 scripts/manual_request.py --stream --open
+
+# Select only io.net
+python3 scripts/manual_request.py --providers ionet --stream --open
+```
+
+Earlier saved reports and dated three-provider observations retain their original results.
+The `providers/` adapter classes and `run_benchmark.py` remain future-work placeholders;
+the working workflow for all four providers is `manual_request.py`.

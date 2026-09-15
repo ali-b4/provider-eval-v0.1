@@ -1,0 +1,387 @@
+{
+  "provider": "darkbloom",
+  "model": "qwen/qwen3.8-27b",
+  "provider_model_id": "EigenLabs/Qwen3.8-27B-4bit-mtp",
+  "timestamp": "2026-09-15T12:57:23.193509+00:00",
+  "request": {
+    "url": "https://api.darkbloom.dev/v1/chat/completions",
+    "headers": {
+      "Authorization": "Bearer <redacted>",
+      "Content-Type": "application/json"
+    },
+    "json": {
+      "model": "EigenLabs/Qwen3.8-27B-4bit-mtp",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Reply with exactly: hello"
+        }
+      ],
+      "temperature": 0,
+      "stream": true,
+      "stream_options": {
+        "include_usage": true
+      }
+    }
+  },
+  "response": {
+    "status_code": 200,
+    "headers": {
+      "Access-Control-Allow-Credentials": "true",
+      "Access-Control-Allow-Headers": "Content-Type, Authorization, X-Darkbloom-Metadata-Details",
+      "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+      "Access-Control-Allow-Origin": "https://console.darkbloom.dev",
+      "Alt-Svc": "h3=\":443\"; ma=2592000",
+      "Cache-Control": "no-cache",
+      "Content-Type": "text/event-stream",
+      "Date": "Tue, 15 Sep 2026 12:57:23 GMT",
+      "Referrer-Policy": "strict-origin-when-cross-origin",
+      "Via": "1.1 Caddy",
+      "X-Attestation-Se-Public-Key": "gymBVKGYDrf1Ry4OtFQXSwWZUNI4L30779YXuEp9S/hU6QnYyanu0N8iWw87PKQS37WkdNTmu8jy0TnzmCZEaA==",
+      "X-Content-Type-Options": "nosniff",
+      "X-Frame-Options": "DENY",
+      "X-Inference-Job-Id": "2fb913f4-7e29-477b-ba83-71115614aa87",
+      "X-Provider-Attested": "true",
+      "X-Provider-Chip": "Apple M5 Max",
+      "X-Provider-Encrypted": "true",
+      "X-Provider-Id": "9f2ea0f5-bade-47c9-b176-a0dbe086ab77",
+      "X-Provider-Mda-Verified": "true",
+      "X-Provider-Model": "Mac17,6",
+      "X-Provider-Secure-Enclave": "true",
+      "X-Provider-Trust-Level": "hardware",
+      "X-Ratelimit-Limit-Input-Tokens": "5000000",
+      "X-Ratelimit-Limit-Output-Tokens": "500000",
+      "X-Ratelimit-Limit-Requests": "1200",
+      "X-Ratelimit-Remaining-Input-Tokens": "999990",
+      "X-Ratelimit-Remaining-Output-Tokens": "21842",
+      "X-Ratelimit-Remaining-Requests": "119",
+      "X-Ratelimit-Reset-Input-Tokens": "1s",
+      "X-Ratelimit-Reset-Output-Tokens": "6s",
+      "X-Ratelimit-Reset-Requests": "1s",
+      "X-Request-Id": "kv1ifv75te6e",
+      "X-Timing": "{\"parse_us\":76,\"reserve_us\":1792,\"route_us\":4424,\"queue_us\":0,\"encrypt_us\":562,\"dispatch_us\":11,\"provider_us\":49266,\"pre_handler_us\":54,\"preflight_us\":545,\"route_reserve_us\":320,\"writer_us\":7,\"socket_us\":45,\"provider_ack_us\":44038}",
+      "Connection": "close",
+      "Transfer-Encoding": "chunked"
+    },
+    "body": {
+      "choices": [
+        {
+          "message": {
+            "content": "\n\nhello",
+            "reasoning_content": "The user wants me to reply with exactly the word \"hello\". This is a simple, direct request. I should output only \"hello\" with no additional text.\n"
+          },
+          "finish_reason": "stop"
+        }
+      ],
+      "model": "EigenLabs/Qwen3.8-27B-4bit-mtp",
+      "id": "chatcmpl-2fb913f4-7e29-477b-ba83-71115614aa87",
+      "usage": {
+        "completion_tokens": 38,
+        "completion_tokens_details": {
+          "reasoning_tokens": 34
+        },
+        "prompt_tokens": 57,
+        "total_tokens": 95
+      }
+    }
+  },
+  "success": true,
+  "error": null,
+  "request_sent": true,
+  "stream": {
+    "events": [
+      {
+        "arrival_seconds": 0.42125170794315636,
+        "data": "{\"choices\":[{\"delta\":{\"role\":\"assistant\"},\"index\":0}],\"created\":1789477043,\"id\":\"chatcmpl_72A89BB7D06641509C6A7B20\",\"model\":\"EigenLabs/Qwen3.8-27B-4bit-mtp\",\"object\":\"chat.completion.chunk\"}"
+      },
+      {
+        "arrival_seconds": 0.4212917499244213,
+        "data": "{\"choices\":[{\"delta\":{\"reasoning\":\"The\",\"reasoning_content\":\"The\",\"reasoning_details\":[{\"type\":\"reasoning.text\",\"text\":\"The\",\"id\":\"reasoning-text-0\",\"format\":\"unknown\",\"index\":0,\"signature\":null}]},\"index\":0}],\"created\":1789477043,\"id\":\"chatcmpl_72A89BB7D06641509C6A7B20\",\"model\":\"EigenLabs/Qwen3.8-27B-4bit-mtp\",\"object\":\"chat.completion.chunk\"}"
+      },
+      {
+        "arrival_seconds": 0.4515832499600947,
+        "data": "{\"choices\":[{\"delta\":{\"reasoning\":\" user\",\"reasoning_content\":\" user\",\"reasoning_details\":[{\"type\":\"reasoning.text\",\"text\":\" user\",\"id\":\"reasoning-text-0\",\"format\":\"unknown\",\"index\":0,\"signature\":null}]},\"index\":0}],\"created\":1789477043,\"id\":\"chatcmpl_72A89BB7D06641509C6A7B20\",\"model\":\"EigenLabs/Qwen3.8-27B-4bit-mtp\",\"object\":\"chat.completion.chunk\"}"
+      },
+      {
+        "arrival_seconds": 0.5032580830156803,
+        "data": "{\"choices\":[{\"delta\":{\"reasoning\":\" wants me to reply with\",\"reasoning_content\":\" wants me to reply with\",\"reasoning_details\":[{\"type\":\"reasoning.text\",\"text\":\" wants me to reply with\",\"id\":\"reasoning-text-0\",\"format\":\"unknown\",\"index\":0,\"signature\":null}]},\"index\":0}],\"created\":1789477043,\"id\":\"chatcmpl_72A89BB7D06641509C6A7B20\",\"model\":\"EigenLabs/Qwen3.8-27B-4bit-mtp\",\"object\":\"chat.completion.chunk\"}"
+      },
+      {
+        "arrival_seconds": 0.5531299170106649,
+        "data": "{\"choices\":[{\"delta\":{\"reasoning\":\" exactly the\",\"reasoning_content\":\" exactly the\",\"reasoning_details\":[{\"type\":\"reasoning.text\",\"text\":\" exactly the\",\"id\":\"reasoning-text-0\",\"format\":\"unknown\",\"index\":0,\"signature\":null}]},\"index\":0}],\"created\":1789477043,\"id\":\"chatcmpl_72A89BB7D06641509C6A7B20\",\"model\":\"EigenLabs/Qwen3.8-27B-4bit-mtp\",\"object\":\"chat.completion.chunk\"}"
+      },
+      {
+        "arrival_seconds": 0.6045459170127288,
+        "data": "{\"choices\":[{\"delta\":{\"reasoning\":\" word \\\"hello\\\". This\",\"reasoning_content\":\" word \\\"hello\\\". This\",\"reasoning_details\":[{\"type\":\"reasoning.text\",\"text\":\" word \\\"hello\\\". This\",\"id\":\"reasoning-text-0\",\"format\":\"unknown\",\"index\":0,\"signature\":null}]},\"index\":0}],\"created\":1789477043,\"id\":\"chatcmpl_72A89BB7D06641509C6A7B20\",\"model\":\"EigenLabs/Qwen3.8-27B-4bit-mtp\",\"object\":\"chat.completion.chunk\"}"
+      },
+      {
+        "arrival_seconds": 0.6634837079327554,
+        "data": "{\"choices\":[{\"delta\":{\"reasoning\":\" is a simple,\",\"reasoning_content\":\" is a simple,\",\"reasoning_details\":[{\"type\":\"reasoning.text\",\"text\":\" is a simple,\",\"id\":\"reasoning-text-0\",\"format\":\"unknown\",\"index\":0,\"signature\":null}]},\"index\":0}],\"created\":1789477043,\"id\":\"chatcmpl_72A89BB7D06641509C6A7B20\",\"model\":\"EigenLabs/Qwen3.8-27B-4bit-mtp\",\"object\":\"chat.completion.chunk\"}"
+      },
+      {
+        "arrival_seconds": 0.7074129169341177,
+        "data": "{\"choices\":[{\"delta\":{\"reasoning\":\" direct request. I\",\"reasoning_content\":\" direct request. I\",\"reasoning_details\":[{\"type\":\"reasoning.text\",\"text\":\" direct request. I\",\"id\":\"reasoning-text-0\",\"format\":\"unknown\",\"index\":0,\"signature\":null}]},\"index\":0}],\"created\":1789477043,\"id\":\"chatcmpl_72A89BB7D06641509C6A7B20\",\"model\":\"EigenLabs/Qwen3.8-27B-4bit-mtp\",\"object\":\"chat.completion.chunk\"}"
+      },
+      {
+        "arrival_seconds": 0.7636423750082031,
+        "data": "{\"choices\":[{\"delta\":{\"reasoning\":\" should output only\",\"reasoning_content\":\" should output only\",\"reasoning_details\":[{\"type\":\"reasoning.text\",\"text\":\" should output only\",\"id\":\"reasoning-text-0\",\"format\":\"unknown\",\"index\":0,\"signature\":null}]},\"index\":0}],\"created\":1789477043,\"id\":\"chatcmpl_72A89BB7D06641509C6A7B20\",\"model\":\"EigenLabs/Qwen3.8-27B-4bit-mtp\",\"object\":\"chat.completion.chunk\"}"
+      },
+      {
+        "arrival_seconds": 0.8145988750038669,
+        "data": "{\"choices\":[{\"delta\":{\"reasoning\":\" \\\"hello\\\" with no\",\"reasoning_content\":\" \\\"hello\\\" with no\",\"reasoning_details\":[{\"type\":\"reasoning.text\",\"text\":\" \\\"hello\\\" with no\",\"id\":\"reasoning-text-0\",\"format\":\"unknown\",\"index\":0,\"signature\":null}]},\"index\":0}],\"created\":1789477043,\"id\":\"chatcmpl_72A89BB7D06641509C6A7B20\",\"model\":\"EigenLabs/Qwen3.8-27B-4bit-mtp\",\"object\":\"chat.completion.chunk\"}"
+      },
+      {
+        "arrival_seconds": 0.8561943749664351,
+        "data": "{\"choices\":[{\"delta\":{\"reasoning\":\" additional\",\"reasoning_content\":\" additional\",\"reasoning_details\":[{\"type\":\"reasoning.text\",\"text\":\" additional\",\"id\":\"reasoning-text-0\",\"format\":\"unknown\",\"index\":0,\"signature\":null}]},\"index\":0}],\"created\":1789477043,\"id\":\"chatcmpl_72A89BB7D06641509C6A7B20\",\"model\":\"EigenLabs/Qwen3.8-27B-4bit-mtp\",\"object\":\"chat.completion.chunk\"}"
+      },
+      {
+        "arrival_seconds": 0.9078177079791203,
+        "data": "{\"choices\":[{\"delta\":{\"reasoning\":\" text.\",\"reasoning_content\":\" text.\",\"reasoning_details\":[{\"type\":\"reasoning.text\",\"text\":\" text.\",\"id\":\"reasoning-text-0\",\"format\":\"unknown\",\"index\":0,\"signature\":null}]},\"index\":0}],\"created\":1789477043,\"id\":\"chatcmpl_72A89BB7D06641509C6A7B20\",\"model\":\"EigenLabs/Qwen3.8-27B-4bit-mtp\",\"object\":\"chat.completion.chunk\"}"
+      },
+      {
+        "arrival_seconds": 0.9519823750015348,
+        "data": "{\"choices\":[{\"delta\":{\"reasoning\":\"\\n\",\"reasoning_content\":\"\\n\",\"reasoning_details\":[{\"type\":\"reasoning.text\",\"text\":\"\\n\",\"id\":\"reasoning-text-0\",\"format\":\"unknown\",\"index\":0,\"signature\":null}]},\"index\":0}],\"created\":1789477043,\"id\":\"chatcmpl_72A89BB7D06641509C6A7B20\",\"model\":\"EigenLabs/Qwen3.8-27B-4bit-mtp\",\"object\":\"chat.completion.chunk\"}"
+      },
+      {
+        "arrival_seconds": 0.9520274579990655,
+        "data": "{\"choices\":[{\"delta\":{\"content\":\"\\n\\nhello\"},\"index\":0}],\"created\":1789477043,\"id\":\"chatcmpl_72A89BB7D06641509C6A7B20\",\"model\":\"EigenLabs/Qwen3.8-27B-4bit-mtp\",\"object\":\"chat.completion.chunk\"}"
+      },
+      {
+        "arrival_seconds": 1.030300832935609,
+        "data": "{\"choices\":[{\"delta\":{},\"finish_reason\":\"stop\",\"index\":0}],\"created\":1789477043,\"id\":\"chatcmpl_72A89BB7D06641509C6A7B20\",\"model\":\"EigenLabs/Qwen3.8-27B-4bit-mtp\",\"object\":\"chat.completion.chunk\",\"usage\":{\"completion_tokens\":38,\"completion_tokens_details\":{\"reasoning_tokens\":34},\"prompt_tokens\":57,\"total_tokens\":95}}"
+      },
+      {
+        "arrival_seconds": 1.030329291941598,
+        "data": "{\"choices\":[],\"created\":1789477044,\"id\":\"chatcmpl-2fb913f4-7e29-477b-ba83-71115614aa87\",\"model\":\"EigenLabs/Qwen3.8-27B-4bit-mtp\",\"object\":\"chat.completion.chunk\",\"response_hash\":\"999432bc71f2c9198b7b51752971b5e4d5e8127a9cfd60fa5d84b2ab77be2116\",\"se_signature\":\"MEUCIQDebNgFDtzqy6JQpFH/9B1M+dOzLUdRPmWfUI/Q/vUZ1gIgSQCmuH+0lRrhW8MA24X6kVS3DgZRfBHsbsQ0OGo8R4I=\"}"
+      },
+      {
+        "arrival_seconds": 1.0303362079430372,
+        "data": "[DONE]"
+      }
+    ],
+    "raw_lines": [
+      "data: {\"choices\":[{\"delta\":{\"role\":\"assistant\"},\"index\":0}],\"created\":1789477043,\"id\":\"chatcmpl_72A89BB7D06641509C6A7B20\",\"model\":\"EigenLabs/Qwen3.8-27B-4bit-mtp\",\"object\":\"chat.completion.chunk\"}",
+      "",
+      "",
+      "",
+      "data: {\"choices\":[{\"delta\":{\"reasoning\":\"The\",\"reasoning_content\":\"The\",\"reasoning_details\":[{\"type\":\"reasoning.text\",\"text\":\"The\",\"id\":\"reasoning-text-0\",\"format\":\"unknown\",\"index\":0,\"signature\":null}]},\"index\":0}],\"created\":1789477043,\"id\":\"chatcmpl_72A89BB7D06641509C6A7B20\",\"model\":\"EigenLabs/Qwen3.8-27B-4bit-mtp\",\"object\":\"chat.completion.chunk\"}",
+      "",
+      "data: {\"choices\":[{\"delta\":{\"reasoning\":\" user\",\"reasoning_content\":\" user\",\"reasoning_details\":[{\"type\":\"reasoning.text\",\"text\":\" user\",\"id\":\"reasoning-text-0\",\"format\":\"unknown\",\"index\":0,\"signature\":null}]},\"index\":0}],\"created\":1789477043,\"id\":\"chatcmpl_72A89BB7D06641509C6A7B20\",\"model\":\"EigenLabs/Qwen3.8-27B-4bit-mtp\",\"object\":\"chat.completion.chunk\"}",
+      "",
+      "data: {\"choices\":[{\"delta\":{\"reasoning\":\" wants me to reply with\",\"reasoning_content\":\" wants me to reply with\",\"reasoning_details\":[{\"type\":\"reasoning.text\",\"text\":\" wants me to reply with\",\"id\":\"reasoning-text-0\",\"format\":\"unknown\",\"index\":0,\"signature\":null}]},\"index\":0}],\"created\":1789477043,\"id\":\"chatcmpl_72A89BB7D06641509C6A7B20\",\"model\":\"EigenLabs/Qwen3.8-27B-4bit-mtp\",\"object\":\"chat.completion.chunk\"}",
+      "",
+      "data: {\"choices\":[{\"delta\":{\"reasoning\":\" exactly the\",\"reasoning_content\":\" exactly the\",\"reasoning_details\":[{\"type\":\"reasoning.text\",\"text\":\" exactly the\",\"id\":\"reasoning-text-0\",\"format\":\"unknown\",\"index\":0,\"signature\":null}]},\"index\":0}],\"created\":1789477043,\"id\":\"chatcmpl_72A89BB7D06641509C6A7B20\",\"model\":\"EigenLabs/Qwen3.8-27B-4bit-mtp\",\"object\":\"chat.completion.chunk\"}",
+      "",
+      "data: {\"choices\":[{\"delta\":{\"reasoning\":\" word \\\"hello\\\". This\",\"reasoning_content\":\" word \\\"hello\\\". This\",\"reasoning_details\":[{\"type\":\"reasoning.text\",\"text\":\" word \\\"hello\\\". This\",\"id\":\"reasoning-text-0\",\"format\":\"unknown\",\"index\":0,\"signature\":null}]},\"index\":0}],\"created\":1789477043,\"id\":\"chatcmpl_72A89BB7D06641509C6A7B20\",\"model\":\"EigenLabs/Qwen3.8-27B-4bit-mtp\",\"object\":\"chat.completion.chunk\"}",
+      "",
+      "data: {\"choices\":[{\"delta\":{\"reasoning\":\" is a simple,\",\"reasoning_content\":\" is a simple,\",\"reasoning_details\":[{\"type\":\"reasoning.text\",\"text\":\" is a simple,\",\"id\":\"reasoning-text-0\",\"format\":\"unknown\",\"index\":0,\"signature\":null}]},\"index\":0}],\"created\":1789477043,\"id\":\"chatcmpl_72A89BB7D06641509C6A7B20\",\"model\":\"EigenLabs/Qwen3.8-27B-4bit-mtp\",\"object\":\"chat.completion.chunk\"}",
+      "",
+      "data: {\"choices\":[{\"delta\":{\"reasoning\":\" direct request. I\",\"reasoning_content\":\" direct request. I\",\"reasoning_details\":[{\"type\":\"reasoning.text\",\"text\":\" direct request. I\",\"id\":\"reasoning-text-0\",\"format\":\"unknown\",\"index\":0,\"signature\":null}]},\"index\":0}],\"created\":1789477043,\"id\":\"chatcmpl_72A89BB7D06641509C6A7B20\",\"model\":\"EigenLabs/Qwen3.8-27B-4bit-mtp\",\"object\":\"chat.completion.chunk\"}",
+      "",
+      "data: {\"choices\":[{\"delta\":{\"reasoning\":\" should output only\",\"reasoning_content\":\" should output only\",\"reasoning_details\":[{\"type\":\"reasoning.text\",\"text\":\" should output only\",\"id\":\"reasoning-text-0\",\"format\":\"unknown\",\"index\":0,\"signature\":null}]},\"index\":0}],\"created\":1789477043,\"id\":\"chatcmpl_72A89BB7D06641509C6A7B20\",\"model\":\"EigenLabs/Qwen3.8-27B-4bit-mtp\",\"object\":\"chat.completion.chunk\"}",
+      "",
+      "data: {\"choices\":[{\"delta\":{\"reasoning\":\" \\\"hello\\\" with no\",\"reasoning_content\":\" \\\"hello\\\" with no\",\"reasoning_details\":[{\"type\":\"reasoning.text\",\"text\":\" \\\"hello\\\" with no\",\"id\":\"reasoning-text-0\",\"format\":\"unknown\",\"index\":0,\"signature\":null}]},\"index\":0}],\"created\":1789477043,\"id\":\"chatcmpl_72A89BB7D06641509C6A7B20\",\"model\":\"EigenLabs/Qwen3.8-27B-4bit-mtp\",\"object\":\"chat.completion.chunk\"}",
+      "",
+      "data: {\"choices\":[{\"delta\":{\"reasoning\":\" additional\",\"reasoning_content\":\" additional\",\"reasoning_details\":[{\"type\":\"reasoning.text\",\"text\":\" additional\",\"id\":\"reasoning-text-0\",\"format\":\"unknown\",\"index\":0,\"signature\":null}]},\"index\":0}],\"created\":1789477043,\"id\":\"chatcmpl_72A89BB7D06641509C6A7B20\",\"model\":\"EigenLabs/Qwen3.8-27B-4bit-mtp\",\"object\":\"chat.completion.chunk\"}",
+      "",
+      "data: {\"choices\":[{\"delta\":{\"reasoning\":\" text.\",\"reasoning_content\":\" text.\",\"reasoning_details\":[{\"type\":\"reasoning.text\",\"text\":\" text.\",\"id\":\"reasoning-text-0\",\"format\":\"unknown\",\"index\":0,\"signature\":null}]},\"index\":0}],\"created\":1789477043,\"id\":\"chatcmpl_72A89BB7D06641509C6A7B20\",\"model\":\"EigenLabs/Qwen3.8-27B-4bit-mtp\",\"object\":\"chat.completion.chunk\"}",
+      "",
+      "data: {\"choices\":[{\"delta\":{\"reasoning\":\"\\n\",\"reasoning_content\":\"\\n\",\"reasoning_details\":[{\"type\":\"reasoning.text\",\"text\":\"\\n\",\"id\":\"reasoning-text-0\",\"format\":\"unknown\",\"index\":0,\"signature\":null}]},\"index\":0}],\"created\":1789477043,\"id\":\"chatcmpl_72A89BB7D06641509C6A7B20\",\"model\":\"EigenLabs/Qwen3.8-27B-4bit-mtp\",\"object\":\"chat.completion.chunk\"}",
+      "",
+      "data: {\"choices\":[{\"delta\":{\"content\":\"\\n\\nhello\"},\"index\":0}],\"created\":1789477043,\"id\":\"chatcmpl_72A89BB7D06641509C6A7B20\",\"model\":\"EigenLabs/Qwen3.8-27B-4bit-mtp\",\"object\":\"chat.completion.chunk\"}",
+      "",
+      "",
+      "",
+      "data: {\"choices\":[{\"delta\":{},\"finish_reason\":\"stop\",\"index\":0}],\"created\":1789477043,\"id\":\"chatcmpl_72A89BB7D06641509C6A7B20\",\"model\":\"EigenLabs/Qwen3.8-27B-4bit-mtp\",\"object\":\"chat.completion.chunk\",\"usage\":{\"completion_tokens\":38,\"completion_tokens_details\":{\"reasoning_tokens\":34},\"prompt_tokens\":57,\"total_tokens\":95}}",
+      "",
+      "data: {\"choices\":[],\"created\":1789477044,\"id\":\"chatcmpl-2fb913f4-7e29-477b-ba83-71115614aa87\",\"model\":\"EigenLabs/Qwen3.8-27B-4bit-mtp\",\"object\":\"chat.completion.chunk\",\"response_hash\":\"999432bc71f2c9198b7b51752971b5e4d5e8127a9cfd60fa5d84b2ab77be2116\",\"se_signature\":\"MEUCIQDebNgFDtzqy6JQpFH/9B1M+dOzLUdRPmWfUI/Q/vUZ1gIgSQCmuH+0lRrhW8MA24X6kVS3DgZRfBHsbsQ0OGo8R4I=\"}",
+      "",
+      "data: [DONE]",
+      ""
+    ],
+    "content": "\n\nhello",
+    "reasoning": "The user wants me to reply with exactly the word \"hello\". This is a simple, direct request. I should output only \"hello\" with no additional text.\n",
+    "first_token_seconds": 0.4212917499244213,
+    "last_token_seconds": 0.9520274579990655,
+    "complete": true
+  },
+  "total_latency_seconds": 1.030505041941069,
+  "metrics": {
+    "ttft_seconds": {
+      "value": 0.4212917499244213,
+      "source": "measured",
+      "reason": null,
+      "unit": "s"
+    },
+    "total_latency_seconds": {
+      "value": 1.030505041941069,
+      "source": "measured",
+      "reason": null,
+      "unit": "s"
+    },
+    "output_tokens_per_second": {
+      "value": 71.59872498093829,
+      "source": "estimated",
+      "reason": null,
+      "unit": "tokens/s",
+      "note": "Completion tokens divided by first-to-last content/reasoning chunk interval; chunk buffering can inflate this estimate."
+    },
+    "input_tokens": {
+      "value": 57,
+      "source": "provider-reported",
+      "reason": null,
+      "unit": "tokens"
+    },
+    "output_tokens": {
+      "value": 38,
+      "source": "provider-reported",
+      "reason": null,
+      "unit": "tokens",
+      "note": "Provider completion_tokens retained as total output; reasoning detail is a subset, never added again. Separate reasoning counts may be unavailable."
+    },
+    "reasoning_tokens": {
+      "value": 34,
+      "source": "provider-reported",
+      "reason": null,
+      "unit": "tokens"
+    },
+    "input_price_per_1m": {
+      "value": 0.15,
+      "source": "provider-reported",
+      "reason": null,
+      "unit": "USD/1M tokens"
+    },
+    "output_price_per_1m": {
+      "value": 2.0,
+      "source": "provider-reported",
+      "reason": null,
+      "unit": "USD/1M tokens"
+    },
+    "input_cost": {
+      "value": 8.55e-06,
+      "source": "estimated",
+      "reason": null,
+      "unit": "USD"
+    },
+    "output_cost": {
+      "value": 7.6e-05,
+      "source": "estimated",
+      "reason": null,
+      "unit": "USD"
+    },
+    "request_cost": {
+      "value": 0.0001,
+      "source": "estimated",
+      "reason": null,
+      "unit": "USD",
+      "note": "Published standard direct-consumer rates with $0.0001 minimum; service accounts and custom rates may differ."
+    },
+    "success": {
+      "value": true,
+      "source": "measured",
+      "reason": null,
+      "unit": null
+    },
+    "http_status": {
+      "value": 200,
+      "source": "provider-reported",
+      "reason": null,
+      "unit": null
+    },
+    "error_type": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "No error.",
+      "unit": null
+    },
+    "error_message": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "No error.",
+      "unit": null
+    }
+  },
+  "metadata": {
+    "provider": {
+      "value": "darkbloom",
+      "source": "configured",
+      "reason": null,
+      "unit": null
+    },
+    "model": {
+      "value": "qwen/qwen3.8-27b",
+      "source": "configured",
+      "reason": null,
+      "unit": null
+    },
+    "provider_model_id": {
+      "value": "EigenLabs/Qwen3.8-27B-4bit-mtp",
+      "source": "configured",
+      "reason": null,
+      "unit": null
+    },
+    "returned_model_id": {
+      "value": "EigenLabs/Qwen3.8-27B-4bit-mtp",
+      "source": "provider-reported",
+      "reason": null,
+      "unit": null
+    },
+    "pricing": {
+      "value": {
+        "provider_model_id": "EigenLabs/Qwen3.8-27B-4bit-mtp",
+        "input_per_1m_tokens": 0.15,
+        "output_per_1m_tokens": 2.0,
+        "context_window": null,
+        "quantization": "4bit (model ID)",
+        "source": "https://api.darkbloom.dev/v1/pricing",
+        "checked_at": "2026-09-15",
+        "cost_basis": "Published standard direct-consumer rates with $0.0001 minimum; service accounts and custom rates may differ.",
+        "minimum_request_cost_usd": 0.0001,
+        "billing_source": "https://github.com/Layr-Labs/d-inference/blob/master/docs/reference/pricing-model.md"
+      },
+      "source": "provider-reported",
+      "reason": null,
+      "unit": null
+    },
+    "rate_limits": {
+      "value": {
+        "x-ratelimit-limit-input-tokens": "5000000",
+        "x-ratelimit-limit-output-tokens": "500000",
+        "x-ratelimit-limit-requests": "1200",
+        "x-ratelimit-remaining-input-tokens": "999990",
+        "x-ratelimit-remaining-output-tokens": "21842",
+        "x-ratelimit-remaining-requests": "119",
+        "x-ratelimit-reset-input-tokens": "1s",
+        "x-ratelimit-reset-output-tokens": "6s",
+        "x-ratelimit-reset-requests": "1s"
+      },
+      "source": "provider-reported",
+      "reason": null,
+      "unit": null
+    },
+    "region": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Not supplied by provider.",
+      "unit": null
+    },
+    "version": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Not supplied by provider.",
+      "unit": null
+    },
+    "context_window": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Not supplied by provider.",
+      "unit": "tokens"
+    },
+    "quantization": {
+      "value": "4bit (model ID)",
+      "source": "provider-reported",
+      "reason": null,
+      "unit": null
+    }
+  }
+}

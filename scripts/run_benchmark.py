@@ -1,7 +1,6 @@
 """Run the direct-API provider benchmark suite."""
 
-MODEL = "qwen/qwen3.8-27b"
-PROVIDERS = ("venice", "chutes", "darkbloom")
+from provider_config import MODEL, PROVIDERS
 
 
 def main() -> None:

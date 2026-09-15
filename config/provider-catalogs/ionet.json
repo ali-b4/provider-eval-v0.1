@@ -1,0 +1,52 @@
+{
+  "checked_at": "2026-09-15",
+  "source": "https://api.intelligence.io.solutions/api/v1/models",
+  "record": {
+    "id": "Qwen/Qwen3.8-27B",
+    "name": "Qwen: Qwen3.8 27B",
+    "object": "model",
+    "created": 1786883740,
+    "owned_by": "io-intelligence",
+    "root": null,
+    "parent": null,
+    "max_model_len": null,
+    "permission": [
+      {
+        "id": "modelperm-dab005e20f3d4d20b7215a652e3f8ac5",
+        "object": "model_permission",
+        "created": 1789479030,
+        "allow_create_engine": false,
+        "allow_sampling": true,
+        "allow_logprobs": true,
+        "allow_search_indices": false,
+        "allow_view": true,
+        "allow_fine_tuning": false,
+        "organization": "*",
+        "group": null,
+        "is_blocking": false
+      }
+    ],
+    "max_tokens": 65536,
+    "context_window": 65536,
+    "supports_reasoning": true,
+    "supports_tools": true,
+    "input_modalities": [
+      "text",
+      "image",
+      "video"
+    ],
+    "output_modalities": [
+      "text"
+    ],
+    "supports_prompt_cache": true,
+    "input_token_price": 3.08e-07,
+    "output_token_price": 2.73e-06,
+    "cache_read_token_price": 1.54e-07,
+    "precision": "fp8",
+    "avg_latency_ms_per_day": 1893.2788517867605,
+    "avg_throughput_per_day": 660.7848318926722,
+    "supports_attestation": false,
+    "min_access_tier": 2,
+    "higher_tier_required": false
+  }
+}

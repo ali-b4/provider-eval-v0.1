@@ -1,0 +1,296 @@
+{
+  "provider": "venice",
+  "model": "qwen/qwen3.8-27b",
+  "provider_model_id": "qwen-3-8-27b",
+  "timestamp": "2026-09-15T12:57:20.397432+00:00",
+  "request": {
+    "url": "https://api.venice.ai/api/v1/chat/completions",
+    "headers": {
+      "Authorization": "Bearer <redacted>",
+      "Content-Type": "application/json"
+    },
+    "json": {
+      "model": "qwen-3-8-27b",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Reply with exactly: hello"
+        }
+      ],
+      "temperature": 0,
+      "stream": false,
+      "venice_parameters": {
+        "include_venice_system_prompt": false
+      }
+    }
+  },
+  "response": {
+    "status_code": 200,
+    "headers": {
+      "Date": "Tue, 15 Sep 2026 12:57:21 GMT",
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "close",
+      "content-security-policy": "default-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests",
+      "access-control-allow-origin": "*",
+      "access-control-expose-headers": "*",
+      "Cache-Control": "no-store, no-cache, private, must-revalidate",
+      "cdn-cache-control": "no-store",
+      "x-venice-version": "outerface-api-server-us-east1-06309-mnq",
+      "x-venice-balance-usd": "9.99680737",
+      "x-ratelimit-limit-requests": "100",
+      "x-ratelimit-remaining-requests": "99",
+      "x-ratelimit-reset-requests": "1789477100513",
+      "x-ratelimit-limit-tokens": "2000000",
+      "x-ratelimit-remaining-tokens": "2000000",
+      "x-ratelimit-reset-tokens": "1789477100515",
+      "x-ratelimit-resets": "1789477070480",
+      "x-ratelimit-remaining": "50",
+      "etag": "W/\"42f-Eu3CI5ccU97N+phyyvTW32prerM\"",
+      "vary": "Accept-Encoding",
+      "X-Frame-Options": "SAMEORIGIN",
+      "Server": "cloudflare",
+      "cf-cache-status": "DYNAMIC",
+      "set-cookie": "__cf_bm=R4b1ryXbwwkP8SlJUKCeAem6HMbVND_oEoP9htOsnIM-1789477040.4615996-1.0.1.1-ovRvkv3gYDSAQz3nUy_vTnD643MruFMX9Qfr0v0aO6P3EMhwjTb9yyPa9CMEMegBLQjkoWC8ynmFrIB51EhOjnIcSsx_h4e9wUJ6NNHSa9vrFdZKZY0t6HvEhJs53uZG; HttpOnly; SameSite=None; Secure; Path=/; Domain=venice.ai; Expires=Tue, 15 Sep 2026 13:27:21 GMT",
+      "Permissions-Policy": "geolocation=(), camera=()",
+      "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload",
+      "X-Content-Type-Options": "nosniff",
+      "Server-Timing": "cfCacheStatus;desc=\"DYNAMIC\"",
+      "Referrer-Policy": "strict-origin",
+      "CF-RAY": "a3b7cbeed8338233-IAD"
+    },
+    "body": {
+      "id": "chatcmpl-b04214a7e057c1ed",
+      "object": "chat.completion",
+      "created": 1789477040,
+      "model": "qwen-3-8-27b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "\n\nhello",
+            "refusal": null,
+            "annotations": null,
+            "audio": null,
+            "function_call": null,
+            "reasoning_content": "The user wants me to reply with exactly \"hello\". This is a straightforward instruction.\n"
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null,
+          "token_ids": null,
+          "routed_experts": null
+        }
+      ],
+      "service_tier": null,
+      "usage": {
+        "prompt_tokens": 94,
+        "completion_tokens": 22,
+        "total_tokens": 116
+      },
+      "prompt_logprobs": null,
+      "prompt_token_ids": null,
+      "prompt_text": null,
+      "kv_transfer_params": null,
+      "ec_transfer_params": null,
+      "metrics": null,
+      "cost": {
+        "usd": 0.0001127,
+        "diem": 0
+      },
+      "venice_parameters": {
+        "strip_thinking_response": false,
+        "disable_thinking": false,
+        "enable_e2ee": true,
+        "enable_web_search": "off",
+        "enable_web_scraping": false,
+        "enable_web_citations": false,
+        "include_search_results_in_stream": false,
+        "include_venice_system_prompt": false,
+        "enable_x_search": false,
+        "web_search_citations": [],
+        "return_search_results_as_documents": false
+      }
+    }
+  },
+  "success": true,
+  "error": null,
+  "request_sent": true,
+  "total_latency_seconds": 0.6347378749633208,
+  "metrics": {
+    "ttft_seconds": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Non-streaming does not expose first-token arrival.",
+      "unit": "s"
+    },
+    "total_latency_seconds": {
+      "value": 0.6347378749633208,
+      "source": "measured",
+      "reason": null,
+      "unit": "s"
+    },
+    "output_tokens_per_second": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Requires a successful stream, usage, and a positive generation interval.",
+      "unit": "tokens/s",
+      "note": "Completion tokens divided by first-to-last content/reasoning chunk interval; chunk buffering can inflate this estimate."
+    },
+    "input_tokens": {
+      "value": 94,
+      "source": "provider-reported",
+      "reason": null,
+      "unit": "tokens"
+    },
+    "output_tokens": {
+      "value": 22,
+      "source": "provider-reported",
+      "reason": null,
+      "unit": "tokens",
+      "note": "Provider completion_tokens retained as total output; reasoning detail is a subset, never added again. Separate reasoning counts may be unavailable."
+    },
+    "reasoning_tokens": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Not supplied by provider.",
+      "unit": "tokens"
+    },
+    "input_price_per_1m": {
+      "value": 0.45,
+      "source": "provider-reported",
+      "reason": null,
+      "unit": "USD/1M tokens"
+    },
+    "output_price_per_1m": {
+      "value": 3.2,
+      "source": "provider-reported",
+      "reason": null,
+      "unit": "USD/1M tokens"
+    },
+    "input_cost": {
+      "value": 4.2300000000000005e-05,
+      "source": "estimated",
+      "reason": null,
+      "unit": "USD"
+    },
+    "output_cost": {
+      "value": 7.04e-05,
+      "source": "estimated",
+      "reason": null,
+      "unit": "USD"
+    },
+    "request_cost": {
+      "value": 0.0001127,
+      "source": "estimated",
+      "reason": null,
+      "unit": "USD",
+      "note": "Published token rates; excludes account discounts and non-token charges."
+    },
+    "success": {
+      "value": true,
+      "source": "measured",
+      "reason": null,
+      "unit": null
+    },
+    "http_status": {
+      "value": 200,
+      "source": "provider-reported",
+      "reason": null,
+      "unit": null
+    },
+    "error_type": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "No error.",
+      "unit": null
+    },
+    "error_message": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "No error.",
+      "unit": null
+    }
+  },
+  "metadata": {
+    "provider": {
+      "value": "venice",
+      "source": "configured",
+      "reason": null,
+      "unit": null
+    },
+    "model": {
+      "value": "qwen/qwen3.8-27b",
+      "source": "configured",
+      "reason": null,
+      "unit": null
+    },
+    "provider_model_id": {
+      "value": "qwen-3-8-27b",
+      "source": "configured",
+      "reason": null,
+      "unit": null
+    },
+    "returned_model_id": {
+      "value": "qwen-3-8-27b",
+      "source": "provider-reported",
+      "reason": null,
+      "unit": null
+    },
+    "pricing": {
+      "value": {
+        "provider_model_id": "qwen-3-8-27b",
+        "input_per_1m_tokens": 0.45,
+        "output_per_1m_tokens": 3.2,
+        "context_window": 262144,
+        "quantization": "fp8",
+        "source": "https://api.venice.ai/api/v1/models",
+        "checked_at": "2026-09-15",
+        "cost_basis": "Published token rates; excludes account discounts and non-token charges."
+      },
+      "source": "provider-reported",
+      "reason": null,
+      "unit": null
+    },
+    "rate_limits": {
+      "value": {
+        "x-ratelimit-limit-requests": "100",
+        "x-ratelimit-remaining-requests": "99",
+        "x-ratelimit-reset-requests": "1789477100513",
+        "x-ratelimit-limit-tokens": "2000000",
+        "x-ratelimit-remaining-tokens": "2000000",
+        "x-ratelimit-reset-tokens": "1789477100515",
+        "x-ratelimit-resets": "1789477070480",
+        "x-ratelimit-remaining": "50"
+      },
+      "source": "provider-reported",
+      "reason": null,
+      "unit": null
+    },
+    "region": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Not supplied by provider.",
+      "unit": null
+    },
+    "version": {
+      "value": "outerface-api-server-us-east1-06309-mnq",
+      "source": "provider-reported",
+      "reason": null,
+      "unit": null
+    },
+    "context_window": {
+      "value": 262144,
+      "source": "provider-reported",
+      "reason": null,
+      "unit": "tokens"
+    },
+    "quantization": {
+      "value": "fp8",
+      "source": "provider-reported",
+      "reason": null,
+      "unit": null
+    }
+  }
+}

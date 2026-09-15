@@ -1,0 +1,10 @@
+{
+  "checked_at": "2026-09-15",
+  "record": {
+    "model": "EigenLabs/Qwen3.8-27B-4bit-mtp",
+    "input_price": 150000,
+    "output_price": 2000000,
+    "input_usd": "$0.1500",
+    "output_usd": "$2.0000"
+  }
+}

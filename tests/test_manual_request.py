@@ -32,7 +32,7 @@ class RequestTests(unittest.TestCase):
             report = manual_request.render_report(path).read_text()
             self.assertIn("&lt;script&gt;", report)
             self.assertNotIn("<script>", report)
-            self.assertEqual(report.count("Not selected for this run"), 2)
+            self.assertEqual(report.count("Not selected for this run"), 3)
 
     @patch.dict(os.environ, {"VENICE_API_KEY": "test-secret"})
     def test_http_error_with_non_json_body(self):
@@ -57,7 +57,7 @@ class RequestTests(unittest.TestCase):
         self.assertIn("Missing VENICE_API_KEY", result["error"]["message"])
 
     def test_selected_providers_overlap_and_failure_does_not_stop_run(self):
-        for selected in (["venice"], ["venice", "chutes"], list(manual_request.PROVIDERS)):
+        for selected in (["venice"], ["ionet"], ["venice", "ionet"], ["venice", "chutes"], list(manual_request.PROVIDERS)):
             with self.subTest(selected=selected), tempfile.TemporaryDirectory() as directory:
                 barrier = threading.Barrier(len(selected))
                 def fake_probe(provider, prompt, timeout):

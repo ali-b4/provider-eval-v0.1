@@ -13,14 +13,11 @@ import uuid
 import webbrowser
 
 from render_report import render_report
+from measurements import normalize
+from streaming import read_stream
 
 ROOT = Path(__file__).resolve().parents[1]
-MODEL = "qwen/qwen3.8-27b"
-PROVIDERS = {
-    "venice": ("https://api.venice.ai/api/v1/chat/completions", "qwen-3-8-27b"),
-    "chutes": ("https://llm.chutes.ai/v1/chat/completions", "Qwen/Qwen3.8-27B-TEE"),
-    "darkbloom": ("https://api.darkbloom.dev/v1/chat/completions", "EigenLabs/Qwen3.8-27B-4bit-mtp"),
-}
+from provider_config import MODEL, PROVIDERS
 
 
 def load_dotenv() -> None:
@@ -37,52 +34,67 @@ def load_dotenv() -> None:
             os.environ.setdefault(key.strip(), value)
 
 
-def probe(provider: str, prompt: str, timeout: float) -> dict:
+def probe(provider: str, prompt: str, timeout: float, streaming: bool = False) -> dict:
     url, default_model = PROVIDERS[provider]
     model = os.getenv(f"{provider.upper()}_MODEL", default_model)
     payload = {"model": model, "messages": [{"role": "user", "content": prompt}],
-               "temperature": 0, "stream": False}
+               "temperature": 0, "stream": streaming}
+    if streaming:
+        payload["stream_options"] = {"include_usage": True}
+    if provider == "venice":
+        payload["venice_parameters"] = {"include_venice_system_prompt": False}
     result = {
         "provider": provider, "model": MODEL, "provider_model_id": model,
         "timestamp": datetime.now(timezone.utc).isoformat(),
         "request": {"url": url, "headers": {"Authorization": "Bearer <redacted>",
                     "Content-Type": "application/json"}, "json": payload},
-        "response": None, "success": False, "error": None,
+        "response": None, "success": False, "error": None, "request_sent": False,
     }
+    if provider == "ionet":
+        result["request"]["headers"]["User-Agent"] = "provider-eval/0.1"
+        result["request"]["headers"]["Accept"] = "text/event-stream" if streaming else "application/json"
     start = time.perf_counter()
     try:
         key = os.getenv(f"{provider.upper()}_API_KEY")
         if not key:
             raise ValueError(f"Missing {provider.upper()}_API_KEY")
+        headers = {**result["request"]["headers"], "Authorization": f"Bearer {key}"}
         request = urllib.request.Request(url, data=json.dumps(payload).encode(),
-                    headers={"Authorization": f"Bearer {key}",
-                             "Content-Type": "application/json"}, method="POST")
+                                         headers=headers, method="POST")
+        start = time.perf_counter()
+        result["request_sent"] = True
         try:
             response = urllib.request.urlopen(request, timeout=timeout)
         except urllib.error.HTTPError as error:
             response = error
         with response:
-            body_text = response.read().decode("utf-8", errors="replace")
-            result["response"] = {"status_code": response.code,
-                                  "headers": dict(response.headers), "body": body_text}
-            try:
-                result["response"]["body"] = json.loads(body_text)
-            except json.JSONDecodeError:
-                result["error"] = {"type": "InvalidJSON", "message": "Response was not valid JSON; raw text retained."}
-            result["success"] = 200 <= response.code < 300 and result["error"] is None
+            result["response"] = {"status_code": response.code, "headers": dict(response.headers), "body": None}
+            if streaming and 200 <= response.code < 300:
+                read_stream(response, result, start)
+            else:
+                body_text = response.read().decode("utf-8", errors="replace")
+                result["response"]["body"] = body_text
+                try:
+                    result["response"]["body"] = json.loads(body_text)
+                except json.JSONDecodeError:
+                    result["error"] = {"type": "InvalidJSON", "message": "Response was not valid JSON; raw text retained."}
+            body = result["response"]["body"]
+            if isinstance(body, dict) and body.get("error"):
+                result["error"] = {"type": "APIError", "message": json.dumps(body["error"])}
             if not 200 <= response.code < 300:
-                result["error"] = {"type": "HTTPError", "message": f"HTTP {response.code}"}
+                result["error"] = {"type": "HTTPError", "message": f"HTTP {response.code}: {json.dumps(body)}"}
+            result["success"] = 200 <= response.code < 300 and result["error"] is None
     except Exception as error:
         result["error"] = {"type": type(error).__name__, "message": str(error)}
-    result["total_latency_seconds"] = round(time.perf_counter() - start, 3)
-    return result
+    result["total_latency_seconds"] = time.perf_counter() - start
+    return normalize(result)
 
 
-def run(providers: list[str], prompt: str, timeout: float, output: Path) -> list[dict]:
+def run(providers: list[str], prompt: str, timeout: float, output: Path, streaming: bool = False) -> list[dict]:
     output.mkdir(parents=True, exist_ok=False)
     results = []
     with ThreadPoolExecutor(max_workers=len(providers)) as pool:
-        futures = [pool.submit(probe, provider, prompt, timeout) for provider in providers]
+        futures = [pool.submit(probe, provider, prompt, timeout, True) if streaming else pool.submit(probe, provider, prompt, timeout) for provider in providers]
         for future in as_completed(futures):
             result = future.result()
             (output / f"{result['provider']}.json").write_text(json.dumps(result, indent=2), encoding="utf-8")
@@ -98,6 +110,7 @@ def main() -> None:
     parser.add_argument("--providers", nargs="+", choices=PROVIDERS, default=list(PROVIDERS))
     parser.add_argument("--prompt", default="Reply with exactly: hello")
     parser.add_argument("--timeout", type=float, default=180, help="Network timeout in seconds (default: 180)")
+    parser.add_argument("--stream", action="store_true", help="Measure streamed output and retain SSE events")
     parser.add_argument("--open", action="store_true", help="Open the completed HTML report in your browser")
     args = parser.parse_args()
     if not 0 < args.timeout < float("inf"):
@@ -105,7 +118,7 @@ def main() -> None:
     load_dotenv()
     run_id = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ") + "-" + uuid.uuid4().hex[:8]
     output = ROOT / "results" / "raw" / run_id
-    results = run(list(dict.fromkeys(args.providers)), args.prompt, args.timeout, output)
+    results = run(list(dict.fromkeys(args.providers)), args.prompt, args.timeout, output, args.stream)
     report = output / "report.html"
     print(f"Report: {report}")
     if args.open:

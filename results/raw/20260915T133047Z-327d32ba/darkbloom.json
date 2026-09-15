@@ -1,0 +1,282 @@
+{
+  "provider": "darkbloom",
+  "model": "qwen/qwen3.8-27b",
+  "provider_model_id": "EigenLabs/Qwen3.8-27B-4bit-mtp",
+  "timestamp": "2026-09-15T13:30:47.647413+00:00",
+  "request": {
+    "url": "https://api.darkbloom.dev/v1/chat/completions",
+    "headers": {
+      "Authorization": "Bearer <redacted>",
+      "Content-Type": "application/json"
+    },
+    "json": {
+      "model": "EigenLabs/Qwen3.8-27B-4bit-mtp",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Reply with exactly: hello"
+        }
+      ],
+      "temperature": 0,
+      "stream": false
+    }
+  },
+  "response": {
+    "status_code": 200,
+    "headers": {
+      "Access-Control-Allow-Credentials": "true",
+      "Access-Control-Allow-Headers": "Content-Type, Authorization, X-Darkbloom-Metadata-Details",
+      "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+      "Access-Control-Allow-Origin": "https://console.darkbloom.dev",
+      "Alt-Svc": "h3=\":443\"; ma=2592000",
+      "Content-Length": "1182",
+      "Content-Type": "application/json",
+      "Date": "Tue, 15 Sep 2026 13:30:49 GMT",
+      "Referrer-Policy": "strict-origin-when-cross-origin",
+      "Via": "1.1 Caddy",
+      "X-Attestation-Se-Public-Key": "7A3DHAt1PAG+QNFHnL9NHkuHF7TYzJzLXbZ4Tgm7/DgeAqhNPjMlTde0Lm6x41oRUHw2X5+Tu6GA8429aKVAQQ==",
+      "X-Content-Type-Options": "nosniff",
+      "X-Frame-Options": "DENY",
+      "X-Inference-Job-Id": "6fa728ab-e96e-41f2-afce-c2b442db786a",
+      "X-Provider-Attested": "true",
+      "X-Provider-Chip": "Apple M5 Max",
+      "X-Provider-Encrypted": "true",
+      "X-Provider-Id": "979be39e-1d0c-4456-88b3-eb13cb2152e5",
+      "X-Provider-Model": "Mac17,6",
+      "X-Provider-Secure-Enclave": "true",
+      "X-Provider-Trust-Level": "hardware",
+      "X-Ratelimit-Limit-Input-Tokens": "5000000",
+      "X-Ratelimit-Limit-Output-Tokens": "500000",
+      "X-Ratelimit-Limit-Requests": "1200",
+      "X-Ratelimit-Remaining-Input-Tokens": "999990",
+      "X-Ratelimit-Remaining-Output-Tokens": "31232",
+      "X-Ratelimit-Remaining-Requests": "119",
+      "X-Ratelimit-Reset-Input-Tokens": "1s",
+      "X-Ratelimit-Reset-Output-Tokens": "4s",
+      "X-Ratelimit-Reset-Requests": "1s",
+      "X-Request-Id": "odhqrc50nb2t",
+      "X-Timing": "{\"parse_us\":59,\"reserve_us\":3026,\"route_us\":4886,\"queue_us\":0,\"encrypt_us\":536,\"dispatch_us\":8,\"provider_us\":245605,\"pre_handler_us\":778,\"preflight_us\":596,\"route_reserve_us\":480,\"writer_us\":5,\"socket_us\":36,\"provider_ack_us\":240544}",
+      "Connection": "close"
+    },
+    "body": {
+      "id": "chatcmpl-6fa728ab-e96e-41f2-afce-c2b442db786a",
+      "object": "chat.completion",
+      "created": 1789479049,
+      "model": "EigenLabs/Qwen3.8-27B-4bit-mtp",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "\n\nhello",
+            "reasoning": "The user wants me to reply with exactly the word \"hello\". This is a simple, direct request. I should output only \"hello\" with no additional text.\n",
+            "reasoning_content": "The user wants me to reply with exactly the word \"hello\". This is a simple, direct request. I should output only \"hello\" with no additional text.\n",
+            "reasoning_details": [
+              {
+                "type": "reasoning.text",
+                "text": "The user wants me to reply with exactly the word \"hello\". This is a simple, direct request. I should output only \"hello\" with no additional text.\n",
+                "id": "reasoning-text-0",
+                "format": "unknown",
+                "index": 0,
+                "signature": null
+              }
+            ]
+          },
+          "finish_reason": "stop"
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 57,
+        "completion_tokens": 38,
+        "total_tokens": 95,
+        "completion_tokens_details": {
+          "reasoning_tokens": 34
+        }
+      },
+      "se_signature": "MEQCIC1ZBc+8PBACwA35GkSUZqQBCriQrFFQBfHa7zJNzwp8AiAmGcoSZw6HNMI9SWtxAo+ALjjchQOVaKMArqyQVlmuJA==",
+      "response_hash": "2af525030b742d7fd5f24db7a6d1893d3896136508575780a388d0d3f99632dd"
+    }
+  },
+  "success": true,
+  "error": null,
+  "request_sent": true,
+  "total_latency_seconds": 1.3731597498990595,
+  "metrics": {
+    "ttft_seconds": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Non-streaming does not expose first-token arrival.",
+      "unit": "s"
+    },
+    "total_latency_seconds": {
+      "value": 1.3731597498990595,
+      "source": "measured",
+      "reason": null,
+      "unit": "s"
+    },
+    "output_tokens_per_second": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Requires a successful stream, usage, and a positive generation interval.",
+      "unit": "tokens/s",
+      "note": "Completion tokens divided by first-to-last content/reasoning chunk interval; chunk buffering can inflate this estimate."
+    },
+    "input_tokens": {
+      "value": 57,
+      "source": "provider-reported",
+      "reason": null,
+      "unit": "tokens"
+    },
+    "output_tokens": {
+      "value": 38,
+      "source": "provider-reported",
+      "reason": null,
+      "unit": "tokens",
+      "note": "Provider completion_tokens retained as total output; reasoning detail is a subset, never added again. Separate reasoning counts may be unavailable."
+    },
+    "reasoning_tokens": {
+      "value": 34,
+      "source": "provider-reported",
+      "reason": null,
+      "unit": "tokens"
+    },
+    "input_price_per_1m": {
+      "value": 0.15,
+      "source": "provider-reported",
+      "reason": null,
+      "unit": "USD/1M tokens"
+    },
+    "output_price_per_1m": {
+      "value": 2.0,
+      "source": "provider-reported",
+      "reason": null,
+      "unit": "USD/1M tokens"
+    },
+    "input_cost": {
+      "value": 8.55e-06,
+      "source": "estimated",
+      "reason": null,
+      "unit": "USD"
+    },
+    "output_cost": {
+      "value": 7.6e-05,
+      "source": "estimated",
+      "reason": null,
+      "unit": "USD"
+    },
+    "request_cost": {
+      "value": 0.0001,
+      "source": "estimated",
+      "reason": null,
+      "unit": "USD",
+      "note": "Published standard direct-consumer rates with $0.0001 minimum; service accounts and custom rates may differ."
+    },
+    "success": {
+      "value": true,
+      "source": "measured",
+      "reason": null,
+      "unit": null
+    },
+    "http_status": {
+      "value": 200,
+      "source": "provider-reported",
+      "reason": null,
+      "unit": null
+    },
+    "error_type": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "No error.",
+      "unit": null
+    },
+    "error_message": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "No error.",
+      "unit": null
+    }
+  },
+  "metadata": {
+    "provider": {
+      "value": "darkbloom",
+      "source": "configured",
+      "reason": null,
+      "unit": null
+    },
+    "model": {
+      "value": "qwen/qwen3.8-27b",
+      "source": "configured",
+      "reason": null,
+      "unit": null
+    },
+    "provider_model_id": {
+      "value": "EigenLabs/Qwen3.8-27B-4bit-mtp",
+      "source": "configured",
+      "reason": null,
+      "unit": null
+    },
+    "returned_model_id": {
+      "value": "EigenLabs/Qwen3.8-27B-4bit-mtp",
+      "source": "provider-reported",
+      "reason": null,
+      "unit": null
+    },
+    "pricing": {
+      "value": {
+        "provider_model_id": "EigenLabs/Qwen3.8-27B-4bit-mtp",
+        "input_per_1m_tokens": 0.15,
+        "output_per_1m_tokens": 2.0,
+        "context_window": null,
+        "quantization": "4bit (model ID)",
+        "source": "https://api.darkbloom.dev/v1/pricing",
+        "checked_at": "2026-09-15",
+        "cost_basis": "Published standard direct-consumer rates with $0.0001 minimum; service accounts and custom rates may differ.",
+        "minimum_request_cost_usd": 0.0001,
+        "billing_source": "https://github.com/Layr-Labs/d-inference/blob/master/docs/reference/pricing-model.md"
+      },
+      "source": "provider-reported",
+      "reason": null,
+      "unit": null
+    },
+    "rate_limits": {
+      "value": {
+        "x-ratelimit-limit-input-tokens": "5000000",
+        "x-ratelimit-limit-output-tokens": "500000",
+        "x-ratelimit-limit-requests": "1200",
+        "x-ratelimit-remaining-input-tokens": "999990",
+        "x-ratelimit-remaining-output-tokens": "31232",
+        "x-ratelimit-remaining-requests": "119",
+        "x-ratelimit-reset-input-tokens": "1s",
+        "x-ratelimit-reset-output-tokens": "4s",
+        "x-ratelimit-reset-requests": "1s"
+      },
+      "source": "provider-reported",
+      "reason": null,
+      "unit": null
+    },
+    "region": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Not supplied by provider.",
+      "unit": null
+    },
+    "version": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Not supplied by provider.",
+      "unit": null
+    },
+    "context_window": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Not supplied by provider.",
+      "unit": "tokens"
+    },
+    "quantization": {
+      "value": "4bit (model ID)",
+      "source": "provider-reported",
+      "reason": null,
+      "unit": null
+    }
+  }
+}

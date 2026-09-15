@@ -1,0 +1,341 @@
+{
+  "provider": "venice",
+  "model": "qwen/qwen3.8-27b",
+  "provider_model_id": "qwen-3-8-27b",
+  "timestamp": "2026-09-15T13:30:50.184952+00:00",
+  "request": {
+    "url": "https://api.venice.ai/api/v1/chat/completions",
+    "headers": {
+      "Authorization": "Bearer <redacted>",
+      "Content-Type": "application/json"
+    },
+    "json": {
+      "model": "qwen-3-8-27b",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Reply with exactly: hello"
+        }
+      ],
+      "temperature": 0,
+      "stream": true,
+      "stream_options": {
+        "include_usage": true
+      },
+      "venice_parameters": {
+        "include_venice_system_prompt": false
+      }
+    }
+  },
+  "response": {
+    "status_code": 200,
+    "headers": {
+      "Date": "Tue, 15 Sep 2026 13:30:50 GMT",
+      "Content-Type": "text/event-stream; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "close",
+      "content-security-policy": "default-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests",
+      "access-control-allow-origin": "*",
+      "access-control-expose-headers": "*",
+      "Cache-Control": "no-cache",
+      "cdn-cache-control": "no-store",
+      "x-venice-version": "outerface-api-server-us-east1-06309-mnq",
+      "x-venice-balance-usd": "9.99658197",
+      "x-ratelimit-limit-requests": "100",
+      "x-ratelimit-remaining-requests": "98",
+      "x-ratelimit-reset-requests": "1789479110282",
+      "x-ratelimit-limit-tokens": "2000000",
+      "x-ratelimit-remaining-tokens": "1999884",
+      "x-ratelimit-reset-tokens": "1789479110283",
+      "vary": "Accept-Encoding",
+      "X-Frame-Options": "SAMEORIGIN",
+      "Server": "cloudflare",
+      "cf-cache-status": "DYNAMIC",
+      "set-cookie": "__cf_bm=5s71KmZFf1ana7e1B5_8x8gyrueviczCMXG3UDj4ogY-1789479050.2499552-1.0.1.1-aSe3xEP3ix9frTi7tC_3R1NCHv669OsKxew8RH0_kOkLkLRJRvK7N6WrDid47Vqs09IwOFf3msZeMVKvXx0cW7rYuYmWLGFzEWqqps7ZN9wnVgOqblLbyPFuTVfXbTmG; HttpOnly; SameSite=None; Secure; Path=/; Domain=venice.ai; Expires=Tue, 15 Sep 2026 14:00:50 GMT",
+      "Permissions-Policy": "geolocation=(), camera=()",
+      "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload",
+      "X-Content-Type-Options": "nosniff",
+      "Server-Timing": "cfCacheStatus;desc=\"DYNAMIC\"",
+      "Referrer-Policy": "strict-origin",
+      "CF-RAY": "a3b7fd000c4df6f9-IAD"
+    },
+    "body": {
+      "choices": [
+        {
+          "message": {
+            "content": "\n\nhello",
+            "reasoning_content": "The user wants me to reply with exactly \"hello\". This is a straightforward instruction.\n"
+          },
+          "finish_reason": "stop"
+        }
+      ],
+      "model": "qwen-3-8-27b",
+      "id": "chatcmpl-92fe47c0c056bc25",
+      "usage": {
+        "prompt_tokens": 94,
+        "completion_tokens": 22,
+        "total_tokens": 116
+      }
+    }
+  },
+  "success": true,
+  "error": null,
+  "request_sent": true,
+  "stream": {
+    "events": [
+      {
+        "arrival_seconds": 0.5669445419916883,
+        "data": "{\"id\":\"chatcmpl-92fe47c0c056bc25\",\"object\":\"chat.completion.chunk\",\"created\":1789479050,\"model\":\"qwen-3-8-27b\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"content\":\"\"},\"logprobs\":null,\"finish_reason\":null}],\"prompt_token_ids\":null,\"prompt_text\":null}"
+      },
+      {
+        "arrival_seconds": 0.5669772919500247,
+        "data": "{\"id\":\"chatcmpl-92fe47c0c056bc25\",\"object\":\"chat.completion.chunk\",\"created\":1789479050,\"model\":\"qwen-3-8-27b\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"\",\"reasoning_content\":\"The\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}]}"
+      },
+      {
+        "arrival_seconds": 0.5669935420155525,
+        "data": "{\"id\":\"chatcmpl-92fe47c0c056bc25\",\"object\":\"chat.completion.chunk\",\"created\":1789479050,\"model\":\"qwen-3-8-27b\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"\",\"reasoning_content\":\" user wants me\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}]}"
+      },
+      {
+        "arrival_seconds": 0.5670060419943184,
+        "data": "{\"id\":\"chatcmpl-92fe47c0c056bc25\",\"object\":\"chat.completion.chunk\",\"created\":1789479050,\"model\":\"qwen-3-8-27b\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"\",\"reasoning_content\":\" to reply with\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}]}"
+      },
+      {
+        "arrival_seconds": 0.5670884170103818,
+        "data": "{\"id\":\"chatcmpl-92fe47c0c056bc25\",\"object\":\"chat.completion.chunk\",\"created\":1789479050,\"model\":\"qwen-3-8-27b\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"\",\"reasoning_content\":\" exactly \\\"hello\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}]}"
+      },
+      {
+        "arrival_seconds": 0.5671045839553699,
+        "data": "{\"id\":\"chatcmpl-92fe47c0c056bc25\",\"object\":\"chat.completion.chunk\",\"created\":1789479050,\"model\":\"qwen-3-8-27b\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"\",\"reasoning_content\":\"\\\". This is\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}]}"
+      },
+      {
+        "arrival_seconds": 0.5734475840581581,
+        "data": "{\"id\":\"chatcmpl-92fe47c0c056bc25\",\"object\":\"chat.completion.chunk\",\"created\":1789479050,\"model\":\"qwen-3-8-27b\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"\",\"reasoning_content\":\" a straightforward\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}]}"
+      },
+      {
+        "arrival_seconds": 0.6041667920071632,
+        "data": "{\"id\":\"chatcmpl-92fe47c0c056bc25\",\"object\":\"chat.completion.chunk\",\"created\":1789479050,\"model\":\"qwen-3-8-27b\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"\",\"reasoning_content\":\" instruction.\\n\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}]}"
+      },
+      {
+        "arrival_seconds": 0.6042062919586897,
+        "data": "{\"id\":\"chatcmpl-92fe47c0c056bc25\",\"object\":\"chat.completion.chunk\",\"created\":1789479050,\"model\":\"qwen-3-8-27b\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"\\n\\nhello\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}]}"
+      },
+      {
+        "arrival_seconds": 0.6101235840469599,
+        "data": "{\"id\":\"chatcmpl-92fe47c0c056bc25\",\"object\":\"chat.completion.chunk\",\"created\":1789479050,\"model\":\"qwen-3-8-27b\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"\"},\"logprobs\":null,\"finish_reason\":\"stop\",\"stop_reason\":null,\"token_ids\":null}]}"
+      },
+      {
+        "arrival_seconds": 0.6101677500410005,
+        "data": "{\"id\":\"chatcmpl-92fe47c0c056bc25\",\"object\":\"chat.completion.chunk\",\"created\":1789479050,\"model\":\"qwen-3-8-27b\",\"choices\":[],\"usage\":{\"prompt_tokens\":94,\"completion_tokens\":22,\"total_tokens\":116},\"cost\":{\"usd\":0.0001127,\"diem\":0}}"
+      },
+      {
+        "arrival_seconds": 0.6101881250506267,
+        "data": "[DONE]"
+      }
+    ],
+    "raw_lines": [
+      "data: {\"id\":\"chatcmpl-92fe47c0c056bc25\",\"object\":\"chat.completion.chunk\",\"created\":1789479050,\"model\":\"qwen-3-8-27b\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"content\":\"\"},\"logprobs\":null,\"finish_reason\":null}],\"prompt_token_ids\":null,\"prompt_text\":null}",
+      "",
+      "data: {\"id\":\"chatcmpl-92fe47c0c056bc25\",\"object\":\"chat.completion.chunk\",\"created\":1789479050,\"model\":\"qwen-3-8-27b\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"\",\"reasoning_content\":\"The\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}]}",
+      "",
+      "data: {\"id\":\"chatcmpl-92fe47c0c056bc25\",\"object\":\"chat.completion.chunk\",\"created\":1789479050,\"model\":\"qwen-3-8-27b\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"\",\"reasoning_content\":\" user wants me\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}]}",
+      "",
+      "data: {\"id\":\"chatcmpl-92fe47c0c056bc25\",\"object\":\"chat.completion.chunk\",\"created\":1789479050,\"model\":\"qwen-3-8-27b\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"\",\"reasoning_content\":\" to reply with\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}]}",
+      "",
+      "data: {\"id\":\"chatcmpl-92fe47c0c056bc25\",\"object\":\"chat.completion.chunk\",\"created\":1789479050,\"model\":\"qwen-3-8-27b\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"\",\"reasoning_content\":\" exactly \\\"hello\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}]}",
+      "",
+      "data: {\"id\":\"chatcmpl-92fe47c0c056bc25\",\"object\":\"chat.completion.chunk\",\"created\":1789479050,\"model\":\"qwen-3-8-27b\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"\",\"reasoning_content\":\"\\\". This is\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}]}",
+      "",
+      "data: {\"id\":\"chatcmpl-92fe47c0c056bc25\",\"object\":\"chat.completion.chunk\",\"created\":1789479050,\"model\":\"qwen-3-8-27b\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"\",\"reasoning_content\":\" a straightforward\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}]}",
+      "",
+      "data: {\"id\":\"chatcmpl-92fe47c0c056bc25\",\"object\":\"chat.completion.chunk\",\"created\":1789479050,\"model\":\"qwen-3-8-27b\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"\",\"reasoning_content\":\" instruction.\\n\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}]}",
+      "",
+      "data: {\"id\":\"chatcmpl-92fe47c0c056bc25\",\"object\":\"chat.completion.chunk\",\"created\":1789479050,\"model\":\"qwen-3-8-27b\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"\\n\\nhello\"},\"logprobs\":null,\"finish_reason\":null,\"token_ids\":null}]}",
+      "",
+      "data: {\"id\":\"chatcmpl-92fe47c0c056bc25\",\"object\":\"chat.completion.chunk\",\"created\":1789479050,\"model\":\"qwen-3-8-27b\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"\"},\"logprobs\":null,\"finish_reason\":\"stop\",\"stop_reason\":null,\"token_ids\":null}]}",
+      "",
+      "data: {\"id\":\"chatcmpl-92fe47c0c056bc25\",\"object\":\"chat.completion.chunk\",\"created\":1789479050,\"model\":\"qwen-3-8-27b\",\"choices\":[],\"usage\":{\"prompt_tokens\":94,\"completion_tokens\":22,\"total_tokens\":116},\"cost\":{\"usd\":0.0001127,\"diem\":0}}",
+      "",
+      "data: [DONE]",
+      ""
+    ],
+    "content": "\n\nhello",
+    "reasoning": "The user wants me to reply with exactly \"hello\". This is a straightforward instruction.\n",
+    "first_token_seconds": 0.5669772919500247,
+    "last_token_seconds": 0.6042062919586897,
+    "complete": true
+  },
+  "total_latency_seconds": 0.610449208994396,
+  "metrics": {
+    "ttft_seconds": {
+      "value": 0.5669772919500247,
+      "source": "measured",
+      "reason": null,
+      "unit": "s"
+    },
+    "total_latency_seconds": {
+      "value": 0.610449208994396,
+      "source": "measured",
+      "reason": null,
+      "unit": "s"
+    },
+    "output_tokens_per_second": {
+      "value": 590.9371724966965,
+      "source": "estimated",
+      "reason": null,
+      "unit": "tokens/s",
+      "note": "Completion tokens divided by first-to-last content/reasoning chunk interval; chunk buffering can inflate this estimate."
+    },
+    "input_tokens": {
+      "value": 94,
+      "source": "provider-reported",
+      "reason": null,
+      "unit": "tokens"
+    },
+    "output_tokens": {
+      "value": 22,
+      "source": "provider-reported",
+      "reason": null,
+      "unit": "tokens",
+      "note": "Provider completion_tokens retained as total output; reasoning detail is a subset, never added again. Separate reasoning counts may be unavailable."
+    },
+    "reasoning_tokens": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Not supplied by provider.",
+      "unit": "tokens"
+    },
+    "input_price_per_1m": {
+      "value": 0.45,
+      "source": "provider-reported",
+      "reason": null,
+      "unit": "USD/1M tokens"
+    },
+    "output_price_per_1m": {
+      "value": 3.2,
+      "source": "provider-reported",
+      "reason": null,
+      "unit": "USD/1M tokens"
+    },
+    "input_cost": {
+      "value": 4.2300000000000005e-05,
+      "source": "estimated",
+      "reason": null,
+      "unit": "USD"
+    },
+    "output_cost": {
+      "value": 7.04e-05,
+      "source": "estimated",
+      "reason": null,
+      "unit": "USD"
+    },
+    "request_cost": {
+      "value": 0.0001127,
+      "source": "estimated",
+      "reason": null,
+      "unit": "USD",
+      "note": "Published token rates; excludes account discounts and non-token charges."
+    },
+    "success": {
+      "value": true,
+      "source": "measured",
+      "reason": null,
+      "unit": null
+    },
+    "http_status": {
+      "value": 200,
+      "source": "provider-reported",
+      "reason": null,
+      "unit": null
+    },
+    "error_type": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "No error.",
+      "unit": null
+    },
+    "error_message": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "No error.",
+      "unit": null
+    }
+  },
+  "metadata": {
+    "provider": {
+      "value": "venice",
+      "source": "configured",
+      "reason": null,
+      "unit": null
+    },
+    "model": {
+      "value": "qwen/qwen3.8-27b",
+      "source": "configured",
+      "reason": null,
+      "unit": null
+    },
+    "provider_model_id": {
+      "value": "qwen-3-8-27b",
+      "source": "configured",
+      "reason": null,
+      "unit": null
+    },
+    "returned_model_id": {
+      "value": "qwen-3-8-27b",
+      "source": "provider-reported",
+      "reason": null,
+      "unit": null
+    },
+    "pricing": {
+      "value": {
+        "provider_model_id": "qwen-3-8-27b",
+        "input_per_1m_tokens": 0.45,
+        "output_per_1m_tokens": 3.2,
+        "context_window": 262144,
+        "quantization": "fp8",
+        "source": "https://api.venice.ai/api/v1/models",
+        "checked_at": "2026-09-15",
+        "cost_basis": "Published token rates; excludes account discounts and non-token charges."
+      },
+      "source": "provider-reported",
+      "reason": null,
+      "unit": null
+    },
+    "rate_limits": {
+      "value": {
+        "x-ratelimit-limit-requests": "100",
+        "x-ratelimit-remaining-requests": "98",
+        "x-ratelimit-reset-requests": "1789479110282",
+        "x-ratelimit-limit-tokens": "2000000",
+        "x-ratelimit-remaining-tokens": "1999884",
+        "x-ratelimit-reset-tokens": "1789479110283"
+      },
+      "source": "provider-reported",
+      "reason": null,
+      "unit": null
+    },
+    "region": {
+      "value": null,
+      "source": "unavailable",
+      "reason": "Not supplied by provider.",
+      "unit": null
+    },
+    "version": {
+      "value": "outerface-api-server-us-east1-06309-mnq",
+      "source": "provider-reported",
+      "reason": null,
+      "unit": null
+    },
+    "context_window": {
+      "value": 262144,
+      "source": "provider-reported",
+      "reason": null,
+      "unit": "tokens"
+    },
+    "quantization": {
+      "value": "fp8",
+      "source": "provider-reported",
+      "reason": null,
+      "unit": null
+    }
+  }
+}

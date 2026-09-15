@@ -31,3 +31,7 @@ Then implement the common provider adapters and streaming benchmark measurements
 The earlier run `20260915T124452Z-026ed7ed` captured local network-resolution failures
 inside the restricted environment. Those are not evidence of provider outages;
 the network-enabled run above succeeded for all three providers.
+
+## Measurement implementation — 2026-09-15
+
+Streaming and non-streaming metrics are now implemented. All six verification requests succeeded. See the README for the saved reports and [metric definitions](metrics.md) for pricing, reasoning accounting, and the remaining input-count difference. The earlier measurement limits above describe the original inspection run.

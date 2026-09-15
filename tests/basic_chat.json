@@ -1,7 +1,7 @@
 {
   "name": "basic_chat",
   "model": "qwen/qwen3.8-27b",
-  "providers": ["venice", "chutes", "darkbloom"],
+  "providers": ["venice", "chutes", "darkbloom", "ionet"],
   "messages": [
     {
       "role": "user",

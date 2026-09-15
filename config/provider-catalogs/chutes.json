@@ -1,0 +1,75 @@
+{
+  "checked_at": "2026-09-15",
+  "record": {
+    "id": "Qwen/Qwen3.8-27B-TEE",
+    "root": "Qwen/Qwen3.8-27B-FP8",
+    "price": {
+      "input": {
+        "tao": 0.0014258419596771895,
+        "usd": 0.32
+      },
+      "output": {
+        "tao": 0.011139390309978042,
+        "usd": 2.5
+      },
+      "input_cache_read": {
+        "tao": 0.0001425841959677189,
+        "usd": 0.031999999999999994
+      }
+    },
+    "object": "model",
+    "parent": null,
+    "created": 1789476731,
+    "pricing": {
+      "prompt": 0.32,
+      "completion": 2.5,
+      "input_cache_read": 0.031999999999999994
+    },
+    "chute_id": "9ecb73cc-909b-5334-9cd8-74985945cff5",
+    "owned_by": "vllm",
+    "permission": [
+      {
+        "id": "modelperm-b14c0cf8066650af",
+        "group": null,
+        "object": "model_permission",
+        "created": 1789476731,
+        "allow_view": true,
+        "is_blocking": false,
+        "organization": "*",
+        "allow_logprobs": true,
+        "allow_sampling": true,
+        "allow_fine_tuning": false,
+        "allow_create_engine": false,
+        "allow_search_indices": false
+      }
+    ],
+    "quantization": "fp8",
+    "max_model_len": 262144,
+    "context_length": 262144,
+    "input_modalities": [
+      "text",
+      "image"
+    ],
+    "max_output_length": 65536,
+    "output_modalities": [
+      "text"
+    ],
+    "supported_features": [
+      "json_mode",
+      "tools",
+      "structured_outputs",
+      "reasoning"
+    ],
+    "confidential_compute": true,
+    "supported_sampling_parameters": [
+      "temperature",
+      "top_p",
+      "top_k",
+      "repetition_penalty",
+      "frequency_penalty",
+      "presence_penalty",
+      "stop",
+      "seed"
+    ]
+  }
+}
